@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVP Algebra — Teacher Intelligence Hub</title>
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #07090f;
+  --surface:  #0e1420;
+  --card:     #131926;
+  --border:   rgba(255,255,255,0.07);
+  --teal:     #00d4ff;
+  --purple:   #a855f7;
+  --gold:     #f59e0b;
+  --green:    #10b981;
+  --red:      #ef4444;
+  --orange:   #f97316;
+  --text:     #f1f5f9;
+  --text2:    #94a3b8;
+  --text3:    #475569;
+  --radius:   14px;
+  --shadow:   0 4px 24px rgba(0,0,0,0.4);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap');
+
+/* ── PIN SCREEN ───────────────────────────────────────────── */
+#pin-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  gap: 0;
+}
+.pin-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px 40px 40px;
+  text-align: center;
+  width: 340px;
+  box-shadow: var(--shadow);
+}
+.pin-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--teal), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+.pin-sub {
+  font-size: 12px;
+  color: var(--text3);
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+.pin-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.pin-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--text3);
+  transition: all 0.15s;
+}
+.pin-dot.filled {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: 0 0 10px rgba(0,212,255,0.4);
+}
+.pin-dot.error {
+  background: var(--red);
+  border-color: var(--red);
+  animation: pinShake 0.3s ease;
+}
+@keyframes pinShake {
+  0%,100%{ transform:translateX(0); }
+  25%{ transform:translateX(-5px); }
+  75%{ transform:translateX(5px); }
+}
+.pin-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.pin-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  height: 56px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.pin-btn:hover { background: rgba(0,212,255,0.08); border-color: rgba(0,212,255,0.3); }
+.pin-btn:active { transform: scale(0.94); }
+.pin-btn.del { font-size: 16px; color: var(--text3); }
+.pin-error-msg {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--red);
+  min-height: 16px;
+}
+
+/* ── MAIN APP (hidden until PIN) ──────────────────────────── */
+#app { display: none; }
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 220px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  padding: 24px 0 20px;
+}
+.sidebar-logo {
+  padding: 0 20px 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.sidebar-logo-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--teal), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sidebar-logo-sub {
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+.nav-section-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 0 20px;
+  margin: 16px 0 6px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+.nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+.nav-item.active {
+  color: var(--teal);
+  background: rgba(0,212,255,0.06);
+  border-left-color: var(--teal);
+}
+.nav-item .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+.nav-badge {
+  margin-left: auto;
+  background: var(--red);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 2px 6px;
+  min-width: 18px;
+  text-align: center;
+}
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 16px 20px 0;
+  border-top: 1px solid var(--border);
+}
+.sidebar-period-label {
+  font-size: 10px;
+  color: var(--text3);
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.period-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.period-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.period-chip.active {
+  background: rgba(0,212,255,0.1);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* ── MAIN CONTENT ─────────────────────────────────────────── */
+.main {
+  margin-left: 220px;
+  flex: 1;
+  padding: 28px 28px 60px;
+  max-width: 1200px;
+}
+
+/* ── TOPBAR ───────────────────────────────────────────────── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.topbar-left h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text);
+}
+.topbar-left p {
+  font-size: 13px;
+  color: var(--text3);
+  margin-top: 2px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar-refresh {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.topbar-refresh:hover { color: var(--teal); border-color: rgba(0,212,255,0.3); }
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(16,185,129,0.6);
+  animation: livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.live-label { font-size: 11px; color: var(--green); font-weight: 600; }
+
+/* ── SECTION (view panel) ─────────────────────────────────── */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── CARDS ────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-title .ct-badge {
+  font-size: 10px;
+  background: rgba(0,212,255,0.1);
+  color: var(--teal);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ── GRID LAYOUTS ─────────────────────────────────────────── */
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 20px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 20px; }
+
+/* ── STAT CARDS ───────────────────────────────────────────── */
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.stat-card.teal::before { background: var(--teal); }
+.stat-card.purple::before { background: var(--purple); }
+.stat-card.gold::before { background: var(--gold); }
+.stat-card.red::before { background: var(--red); }
+.stat-card.green::before { background: var(--green); }
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-sub {
+  font-size: 11px;
+  color: var(--text3);
+}
+.stat-trend {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 20px;
+}
+
+/* ── BRIEFING ALERTS ──────────────────────────────────────── */
+.briefing-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.alert-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  border-left: 4px solid transparent;
+  transition: all 0.15s;
+}
+.alert-row:hover { border-color: rgba(255,255,255,0.12); }
+.alert-row.critical { border-left-color: var(--red); }
+.alert-row.warning { border-left-color: var(--gold); }
+.alert-row.info { border-left-color: var(--teal); }
+.alert-row.success { border-left-color: var(--green); }
+.alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.alert-body { flex: 1; }
+.alert-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.alert-desc {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.alert-action {
+  font-size: 11px;
+  color: var(--teal);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  display: inline-block;
+}
+.alert-time {
+  font-size: 10px;
+  color: var(--text3);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── HEAT MAP ─────────────────────────────────────────────── */
+.heatmap-wrap { overflow-x: auto; }
+.heatmap-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+  font-size: 11px;
+}
+.heatmap-table th {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+.heatmap-table th.dok-th {
+  text-align: center;
+  width: 64px;
+}
+.hm-cell {
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.hm-cell:hover { transform: scale(1.08); }
+.hm-label {
+  font-size: 11px;
+  color: var(--text2);
+  padding: 8px 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+/* Heat colors */
+.hm-90 { background: rgba(16,185,129,0.25); color: #10b981; }
+.hm-75 { background: rgba(0,212,255,0.15); color: #00d4ff; }
+.hm-60 { background: rgba(245,158,11,0.2); color: #f59e0b; }
+.hm-40 { background: rgba(249,115,22,0.2); color: #f97316; }
+.hm-20 { background: rgba(239,68,68,0.2); color: #ef4444; }
+.hm-na { background: rgba(255,255,255,0.03); color: var(--text3); }
+
+/* ── STUDENT TABLE ─────────────────────────────────────────── */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.student-table th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.student-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-size: 13px;
+  color: var(--text2);
+  vertical-align: middle;
+}
+.student-table tr:hover td { background: rgba(255,255,255,0.02); }
+.student-table tr:last-child td { border-bottom: none; }
+.stu-name {
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+}
+.stu-name:hover { color: var(--teal); }
+.designation-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 6px;
+}
+.des-L25 { background: rgba(239,68,68,0.15); color: #ef4444; }
+.des-L35 { background: rgba(249,115,22,0.15); color: #f97316; }
+.des-ESOL { background: rgba(168,85,247,0.15); color: #a855f7; }
+
+/* Accuracy bar */
+.acc-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.acc-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 80px;
+}
+.acc-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.acc-val { font-size: 12px; font-weight: 700; min-width: 32px; }
+
+/* Speed signature */
+.speed-sig {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+.sig-fc { background: rgba(16,185,129,0.12); color: #10b981; } /* fast correct */
+.sig-sc { background: rgba(0,212,255,0.1); color: #00d4ff; }  /* slow correct */
+.sig-fw { background: rgba(239,68,68,0.12); color: #ef4444; } /* fast wrong */
+.sig-sw { background: rgba(245,158,11,0.12); color: #f59e0b; } /* slow wrong */
+
+/* Regression flag */
+.reg-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--red);
+  background: rgba(239,68,68,0.1);
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+.trending-up { color: var(--green); font-size: 12px; }
+.trending-dn { color: var(--red); font-size: 12px; }
+.trending-st { color: var(--text3); font-size: 12px; }
+
+/* ── GROUPING CARDS ───────────────────────────────────────── */
+.group-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.group-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+}
+.group-standard {
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: 2px;
+}
+.group-size {
+  font-size: 11px;
+  color: var(--text3);
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-weight: 600;
+}
+.group-members {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.group-member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.gm-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.gm-reason {
+  font-size: 11px;
+  color: var(--text3);
+  margin-top: 1px;
+}
+.gm-signal {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+/* ── TRENDLINE CHART ──────────────────────────────────────── */
+.trend-canvas-wrap {
+  position: relative;
+  height: 180px;
+  width: 100%;
+}
+
+/* ── STUDENT PROFILE MODAL ────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 28px;
+  animation: modalPop 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes modalPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text3);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s;
+}
+.modal-close:hover { color: var(--text); }
+.modal-stu-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text);
+}
+.modal-stu-meta {
+  font-size: 12px;
+  color: var(--text3);
+  margin-top: 4px;
+}
+.modal-section {
+  margin-bottom: 22px;
+}
+.modal-section-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.baseline-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.baseline-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  text-align: center;
+}
+.baseline-chip-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--teal);
+}
+.baseline-chip-lbl {
+  font-size: 9px;
+  color: var(--text3);
+  margin-top: 2px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.assessment-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.assessment-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.assessment-chip:hover { border-color: rgba(0,212,255,0.3); }
+.ac-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+}
+.ac-lbl { font-size: 9px; color: var(--text3); font-weight: 600; text-transform: uppercase; }
+.ac-input {
+  background: none;
+  border: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--teal);
+  width: 48px;
+  text-align: center;
+  outline: none;
+}
+.ac-input::placeholder { color: var(--text3); font-size: 12px; }
+
+/* Standard breakdown bars */
+.std-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.std-bar-label {
+  font-size: 11px;
+  color: var(--text2);
+  width: 120px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.std-bar-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.std-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.std-bar-pct {
+  font-size: 11px;
+  font-weight: 700;
+  width: 36px;
+  text-align: right;
+}
+.std-dok-row {
+  display: flex;
+  gap: 6px;
+  margin-left: 130px;
+  margin-top: -4px;
+  margin-bottom: 10px;
+}
+.dok-mini {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ── CSV IMPORT ───────────────────────────────────────────── */
+.import-drop {
+  border: 2px dashed rgba(0,212,255,0.2);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.import-drop:hover, .import-drop.drag-over {
+  border-color: var(--teal);
+  background: rgba(0,212,255,0.03);
+}
+.import-drop-icon { font-size: 40px; margin-bottom: 12px; }
+.import-drop-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.import-drop-sub { font-size: 13px; color: var(--text3); }
+.import-drop input[type=file] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.import-preview {
+  display: none;
+  margin-top: 20px;
+}
+.import-preview.show { display: block; }
+.import-table-wrap { overflow-x: auto; max-height: 300px; overflow-y: auto; margin-bottom: 16px; }
+.import-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.import-table th {
+  background: var(--surface);
+  color: var(--text3);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+.import-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  color: var(--text2);
+}
+.import-table tr.matched td { color: var(--text); }
+.import-table tr.unmatched td { color: var(--red); opacity: 0.7; }
+.import-status-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.import-status-chip {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+.isc-match { background: rgba(16,185,129,0.12); color: var(--green); }
+.isc-new   { background: rgba(0,212,255,0.1); color: var(--teal); }
+.isc-err   { background: rgba(239,68,68,0.12); color: var(--red); }
+.import-confirm-btn {
+  background: linear-gradient(135deg, var(--teal), var(--purple));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.import-confirm-btn:hover { transform: scale(1.02); }
+.import-confirm-btn:disabled { opacity: 0.4; cursor: default; }
+
+/* ── TRENDLINE mini sparkline ─────────────────────────────── */
+.sparkline { display: inline-block; }
+
+/* ── EOC READINESS ────────────────────────────────────────── */
+.eoc-readiness-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.eoc-rb-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.eoc-rb-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s cubic-bezier(0.16,1,0.3,1);
+}
+.eoc-rb-pct { font-size: 12px; font-weight: 700; min-width: 36px; }
+.eoc-level-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+.eoc-l1 { background: rgba(239,68,68,0.15); color: var(--red); }
+.eoc-l2 { background: rgba(249,115,22,0.15); color: var(--orange); }
+.eoc-l3 { background: rgba(245,158,11,0.15); color: var(--gold); }
+.eoc-l4 { background: rgba(0,212,255,0.1); color: var(--teal); }
+.eoc-l5 { background: rgba(16,185,129,0.12); color: var(--green); }
+
+/* ── GAME OVER LOG ────────────────────────────────────────── */
+.go-event-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(239,68,68,0.05);
+  border: 1px solid rgba(239,68,68,0.12);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.go-badge {
+  background: rgba(239,68,68,0.15);
+  color: var(--red);
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.go-name { font-weight: 700; color: var(--text); }
+.go-detail { color: var(--text3); flex: 1; }
+.go-time { color: var(--text3); font-size: 11px; flex-shrink: 0; }
+
+/* ── PERIOD COMPARISON ────────────────────────────────────── */
+.period-compare-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.pc-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text2);
+  width: 80px;
+  flex-shrink: 0;
+}
+.pc-bar-track {
+  flex: 1;
+  height: 22px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.pc-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  transition: width 1s cubic-bezier(0.16,1,0.3,1);
+}
+.pc-pct { font-size: 12px; font-weight: 700; width: 40px; text-align: right; }
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+/* ── EMPTY STATE ──────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text3);
+}
+.empty-state-icon { font-size: 36px; margin-bottom: 12px; }
+.empty-state-title { font-size: 14px; font-weight: 700; color: var(--text2); margin-bottom: 6px; }
+.empty-state-sub { font-size: 12px; line-height: 1.6; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sidebar { width: 60px; }
+  .sidebar-logo-text, .sidebar-logo-sub, .nav-section-label,
+  .nav-item span:not(.nav-icon), .sidebar-bottom { display: none; }
+  .main { margin-left: 60px; padding: 20px; }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+  .main { padding: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ PIN SCREEN ══ -->
+<div id="pin-screen">
+  <div class="pin-card">
+    <div class="pin-logo">MVP Algebra</div>
+    <div class="pin-sub">Teacher Intelligence Hub</div>
+    <div class="pin-label">Enter PIN</div>
+    <div class="pin-dots">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+    </div>
+    <div class="pin-pad">
+      <button class="pin-btn" onclick="pinPress('1')">1</button>
+      <button class="pin-btn" onclick="pinPress('2')">2</button>
+      <button class="pin-btn" onclick="pinPress('3')">3</button>
+      <button class="pin-btn" onclick="pinPress('4')">4</button>
+      <button class="pin-btn" onclick="pinPress('5')">5</button>
+      <button class="pin-btn" onclick="pinPress('6')">6</button>
+      <button class="pin-btn" onclick="pinPress('7')">7</button>
+      <button class="pin-btn" onclick="pinPress('8')">8</button>
+      <button class="pin-btn" onclick="pinPress('9')">9</button>
+      <button class="pin-btn del" onclick="pinDel()">⌫</button>
+      <button class="pin-btn" onclick="pinPress('0')">0</button>
+      <button class="pin-btn del" onclick="pinClear()">✕</button>
+    </div>
+    <div class="pin-error-msg" id="pin-error"></div>
+  </div>
+</div>
+
+<!-- ══ MAIN APP ══ -->
+<div id="app">
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-text">MVP Algebra</div>
+        <div class="sidebar-logo-sub">Intelligence Hub</div>
+      </div>
+
+      <div class="nav-section-label">Overview</div>
+      <div class="nav-item active" onclick="showView('briefing')">
+        <span class="nav-icon">⚡</span><span>Daily Briefing</span>
+        <span class="nav-badge" id="nav-badge-briefing" style="display:none">0</span>
+      </div>
+      <div class="nav-item" onclick="showView('heatmap')">
+        <span class="nav-icon">🗺️</span><span>Class Heat Map</span>
+      </div>
+      <div class="nav-item" onclick="showView('trends')">
+        <span class="nav-icon">📈</span><span>Trendlines</span>
+      </div>
+
+      <div class="nav-section-label">Students</div>
+      <div class="nav-item" onclick="showView('students')">
+        <span class="nav-icon">👥</span><span>All Students</span>
+      </div>
+      <div class="nav-item" onclick="showView('regressors')">
+        <span class="nav-icon">⚠️</span><span>Regressors</span>
+        <span class="nav-badge" id="nav-badge-reg" style="display:none">0</span>
+      </div>
+      <div class="nav-item" onclick="showView('groups')">
+        <span class="nav-icon">🎯</span><span>Grouping</span>
+      </div>
+      <div class="nav-item" onclick="showView('eoc')">
+        <span class="nav-icon">📊</span><span>EOC Readiness</span>
+      </div>
+
+      <div class="nav-section-label">Alerts</div>
+      <div class="nav-item" onclick="showView('gameover')">
+        <span class="nav-icon">🚨</span><span>Game-Over Log</span>
+        <span class="nav-badge" id="nav-badge-go" style="display:none">0</span>
+      </div>
+      <div class="nav-item" onclick="showView('periods')">
+        <span class="nav-icon">📋</span><span>Periods</span>
+      </div>
+
+      <div class="nav-section-label">Data</div>
+      <div class="nav-item" onclick="showView('import')">
+        <span class="nav-icon">📥</span><span>Import Data</span>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-period-label">Filter Period</div>
+        <div class="period-chips">
+          <div class="period-chip active" onclick="setPeriod('all',this)">All</div>
+          <div class="period-chip" onclick="setPeriod('01',this)">P01</div>
+          <div class="period-chip" onclick="setPeriod('05',this)">P05</div>
+          <div class="period-chip" onclick="setPeriod('07',this)">P07</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <h1 id="view-title">Daily Briefing</h1>
+          <p id="view-sub">Loading data...</p>
+        </div>
+        <div class="topbar-right">
+          <div class="live-dot"></div>
+          <span class="live-label">Live</span>
+          <button class="topbar-refresh" onclick="loadAllData()">↻ Refresh</button>
+        </div>
+      </div>
+
+      <!-- ── VIEW: DAILY BRIEFING ── -->
+      <div class="view active" id="view-briefing">
+        <div class="grid-4" id="briefing-stats"></div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-title">⚡ Priority Alerts <span class="ct-badge" id="alert-count-badge">0</span></div>
+          <div class="briefing-grid" id="briefing-alerts">
+            <div class="empty-state">
+              <div class="empty-state-icon">✅</div>
+              <div class="empty-state-title">All clear</div>
+              <div class="empty-state-sub">No urgent flags right now. Check back after students complete more sessions.</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">🎯 Suggested Actions</div>
+            <div id="briefing-actions">
+              <div class="empty-state" style="padding:24px 0">
+                <div class="empty-state-sub">Actions will appear once diagnostic data is collected.</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">🚨 Recent Game-Overs</div>
+            <div id="briefing-gameovers">
+              <div class="empty-state" style="padding:24px 0">
+                <div class="empty-state-sub">No game-over events recorded yet.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: HEAT MAP ── -->
+      <div class="view" id="view-heatmap">
+        <div class="card">
+          <div class="card-title">🗺️ Standard × DOK Accuracy Heat Map
+            <span class="ct-badge">All Periods</span>
+          </div>
+          <div class="heatmap-wrap">
+            <table class="heatmap-table" id="heatmap-table">
+              <thead>
+                <tr>
+                  <th>Standard</th>
+                  <th>Topic</th>
+                  <th class="dok-th">DOK 1</th>
+                  <th class="dok-th">DOK 2</th>
+                  <th class="dok-th">DOK 3</th>
+                  <th class="dok-th">Overall</th>
+                </tr>
+              </thead>
+              <tbody id="heatmap-body">
+                <tr><td colspan="6" style="padding:40px;text-align:center;color:var(--text3)">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: TRENDLINES ── -->
+      <div class="view" id="view-trends">
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-title">📈 Class Accuracy Over Time</div>
+          <canvas id="trend-chart" height="200"></canvas>
+        </div>
+        <div class="card">
+          <div class="card-title">📉 Per-Standard Trends</div>
+          <div id="std-trend-rows"></div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: ALL STUDENTS ── -->
+      <div class="view" id="view-students">
+        <div class="card">
+          <div class="card-title">👥 Student Roster
+            <span class="ct-badge" id="student-count-badge">0 students</span>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="student-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Period</th>
+                  <th>EOC Baseline</th>
+                  <th>App Accuracy</th>
+                  <th>Speed Sig.</th>
+                  <th>Sessions</th>
+                  <th>Trend</th>
+                  <th>Flags</th>
+                </tr>
+              </thead>
+              <tbody id="student-table-body">
+                <tr><td colspan="8" style="padding:40px;text-align:center;color:var(--text3)">Loading roster...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: REGRESSORS ── -->
+      <div class="view" id="view-regressors">
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-title">⚠️ Regression Alerts
+            <span class="ct-badge" id="reg-count-badge">0</span>
+          </div>
+          <div id="regressor-list">
+            <div class="empty-state">
+              <div class="empty-state-icon">✅</div>
+              <div class="empty-state-title">No regressors detected</div>
+              <div class="empty-state-sub">The system continuously monitors each student against their personal baseline.<br>Alerts appear here when performance drops significantly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: GROUPING ── -->
+      <div class="view" id="view-groups">
+        <div id="grouping-list">
+          <div class="empty-state">
+            <div class="empty-state-icon">🎯</div>
+            <div class="empty-state-title">Grouping suggestions will appear here</div>
+            <div class="empty-state-sub">Once students complete enough EOC path sessions, the system will<br>automatically generate re-teach groups with individual reasoning.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: EOC READINESS ── -->
+      <div class="view" id="view-eoc">
+        <div class="card">
+          <div class="card-title">📊 EOC Pass Probability
+            <span class="ct-badge">Based on baseline + assessments + app performance</span>
+          </div>
+          <div id="eoc-readiness-list">
+            <div class="empty-state">
+              <div class="empty-state-icon">📊</div>
+              <div class="empty-state-title">EOC readiness requires baseline data</div>
+              <div class="empty-state-sub">Import your student spreadsheet to enable EOC readiness predictions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: GAME-OVER LOG ── -->
+      <div class="view" id="view-gameover">
+        <div class="card">
+          <div class="card-title">🚨 Game-Over Event Log</div>
+          <div id="gameover-log-list">
+            <div class="empty-state">
+              <div class="empty-state-icon">🎮</div>
+              <div class="empty-state-title">No game-over events yet</div>
+              <div class="empty-state-sub">Events are logged when a student leaves the app 3 times during a session.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: PERIODS ── -->
+      <div class="view" id="view-periods">
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-title">📋 Period vs Period Comparison</div>
+          <div id="period-compare-content">
+            <div class="empty-state">
+              <div class="empty-state-sub">Period comparison loads once students from all periods have completed sessions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIEW: IMPORT ── -->
+      <div class="view" id="view-import">
+        <div class="card">
+          <div class="card-title">📥 Import Student Data
+            <span class="ct-badge">CSV Upload</span>
+          </div>
+          <p style="font-size:13px;color:var(--text3);margin-bottom:20px;line-height:1.6">
+            Export your spreadsheet as a CSV with these columns:
+            <strong style="color:var(--text2)">student_id, first_name, last_name, period, prior_eoc_level, prior_eoc_score, designation, ch1_test, ch2_test, ch3_test, ch4_test, ch5_test, midterm</strong><br>
+            The system matches on <strong style="color:var(--teal)">student_id</strong>. Missing assessment columns are fine — leave them blank.
+          </p>
+          <div class="import-drop" id="import-drop" onclick="document.getElementById('csv-file-input').click()">
+            <div class="import-drop-icon">📂</div>
+            <div class="import-drop-title">Drop your CSV here or tap to browse</div>
+            <div class="import-drop-sub">Supports .csv files · Matches on student ID</div>
+            <input type="file" id="csv-file-input" accept=".csv" style="display:none" onchange="handleCSVFile(this.files[0])">
+          </div>
+          <div class="import-preview" id="import-preview">
+            <div class="import-status-row" id="import-status-row"></div>
+            <div class="import-table-wrap">
+              <table class="import-table">
+                <thead id="import-table-head"></thead>
+                <tbody id="import-table-body"></tbody>
+              </table>
+            </div>
+            <button class="import-confirm-btn" id="import-confirm-btn" onclick="confirmImport()">
+              ✓ Import to Firebase
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ── STUDENT PROFILE MODAL ── -->
+<div class="modal-overlay" id="student-modal">
+  <div class="modal" id="student-modal-inner">
+    <div class="modal-header">
+      <div>
+        <div class="modal-stu-name" id="modal-stu-name">Student Name</div>
+        <div class="modal-stu-meta" id="modal-stu-meta"></div>
+      </div>
+      <button class="modal-close" onclick="closeStudentModal()">✕</button>
+    </div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getDatabase, ref, get, set, update, onValue } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyC7QMWYLwYl3A6li_dfxCTRvfTUrTYIv5I",
+  authDomain: "mvp-algebra.firebaseapp.com",
+  databaseURL: "https://mvp-algebra-default-rtdb.firebaseio.com",
+  projectId: "mvp-algebra",
+  storageBucket: "mvp-algebra.firebasestorage.app",
+  messagingSenderId: "224268800397",
+  appId: "1:224268800397:web:3356870491c7a10ffcedc4"
+};
+
+const app = initializeApp(FIREBASE_CONFIG);
+const db  = getDatabase(app);
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let STATE = {
+  roster: {},
+  diagnostics: {},
+  gameOverEvents: [],
+  activePeriod: 'all',
+  importRows: [],
+  importParsed: [],
+};
+
+// ── STANDARD MAP ──────────────────────────────────────────────────────────────
+const STANDARDS = [
+  { id:'MA.912.AR.1.1',  topic:'One-Step & Multi-Step Equations' },
+  { id:'MA.912.AR.1.2',  topic:'Inequalities' },
+  { id:'MA.912.AR.1.3',  topic:'Systems of Equations' },
+  { id:'MA.912.AR.1.4',  topic:'Systems of Inequalities' },
+  { id:'MA.912.AR.2.1',  topic:'Linear Functions' },
+  { id:'MA.912.AR.2.2',  topic:'Slope & Intercepts' },
+  { id:'MA.912.AR.2.3',  topic:'Linear Transformations' },
+  { id:'MA.912.AR.2.4',  topic:'Linear Equations from Context' },
+  { id:'MA.912.AR.3.1',  topic:'Factoring & Quadratics' },
+  { id:'MA.912.AR.3.2',  topic:'Completing the Square' },
+  { id:'MA.912.AR.3.3',  topic:'Quadratic Formula' },
+  { id:'MA.912.AR.3.4',  topic:'Quadratic Functions & Graphs' },
+  { id:'MA.912.AR.3.5',  topic:'Quadratic Transformations' },
+  { id:'MA.912.AR.4.1',  topic:'Exponential Functions' },
+  { id:'MA.912.AR.4.2',  topic:'Exponential Transformations' },
+  { id:'MA.912.AR.4.3',  topic:'Exponential Growth & Decay' },
+  { id:'MA.912.AR.5.1',  topic:'Absolute Value' },
+  { id:'MA.912.F.1.1',   topic:'Functions — Definition & Evaluation' },
+  { id:'MA.912.F.1.2',   topic:'Domain & Range' },
+  { id:'MA.912.F.1.3',   topic:'Function Notation' },
+  { id:'MA.912.F.1.4',   topic:'Comparing Functions' },
+  { id:'MA.912.F.2.1',   topic:'Sequences' },
+  { id:'MA.912.NSO.1.1', topic:'Radicals & Rational Exponents' },
+  { id:'MA.912.NSO.1.2', topic:'Polynomial Operations' },
+  { id:'MA.912.DP.1.1',  topic:'Scatter Plots & Lines of Fit' },
+  { id:'MA.912.DP.1.2',  topic:'Correlation & Causation' },
+  { id:'MA.912.DP.2.1',  topic:'Data Distributions' },
+];
+
+// ── LOAD ALL DATA ─────────────────────────────────────────────────────────────
+window.loadAllData = async function() {
+  document.getElementById('view-sub').textContent = 'Refreshing...';
+  try {
+    const [rosterSnap, diagSnap, goSnap] = await Promise.all([
+      get(ref(db, 'roster')),
+      get(ref(db, 'diagnosticProfiles')),
+      get(ref(db, 'gameOverEvents')),
+    ]);
+    STATE.roster     = rosterSnap.exists()  ? rosterSnap.val()  : {};
+    STATE.diagnostics= diagSnap.exists()    ? diagSnap.val()    : {};
+    STATE.gameOverEvents = goSnap.exists()
+      ? Object.values(goSnap.val()).sort((a,b) => b.timestamp - a.timestamp)
+      : [];
+
+    const now = new Date();
+    document.getElementById('view-sub').textContent =
+      'Last updated ' + now.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+
+    renderCurrentView();
+    updateNavBadges();
+  } catch(e) {
+    document.getElementById('view-sub').textContent = 'Error loading data — check Firebase connection';
+    console.error(e);
+  }
+};
+
+function updateNavBadges() {
+  const regressors = detectRegressors();
+  const goCount    = STATE.gameOverEvents.filter(e => isToday(e.timestamp)).length;
+  const alertCount = regressors.length + goCount;
+
+  setBadge('nav-badge-briefing', alertCount);
+  setBadge('nav-badge-reg', regressors.length);
+  setBadge('nav-badge-go', goCount);
+}
+
+function setBadge(id, count) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (count > 0) { el.textContent = count; el.style.display = ''; }
+  else { el.style.display = 'none'; }
+}
+
+function isToday(ts) {
+  const d = new Date(ts);
+  const n = new Date();
+  return d.toDateString() === n.toDateString();
+}
+
+// ── REGRESSOR DETECTION ───────────────────────────────────────────────────────
+function detectRegressors() {
+  const flags = [];
+  Object.entries(STATE.roster).forEach(([sid, stu]) => {
+    if (!stu.baseline || !STATE.diagnostics[sid]) return;
+    const diag = STATE.diagnostics[sid];
+    const baseline = stu.baseline.priorEOCScore || 0;
+    if (!baseline) return;
+
+    // Check each standard for drop
+    Object.entries(diag.standards || {}).forEach(([std, data]) => {
+      if (!data.attempts || data.attempts < 5) return;
+      const appPct = data.correct / data.attempts * 100;
+      // Convert baseline EOC level to expected % range
+      const expectedPct = eocLevelToExpected(stu.baseline.priorEOCLevel);
+      const drop = expectedPct - appPct;
+      if (drop >= 20) {
+        flags.push({
+          studentId: sid,
+          name: (stu.firstName || '') + ' ' + (stu.lastName || ''),
+          standard: std,
+          baseline: expectedPct,
+          current: Math.round(appPct),
+          drop: Math.round(drop),
+          speedSig: data.speedSignature || 'unknown',
+          designation: stu.designation || 'none',
+        });
+      }
+    });
+  });
+  return flags.sort((a,b) => b.drop - a.drop);
+}
+
+function eocLevelToExpected(level) {
+  const map = { 1: 40, 2: 55, 3: 70, 4: 82, 5: 93 };
+  return map[parseInt(level)] || 60;
+}
+
+// ── VIEW ROUTER ───────────────────────────────────────────────────────────────
+const VIEW_TITLES = {
+  briefing:  ['Daily Briefing',       'Your command center — most important signals first.'],
+  heatmap:   ['Class Heat Map',       'Accuracy by standard and DOK level across all periods.'],
+  trends:    ['Trendlines',           'Performance over time — class and individual.'],
+  students:  ['All Students',         'Complete roster with diagnostic profiles.'],
+  regressors:['Regression Alerts',    'Students performing below their personal baseline.'],
+  groups:    ['Grouping Suggestions', 'AI-generated re-teach groups with individual reasoning.'],
+  eoc:       ['EOC Readiness',        'Predicted EOC pass probability per student.'],
+  gameover:  ['Game-Over Log',        'Tab-away and game-over events during EOC prep sessions.'],
+  periods:   ['Period Comparison',    'Period 01 vs 05 vs 07 — side by side.'],
+  import:    ['Import Data',          'Upload your student spreadsheet CSV.'],
+};
+
+window.showView = function(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('view-' + name).classList.add('active');
+  document.querySelector(`[onclick="showView('${name}')"]`).classList.add('active');
+  const [title, sub] = VIEW_TITLES[name] || [name, ''];
+  document.getElementById('view-title').textContent = title;
+  document.getElementById('view-sub').textContent = sub;
+  renderView(name);
+};
+
+function renderCurrentView() {
+  const active = document.querySelector('.view.active');
+  if (!active) return;
+  const name = active.id.replace('view-','');
+  renderView(name);
+}
+
+function renderView(name) {
+  const fns = {
+    briefing:   renderBriefing,
+    heatmap:    renderHeatmap,
+    trends:     renderTrends,
+    students:   renderStudents,
+    regressors: renderRegressors,
+    groups:     renderGroups,
+    eoc:        renderEOCReadiness,
+    gameover:   renderGameOverLog,
+    periods:    renderPeriods,
+  };
+  if (fns[name]) fns[name]();
+}
+
+// ── FILTER ─────────────────────────────────────────────────────────────────────
+window.setPeriod = function(period, el) {
+  STATE.activePeriod = period;
+  document.querySelectorAll('.period-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  renderCurrentView();
+};
+
+function filteredRoster() {
+  if (STATE.activePeriod === 'all') return STATE.roster;
+  const out = {};
+  Object.entries(STATE.roster).forEach(([k,v]) => {
+    if (v.period === STATE.activePeriod) out[k] = v;
+  });
+  return out;
+}
+
+// ── BRIEFING ──────────────────────────────────────────────────────────────────
+function renderBriefing() {
+  const roster = filteredRoster();
+  const stuCount = Object.keys(roster).length;
+  const regressors = detectRegressors().filter(r =>
+    STATE.activePeriod === 'all' || (STATE.roster[r.studentId]||{}).period === STATE.activePeriod
+  );
+  const goToday = STATE.gameOverEvents.filter(e => isToday(e.timestamp));
+
+  // Stat cards
+  let totalAcc = 0; let accCount = 0;
+  Object.keys(roster).forEach(sid => {
+    const d = STATE.diagnostics[sid];
+    if (!d || !d.overall) return;
+    totalAcc += d.overall.accuracy || 0;
+    accCount++;
+  });
+  const avgAcc = accCount > 0 ? Math.round(totalAcc / accCount) : null;
+
+  document.getElementById('briefing-stats').innerHTML = `
+    <div class="stat-card teal">
+      <div class="stat-label">Students</div>
+      <div class="stat-value">${stuCount}</div>
+      <div class="stat-sub">in ${STATE.activePeriod === 'all' ? 'all periods' : 'Period ' + STATE.activePeriod}</div>
+      <div class="stat-trend">👥</div>
+    </div>
+    <div class="stat-card ${regressors.length > 0 ? 'red' : 'green'}">
+      <div class="stat-label">Regressors</div>
+      <div class="stat-value">${regressors.length}</div>
+      <div class="stat-sub">${regressors.length > 0 ? 'need attention' : 'all on track'}</div>
+      <div class="stat-trend">${regressors.length > 0 ? '⚠️' : '✅'}</div>
+    </div>
+    <div class="stat-card ${avgAcc !== null ? (avgAcc >= 70 ? 'green' : avgAcc >= 50 ? 'gold' : 'red') : 'purple'}">
+      <div class="stat-label">Avg Accuracy</div>
+      <div class="stat-value">${avgAcc !== null ? avgAcc + '%' : '—'}</div>
+      <div class="stat-sub">across all EOC sessions</div>
+      <div class="stat-trend">🎯</div>
+    </div>
+    <div class="stat-card ${goToday.length > 0 ? 'red' : 'teal'}">
+      <div class="stat-label">Game-Overs Today</div>
+      <div class="stat-value">${goToday.length}</div>
+      <div class="stat-sub">tab-away violations</div>
+      <div class="stat-trend">🚨</div>
+    </div>
+  `;
+
+  // Alerts
+  const alerts = [];
+  regressors.slice(0,5).forEach(r => {
+    alerts.push({
+      type: 'critical',
+      icon: '⚠️',
+      title: r.name + ' — Regression Detected',
+      desc: r.standard + ' · dropped ' + r.drop + '% below personal baseline · Speed: ' + formatSpeedSig(r.speedSig),
+      action: 'View profile →',
+      actionFn: () => openStudentModal(r.studentId),
+    });
+  });
+  goToday.forEach(go => {
+    alerts.push({
+      type: 'warning',
+      icon: '🚨',
+      title: (go.studentName || 'Unknown') + ' — Game Over',
+      desc: 'Triggered during ' + (go.levelTitle || 'EOC session') + ' · ' + (go.standard || '') + ' · ' + formatTime(go.timestamp),
+    });
+  });
+  if (alerts.length === 0) {
+    document.getElementById('briefing-alerts').innerHTML = `
+      <div class="empty-state" style="padding:32px 0">
+        <div class="empty-state-icon">✅</div>
+        <div class="empty-state-title">All clear</div>
+        <div class="empty-state-sub">No urgent flags right now.</div>
+      </div>`;
+  } else {
+    document.getElementById('briefing-alerts').innerHTML = alerts.map(a => `
+      <div class="alert-row ${a.type}">
+        <div class="alert-icon">${a.icon}</div>
+        <div class="alert-body">
+          <div class="alert-title">${a.title}</div>
+          <div class="alert-desc">${a.desc}</div>
+          ${a.action ? `<span class="alert-action" onclick="${a.actionFn ? 'openStudentModal(\'' + (alerts.find(x=>x===a) ? regressors.find(r=>r.name===a.title.split(' — ')[0])?.studentId || '' : '') + '\')' : ''}">${a.action}</span>` : ''}
+        </div>
+        <div class="alert-time">${a.time || ''}</div>
+      </div>`).join('');
+  }
+  document.getElementById('alert-count-badge').textContent = alerts.length;
+
+  // Suggested actions
+  const actions = generateSuggestedActions(regressors, goToday);
+  document.getElementById('briefing-actions').innerHTML = actions.length > 0
+    ? actions.map(a => `<div class="alert-row info" style="margin-bottom:8px">
+        <div class="alert-icon">${a.icon}</div>
+        <div class="alert-body">
+          <div class="alert-title">${a.title}</div>
+          <div class="alert-desc">${a.desc}</div>
+        </div>
+      </div>`).join('')
+    : '<div class="empty-state" style="padding:24px 0"><div class="empty-state-sub">Actions appear once diagnostic data is collected.</div></div>';
+
+  // Recent game-overs
+  document.getElementById('briefing-gameovers').innerHTML = STATE.gameOverEvents.length > 0
+    ? STATE.gameOverEvents.slice(0,5).map(e => `
+        <div class="go-event-row">
+          <span class="go-badge">GAME OVER</span>
+          <span class="go-name">${e.studentName || '—'}</span>
+          <span class="go-detail">${e.standard || 'EOC Prep'} · ${e.levelTitle || ''}</span>
+          <span class="go-time">${formatTime(e.timestamp)}</span>
+        </div>`).join('')
+    : '<div class="empty-state" style="padding:24px 0"><div class="empty-state-sub">No game-over events yet.</div></div>';
+}
+
+function generateSuggestedActions(regressors, goToday) {
+  const actions = [];
+  if (regressors.length >= 3) {
+    const stds = [...new Set(regressors.map(r => r.standard))];
+    actions.push({
+      icon: '👥',
+      title: 'Form re-teach group · ' + stds[0],
+      desc: regressors.length + ' students show regression on this standard. Consider a targeted small group session.',
+    });
+  }
+  if (goToday.length >= 2) {
+    actions.push({
+      icon: '🎯',
+      title: 'Check in with ' + goToday.length + ' students',
+      desc: 'Multiple game-over events today may indicate avoidance, distraction, or frustration.',
+    });
+  }
+  const noBaseline = Object.values(STATE.roster).filter(s => !s.baseline).length;
+  if (noBaseline > 0) {
+    actions.push({
+      icon: '📥',
+      title: 'Import baseline data for ' + noBaseline + ' students',
+      desc: 'Regression detection and EOC readiness requires prior EOC scores. Go to Import Data.',
+    });
+  }
+  return actions;
+}
+
+// ── HEAT MAP ──────────────────────────────────────────────────────────────────
+function renderHeatmap() {
+  const tbody = document.getElementById('heatmap-body');
+  const roster = filteredRoster();
+  const rows = STANDARDS.map(std => {
+    const dok1 = getAggAcc(roster, std.id, 1);
+    const dok2 = getAggAcc(roster, std.id, 2);
+    const dok3 = getAggAcc(roster, std.id, 3);
+    const overall = getAggAcc(roster, std.id, null);
+    return `<tr>
+      <td class="hm-label" style="font-size:10px;color:var(--text3)">${std.id}</td>
+      <td class="hm-label">${std.topic}</td>
+      <td>${heatCell(dok1)}</td>
+      <td>${heatCell(dok2)}</td>
+      <td>${heatCell(dok3)}</td>
+      <td>${heatCell(overall, true)}</td>
+    </tr>`;
+  });
+  tbody.innerHTML = rows.join('');
+}
+
+function getAggAcc(roster, standardId, dok) {
+  let correct = 0, total = 0;
+  Object.keys(roster).forEach(sid => {
+    const d = STATE.diagnostics[sid];
+    if (!d || !d.standards || !d.standards[standardId.replace(/\./g,'_')]) return;
+    const s = d.standards[standardId.replace(/\./g,'_')];
+    if (dok === null) {
+      correct += s.correct || 0;
+      total   += s.attempts || 0;
+    } else {
+      const dk = s['dok' + dok];
+      if (dk) { correct += dk.correct || 0; total += dk.attempts || 0; }
+    }
+  });
+  return total >= 3 ? Math.round(correct / total * 100) : null;
+}
+
+function heatCell(pct, bold) {
+  if (pct === null) return `<td><div class="hm-cell hm-na">—</div></td>`;
+  const cls = pct >= 85 ? 'hm-90' : pct >= 70 ? 'hm-75' : pct >= 55 ? 'hm-60' : pct >= 40 ? 'hm-40' : 'hm-20';
+  return `<td><div class="hm-cell ${cls}" ${bold ? 'style="font-weight:900"' : ''}>${pct}%</div></td>`;
+}
+
+// ── TRENDS ─────────────────────────────────────────────────────────────────────
+function renderTrends() {
+  // Simple canvas sparkline for now
+  const canvas = document.getElementById('trend-chart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.parentElement.offsetWidth - 40;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = 'rgba(255,255,255,0.05)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = 'rgba(255,255,255,0.1)';
+  ctx.font = '13px DM Sans';
+  ctx.textAlign = 'center';
+  ctx.fillText('Trendline data accumulates as students complete more sessions.', canvas.width/2, canvas.height/2);
+
+  // Per-standard trend bars
+  const roster = filteredRoster();
+  const rows = STANDARDS.slice(0,8).map(std => {
+    const acc = getAggAcc(roster, std.id, null);
+    const color = acc === null ? 'var(--text3)' : acc >= 70 ? 'var(--green)' : acc >= 50 ? 'var(--gold)' : 'var(--red)';
+    return `<div class="std-bar-row">
+      <div class="std-bar-label">${std.id.replace('MA.912.','')}</div>
+      <div class="std-bar-track">
+        <div class="std-bar-fill" style="width:${acc||0}%;background:${color}"></div>
+      </div>
+      <div class="std-bar-pct" style="color:${color}">${acc !== null ? acc+'%' : '—'}</div>
+    </div>`;
+  });
+  document.getElementById('std-trend-rows').innerHTML = rows.join('');
+}
+
+// ── STUDENTS ──────────────────────────────────────────────────────────────────
+function renderStudents() {
+  const roster = filteredRoster();
+  const count = Object.keys(roster).length;
+  document.getElementById('student-count-badge').textContent = count + ' students';
+
+  if (count === 0) {
+    document.getElementById('student-table-body').innerHTML =
+      '<tr><td colspan="8" style="padding:40px;text-align:center;color:var(--text3)">No students found for this period.</td></tr>';
+    return;
+  }
+
+  const rows = Object.entries(roster).map(([sid, stu]) => {
+    const diag = STATE.diagnostics[sid] || {};
+    const overall = diag.overall || {};
+    const acc = overall.accuracy != null ? Math.round(overall.accuracy) : null;
+    const sessions = overall.sessions || 0;
+    const sig = overall.speedSignature || null;
+    const regs = detectRegressors().filter(r => r.studentId === sid);
+    const trend = overall.trend || 'stable';
+    const desig = stu.designation || 'none';
+    const baseLevel = stu.baseline ? stu.baseline.priorEOCLevel : null;
+
+    const accColor = acc === null ? 'var(--text3)' : acc >= 70 ? 'var(--green)' : acc >= 50 ? 'var(--gold)' : 'var(--red)';
+    return `<tr>
+      <td>
+        <span class="stu-name" onclick="openStudentModal('${sid}')">${stu.firstName || ''} ${stu.lastName || ''}</span>
+        ${desig !== 'none' ? `<span class="designation-badge des-${desig}">${desig}</span>` : ''}
+      </td>
+      <td style="color:var(--text3)">P${stu.period || '—'}</td>
+      <td>${baseLevel ? `<span style="font-weight:700;color:var(--teal)">L${baseLevel}</span>` : '<span style="color:var(--text3)">—</span>'}</td>
+      <td>
+        <div class="acc-bar-wrap">
+          <div class="acc-bar"><div class="acc-bar-fill" style="width:${acc||0}%;background:${accColor}"></div></div>
+          <span class="acc-val" style="color:${accColor}">${acc !== null ? acc+'%' : '—'}</span>
+        </div>
+      </td>
+      <td>${sig ? `<span class="speed-sig ${sigClass(sig)}">${sig}</span>` : '<span style="color:var(--text3);font-size:11px">—</span>'}</td>
+      <td style="color:var(--text3)">${sessions}</td>
+      <td>${trendIcon(trend)}</td>
+      <td>${regs.length > 0 ? `<span class="reg-flag">⚠ ${regs.length} flag${regs.length>1?'s':''}</span>` : '<span style="color:var(--text3);font-size:11px">—</span>'}</td>
+    </tr>`;
+  });
+
+  document.getElementById('student-table-body').innerHTML = rows.join('');
+}
+
+function sigClass(sig) {
+  if (sig === 'fast-correct') return 'sig-fc';
+  if (sig === 'slow-correct') return 'sig-sc';
+  if (sig === 'fast-wrong')   return 'sig-fw';
+  if (sig === 'slow-wrong')   return 'sig-sw';
+  return '';
+}
+function trendIcon(t) {
+  if (t === 'up')   return '<span class="trending-up">↑ Up</span>';
+  if (t === 'down') return '<span class="trending-dn">↓ Down</span>';
+  return '<span class="trending-st">→ Stable</span>';
+}
+function formatSpeedSig(sig) {
+  const map = {
+    'fast-correct': 'Fast + Correct (fluent)',
+    'fast-wrong': 'Fast + Wrong (impulsive)',
+    'slow-correct': 'Slow + Correct (working hard)',
+    'slow-wrong': 'Slow + Wrong (concept gap)',
+  };
+  return map[sig] || sig;
+}
+
+// ── REGRESSORS ────────────────────────────────────────────────────────────────
+function renderRegressors() {
+  const regressors = detectRegressors().filter(r =>
+    STATE.activePeriod === 'all' || (STATE.roster[r.studentId]||{}).period === STATE.activePeriod
+  );
+  document.getElementById('reg-count-badge').textContent = regressors.length;
+  if (regressors.length === 0) {
+    document.getElementById('regressor-list').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">✅</div>
+        <div class="empty-state-title">No regressors detected</div>
+        <div class="empty-state-sub">The system monitors each student against their personal baseline.<br>Import baseline data to activate regression detection.</div>
+      </div>`;
+    return;
+  }
+  document.getElementById('regressor-list').innerHTML = regressors.map(r => {
+    const stu = STATE.roster[r.studentId] || {};
+    return `<div class="alert-row critical" style="margin-bottom:10px">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-body">
+        <div class="alert-title">
+          <span class="stu-name" onclick="openStudentModal('${r.studentId}')">${r.name}</span>
+          ${stu.designation && stu.designation !== 'none' ? `<span class="designation-badge des-${stu.designation}">${stu.designation}</span>` : ''}
+          — dropped ${r.drop}% below baseline
+        </div>
+        <div class="alert-desc">
+          ${r.standard} · Baseline: ${r.baseline}% → Current: ${r.current}%<br>
+          Speed signature: <strong>${formatSpeedSig(r.speedSig)}</strong>
+          ${stu.designation === 'ESOL' ? ' · <em style="color:var(--purple)">ESOL: slow response may reflect language processing, not math gap</em>' : ''}
+        </div>
+        <span class="alert-action" onclick="openStudentModal('${r.studentId}')">View full profile →</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── GROUPS ────────────────────────────────────────────────────────────────────
+function renderGroups() {
+  const regressors = detectRegressors().filter(r =>
+    STATE.activePeriod === 'all' || (STATE.roster[r.studentId]||{}).period === STATE.activePeriod
+  );
+  if (regressors.length === 0) {
+    document.getElementById('grouping-list').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🎯</div>
+        <div class="empty-state-title">No grouping suggestions yet</div>
+        <div class="empty-state-sub">Groups are generated from regression and diagnostic data.<br>Import baseline data and have students complete EOC path sessions.</div>
+      </div>`;
+    return;
+  }
+
+  // Group by standard
+  const byStandard = {};
+  regressors.forEach(r => {
+    if (!byStandard[r.standard]) byStandard[r.standard] = [];
+    byStandard[r.standard].push(r);
+  });
+
+  const cards = Object.entries(byStandard).map(([std, members]) => {
+    const stdInfo = STANDARDS.find(s => s.id === std) || { topic: std };
+    return `<div class="group-card">
+      <div class="group-header">
+        <div>
+          <div class="group-title">Re-teach: ${stdInfo.topic}</div>
+          <div class="group-standard">${std}</div>
+        </div>
+        <div class="group-size">${members.length} student${members.length>1?'s':''}</div>
+      </div>
+      <div class="group-members">
+        ${members.map(m => {
+          const reason = groupReason(m);
+          const sigC = sigClass(m.speedSig);
+          return `<div class="group-member">
+            <div>
+              <div class="gm-name" onclick="openStudentModal('${m.studentId}')" style="cursor:pointer">${m.name}</div>
+              <div class="gm-reason">${reason.desc}</div>
+            </div>
+            <span class="gm-signal ${sigC}" style="background:rgba(255,255,255,0.05);border-radius:6px;padding:4px 10px;font-size:11px">${reason.tag}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
+  document.getElementById('grouping-list').innerHTML = cards.join('');
+}
+
+function groupReason(r) {
+  if (r.speedSig === 'fast-wrong') return { desc: 'Answers quickly but incorrectly — possible impulsivity or guessing', tag: '⚡ Impulsive' };
+  if (r.speedSig === 'slow-wrong') return { desc: 'Takes time but still misses — concept gap, needs re-teach', tag: '🧱 Concept Gap' };
+  if (r.speedSig === 'fast-correct') return { desc: 'Usually fast-correct but regressing on this standard specifically', tag: '📉 Regression' };
+  if (r.speedSig === 'slow-correct') return { desc: 'Working hard but fragile — may not hold under test conditions', tag: '⏱ Fragile' };
+  return { desc: 'Performance dropped ' + r.drop + '% below personal baseline', tag: '⚠ Flagged' };
+}
+
+// ── EOC READINESS ─────────────────────────────────────────────────────────────
+function renderEOCReadiness() {
+  const roster = filteredRoster();
+  const entries = Object.entries(roster).map(([sid, stu]) => {
+    const diag = STATE.diagnostics[sid] || {};
+    const overall = diag.overall || {};
+    const appAcc = overall.accuracy || null;
+    const priorLevel = stu.baseline ? parseInt(stu.baseline.priorEOCLevel) || 0 : 0;
+    const priorScore = stu.baseline ? parseFloat(stu.baseline.priorEOCScore) || 0 : 0;
+    const midterm = stu.assessments ? parseFloat(stu.assessments.midterm) || 0 : 0;
+
+    // Weighted prediction: 40% prior EOC + 35% midterm + 25% app accuracy
+    let prob = null;
+    let components = 0;
+    if (priorScore > 0) { prob = (prob||0) + priorScore * 0.4; components++; }
+    if (midterm > 0)    { prob = (prob||0) + midterm * 0.35; components++; }
+    if (appAcc !== null){ prob = (prob||0) + appAcc * 0.25; components++; }
+    if (components > 0 && prob !== null) prob = Math.min(99, Math.round(prob));
+
+    const predictedLevel = prob === null ? null :
+      prob >= 85 ? 5 : prob >= 70 ? 4 : prob >= 55 ? 3 : prob >= 40 ? 2 : 1;
+
+    return { sid, stu, prob, predictedLevel, priorLevel };
+  }).sort((a,b) => (b.prob||0) - (a.prob||0));
+
+  if (entries.length === 0) {
+    document.getElementById('eoc-readiness-list').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-sub">No students found for this period.</div>
+      </div>`;
+    return;
+  }
+
+  document.getElementById('eoc-readiness-list').innerHTML = entries.map(e => {
+    const color = e.prob === null ? 'var(--text3)' : e.prob >= 70 ? 'var(--green)' : e.prob >= 50 ? 'var(--gold)' : 'var(--red)';
+    const levelCls = e.predictedLevel ? 'eoc-l'+e.predictedLevel : '';
+    return `<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;padding:12px 14px;background:var(--card);border-radius:10px;border:1px solid var(--border)">
+      <div style="width:160px;flex-shrink:0">
+        <div style="font-weight:700;font-size:13px;color:var(--text);cursor:pointer" onclick="openStudentModal('${e.sid}')">${e.stu.firstName||''} ${e.stu.lastName||''}</div>
+        <div style="font-size:10px;color:var(--text3)">P${e.stu.period||'—'} · Prior EOC: L${e.priorLevel||'?'}</div>
+      </div>
+      <div class="eoc-readiness-bar" style="flex:1">
+        <div class="eoc-rb-track">
+          <div class="eoc-rb-fill" style="width:${e.prob||0}%;background:${color}"></div>
+        </div>
+        <div class="eoc-rb-pct" style="color:${color}">${e.prob !== null ? e.prob+'%' : '—'}</div>
+      </div>
+      ${e.predictedLevel ? `<span class="eoc-level-badge ${levelCls}">L${e.predictedLevel}</span>` : '<span style="color:var(--text3);font-size:11px">No data</span>'}
+    </div>`;
+  }).join('');
+}
+
+// ── GAME-OVER LOG ─────────────────────────────────────────────────────────────
+function renderGameOverLog() {
+  const events = STATE.gameOverEvents.filter(e =>
+    STATE.activePeriod === 'all' || e.period === STATE.activePeriod
+  );
+  if (events.length === 0) {
+    document.getElementById('gameover-log-list').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🎮</div>
+        <div class="empty-state-title">No game-over events yet</div>
+        <div class="empty-state-sub">Events are logged when a student exits the app 3 times during a session.</div>
+      </div>`;
+    return;
+  }
+  document.getElementById('gameover-log-list').innerHTML = events.map(e => `
+    <div class="go-event-row">
+      <span class="go-badge">GAME OVER</span>
+      <div style="flex:1">
+        <div class="go-name" style="cursor:pointer" onclick="openStudentModal('${e.studentId||''}')">${e.studentName || '—'}</div>
+        <div class="go-detail">${e.levelTitle || 'EOC Session'} · ${e.standard || ''} · ${e.questionsCompleted || 0} Qs completed</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="go-time">${formatDateTime(e.timestamp)}</div>
+        <div style="font-size:10px;color:var(--text3)">P${e.period || '—'}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ── PERIODS ───────────────────────────────────────────────────────────────────
+function renderPeriods() {
+  const periods = ['01','05','07'];
+  const rows = STANDARDS.slice(0,6).map(std => {
+    const bars = periods.map(p => {
+      const r = {};
+      Object.entries(STATE.roster).forEach(([sid,stu]) => { if(stu.period===p) r[sid]=stu; });
+      const acc = getAggAcc(r, std.id, null);
+      const color = acc === null ? 'var(--text3)' : acc >= 70 ? 'var(--green)' : acc >= 50 ? 'var(--gold)' : 'var(--red)';
+      return `<div class="period-compare-row">
+        <div class="pc-label">Period ${p}</div>
+        <div class="pc-bar-track">
+          <div class="pc-bar-fill" style="width:${acc||0}%;background:${color}">${acc !== null ? acc+'%' : ''}</div>
+        </div>
+        <div class="pc-pct" style="color:${color}">${acc !== null ? acc+'%' : '—'}</div>
+      </div>`;
+    }).join('');
+    return `<div style="margin-bottom:20px">
+      <div style="font-size:12px;font-weight:700;color:var(--text2);margin-bottom:8px">${std.topic} <span style="color:var(--text3);font-weight:400">${std.id}</span></div>
+      ${bars}
+    </div>`;
+  });
+  document.getElementById('period-compare-content').innerHTML = rows.join('');
+}
+
+// ── STUDENT PROFILE MODAL ─────────────────────────────────────────────────────
+window.openStudentModal = function(sid) {
+  const stu = STATE.roster[sid];
+  if (!stu) return;
+  const diag = STATE.diagnostics[sid] || {};
+  const overall = diag.overall || {};
+  const name = (stu.firstName||'') + ' ' + (stu.lastName||'');
+  const desig = stu.designation || 'none';
+
+  document.getElementById('modal-stu-name').textContent = name;
+  document.getElementById('modal-stu-meta').textContent =
+    'Period ' + (stu.period||'—') +
+    (desig !== 'none' ? ' · ' + desig : '') +
+    ' · ' + (overall.sessions||0) + ' sessions';
+
+  const assessments = stu.assessments || {};
+  const baseline = stu.baseline || {};
+  const regressors = detectRegressors().filter(r => r.studentId === sid);
+
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-section">
+      <div class="modal-section-title">Baseline & Assessments</div>
+      <div class="baseline-row">
+        <div class="baseline-chip">
+          <div class="baseline-chip-val">${baseline.priorEOCLevel ? 'L'+baseline.priorEOCLevel : '—'}</div>
+          <div class="baseline-chip-lbl">Prior EOC Level</div>
+        </div>
+        <div class="baseline-chip">
+          <div class="baseline-chip-val" style="color:var(--gold)">${baseline.priorEOCScore ? baseline.priorEOCScore+'%' : '—'}</div>
+          <div class="baseline-chip-lbl">Prior EOC Score</div>
+        </div>
+        <div class="baseline-chip">
+          <div class="baseline-chip-val" style="color:var(--purple)">${assessments.midterm != null ? assessments.midterm+'%' : '—'}</div>
+          <div class="baseline-chip-lbl">Midterm</div>
+        </div>
+      </div>
+      <div class="assessment-row" style="margin-top:12px">
+        ${['ch1_test','ch2_test','ch3_test','ch4_test','ch5_test'].map((k,i) => `
+          <div class="assessment-chip" onclick="editAssessment('${sid}','${k}',this)">
+            <input class="ac-input" id="ac-${sid}-${k}" value="${assessments[k] != null ? assessments[k] : ''}" placeholder="—" onblur="saveAssessment('${sid}','${k}',this.value)" style="color:${assessments[k]!=null?'var(--teal)':'var(--text3)'}">
+            <div class="ac-lbl">Ch${i+1} Test</div>
+          </div>`).join('')}
+        <div class="assessment-chip" onclick="editAssessment('${sid}','midterm',this)">
+          <input class="ac-input" id="ac-${sid}-midterm" value="${assessments.midterm != null ? assessments.midterm : ''}" placeholder="—" onblur="saveAssessment('${sid}','midterm',this.value)" style="color:${assessments.midterm!=null?'var(--purple)':'var(--text3)'}">
+          <div class="ac-lbl">Midterm</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">App Performance — Overall</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div class="baseline-chip">
+          <div class="baseline-chip-val" style="color:${overall.accuracy>=70?'var(--green)':overall.accuracy>=50?'var(--gold)':'var(--red)'}">${overall.accuracy!=null?Math.round(overall.accuracy)+'%':'—'}</div>
+          <div class="baseline-chip-lbl">App Accuracy</div>
+        </div>
+        <div class="baseline-chip">
+          <div class="baseline-chip-val" style="font-size:16px">${overall.speedSignature ? formatSpeedSig(overall.speedSignature).split('(')[0] : '—'}</div>
+          <div class="baseline-chip-lbl">Speed Signature</div>
+        </div>
+        <div class="baseline-chip">
+          <div class="baseline-chip-val">${overall.sessions||0}</div>
+          <div class="baseline-chip-lbl">Sessions</div>
+        </div>
+      </div>
+    </div>
+
+    ${regressors.length > 0 ? `
+    <div class="modal-section">
+      <div class="modal-section-title" style="color:var(--red)">⚠ Regression Flags</div>
+      ${regressors.map(r => `
+        <div class="alert-row critical" style="margin-bottom:8px">
+          <div class="alert-icon">📉</div>
+          <div class="alert-body">
+            <div class="alert-title">${r.standard} — dropped ${r.drop}%</div>
+            <div class="alert-desc">Baseline: ${r.baseline}% → Current: ${r.current}% · ${formatSpeedSig(r.speedSig)}</div>
+          </div>
+        </div>`).join('')}
+    </div>` : ''}
+
+    <div class="modal-section">
+      <div class="modal-section-title">Standard Breakdown</div>
+      ${STANDARDS.slice(0,8).map(std => {
+        const key = std.id.replace(/\./g,'_');
+        const s = (diag.standards||{})[key] || {};
+        const acc = s.attempts > 0 ? Math.round(s.correct/s.attempts*100) : null;
+        const color = acc===null?'var(--text3)':acc>=70?'var(--green)':acc>=50?'var(--gold)':'var(--red)';
+        return `<div class="std-bar-row">
+          <div class="std-bar-label" style="font-size:10px">${std.id.replace('MA.912.','')}</div>
+          <div class="std-bar-track"><div class="std-bar-fill" style="width:${acc||0}%;background:${color}"></div></div>
+          <div class="std-bar-pct" style="color:${color}">${acc!==null?acc+'%':'—'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  `;
+
+  document.getElementById('student-modal').classList.add('open');
+};
+
+window.closeStudentModal = function() {
+  document.getElementById('student-modal').classList.remove('open');
+};
+
+window.editAssessment = function(sid, key, chipEl) {
+  const input = document.getElementById('ac-' + sid + '-' + key);
+  if (input) input.focus();
+};
+
+window.saveAssessment = async function(sid, key, value) {
+  const num = parseFloat(value);
+  if (isNaN(num)) return;
+  try {
+    await update(ref(db, 'roster/' + sid + '/assessments'), { [key]: num });
+    if (!STATE.roster[sid]) STATE.roster[sid] = {};
+    if (!STATE.roster[sid].assessments) STATE.roster[sid].assessments = {};
+    STATE.roster[sid].assessments[key] = num;
+  } catch(e) { console.error('Save failed', e); }
+};
+
+// ── CSV IMPORT ────────────────────────────────────────────────────────────────
+const EXPECTED_COLS = ['student_id','first_name','last_name','period',
+  'prior_eoc_level','prior_eoc_score','designation',
+  'ch1_test','ch2_test','ch3_test','ch4_test','ch5_test','midterm'];
+
+window.handleCSVFile = function(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const text = e.target.result;
+    parseCSV(text);
+  };
+  reader.readAsText(file);
+};
+
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  if (lines.length < 2) return;
+  const headers = lines[0].split(',').map(h => h.trim().toLowerCase().replace(/\s+/g,'_'));
+  const rows = lines.slice(1).map(line => {
+    const vals = line.split(',').map(v => v.trim());
+    const obj = {};
+    headers.forEach((h,i) => { obj[h] = vals[i] || ''; });
+    return obj;
+  }).filter(r => r.student_id);
+
+  STATE.importParsed = rows;
+
+  // Match against Firebase roster
+  const matched = rows.filter(r => STATE.roster[r.student_id] || STATE.roster[r.student_id.padStart(7,'0')]);
+  const unmatched = rows.filter(r => !STATE.roster[r.student_id] && !STATE.roster[r.student_id.padStart(7,'0')]);
+
+  // Show status
+  document.getElementById('import-status-row').innerHTML = `
+    <span class="import-status-chip isc-match">✓ ${matched.length} matched</span>
+    ${unmatched.length > 0 ? `<span class="import-status-chip isc-err">✗ ${unmatched.length} unmatched</span>` : ''}
+    <span class="import-status-chip isc-new">${rows.length} total rows</span>
+  `;
+
+  // Build preview table
+  const previewCols = ['student_id','first_name','last_name','period','prior_eoc_level','designation','midterm'];
+  document.getElementById('import-table-head').innerHTML = '<tr>' + previewCols.map(c => `<th>${c}</th>`).join('') + '<th>Status</th></tr>';
+  document.getElementById('import-table-body').innerHTML = rows.slice(0,20).map(r => {
+    const isMatch = !!STATE.roster[r.student_id] || !!STATE.roster[r.student_id.padStart(7,'0')];
+    return `<tr class="${isMatch ? 'matched' : 'unmatched'}">
+      ${previewCols.map(c => `<td>${r[c]||'—'}</td>`).join('')}
+      <td style="color:${isMatch ? 'var(--green)' : 'var(--red)'};font-weight:700">${isMatch ? '✓ Match' : '✗ No match'}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('import-preview').classList.add('show');
+  document.getElementById('import-confirm-btn').disabled = matched.length === 0;
+}
+
+window.confirmImport = async function() {
+  const btn = document.getElementById('import-confirm-btn');
+  btn.disabled = true;
+  btn.textContent = 'Importing...';
+  let count = 0;
+  for (const row of STATE.importParsed) {
+    const sid = STATE.roster[row.student_id] ? row.student_id : row.student_id.padStart(7,'0');
+    if (!STATE.roster[sid]) continue;
+    const updates = {};
+    if (row.prior_eoc_level) updates['baseline/priorEOCLevel'] = parseInt(row.prior_eoc_level) || null;
+    if (row.prior_eoc_score) updates['baseline/priorEOCScore'] = parseFloat(row.prior_eoc_score) || null;
+    if (row.designation)     updates['designation'] = row.designation.toUpperCase() || 'none';
+    const assessKeys = ['ch1_test','ch2_test','ch3_test','ch4_test','ch5_test','midterm'];
+    assessKeys.forEach(k => {
+      if (row[k]) updates['assessments/' + k] = parseFloat(row[k]) || null;
+    });
+    try {
+      await update(ref(db, 'roster/' + sid), updates);
+      count++;
+    } catch(e) { console.error('Failed to update', sid, e); }
+  }
+  btn.textContent = '✓ Imported ' + count + ' students';
+  setTimeout(() => loadAllData(), 1000);
+};
+
+// Drag and drop on import
+const dropZone = document.getElementById('import-drop');
+if (dropZone) {
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) handleCSVFile(file);
+  });
+}
+
+// ── UTILS ─────────────────────────────────────────────────────────────────────
+function formatTime(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  return d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+function formatDateTime(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  return d.toLocaleDateString([], {month:'short',day:'numeric'}) + ' ' +
+         d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+}
+
+// ── PIN ───────────────────────────────────────────────────────────────────────
+let pinBuffer = '';
+const CORRECT_PIN = '1234';
+
+window.pinPress = function(digit) {
+  if (pinBuffer.length >= 4) return;
+  pinBuffer += digit;
+  updatePinDots();
+  if (pinBuffer.length === 4) {
+    setTimeout(() => {
+      if (pinBuffer === CORRECT_PIN) {
+        document.getElementById('pin-screen').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+        loadAllData();
+        setInterval(loadAllData, 30000); // auto-refresh every 30s
+      } else {
+        document.querySelectorAll('.pin-dot').forEach(d => { d.classList.remove('filled'); d.classList.add('error'); });
+        document.getElementById('pin-error').textContent = 'Incorrect PIN. Try again.';
+        setTimeout(() => {
+          document.querySelectorAll('.pin-dot').forEach(d => d.classList.remove('error'));
+          document.getElementById('pin-error').textContent = '';
+          pinBuffer = '';
+          updatePinDots();
+        }, 800);
+      }
+    }, 100);
+  }
+};
+
+window.pinDel = function() {
+  pinBuffer = pinBuffer.slice(0,-1);
+  updatePinDots();
+};
+window.pinClear = function() { pinBuffer = ''; updatePinDots(); };
+
+function updatePinDots() {
+  for (let i = 0; i < 4; i++) {
+    const dot = document.getElementById('pd' + i);
+    if (!dot) continue;
+    dot.classList.remove('error');
+    dot.classList.toggle('filled', i < pinBuffer.length);
+  }
+}
+
+</script>
+</body>
+</html>
