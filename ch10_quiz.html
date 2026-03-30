@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 10 Quiz — Data Analysis & Displays</title>
+
+  <style>
+    :root {
+      --bg: #f4f3ef;
+      --card: #ffffff;
+      --primary: #1b3a5c;
+      --accent: #d95f2b;
+      --correct: #2a7d46;
+      --wrong: #b83232;
+      --neutral: #6b7280;
+      --border: #e0ddd6;
+      --text: #1a1a2e;
+      --ring-deg: 0deg;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* HEADER */
+    .header {
+      background: var(--primary);
+      color: white;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header-left h1 { font-family: Georgia, serif; font-size: 1.25rem; line-height: 1.2; }
+    .header-left .sub { font-size: 0.78rem; opacity: 0.65; margin-top: 2px; }
+    .progress-wrap { background: rgba(255,255,255,0.18); height: 8px; width: 180px; border-radius: 4px; overflow: hidden; display: none; }
+    .progress-fill { background: var(--accent); height: 100%; border-radius: 4px; transition: width 0.4s ease; width: 0%; }
+
+    /* START SCREEN */
+    #start-screen { max-width: 460px; margin: 60px auto; padding: 20px; }
+    .start-card { background: white; border-radius: 18px; padding: 44px 36px; text-align: center; box-shadow: 0 6px 32px rgba(0,0,0,0.09); }
+    .start-card .icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .start-card h2 { font-family: Georgia, serif; font-size: 1.75rem; color: var(--primary); margin-bottom: 8px; }
+    .start-card .desc { color: var(--neutral); font-size: 0.92rem; margin-bottom: 28px; line-height: 1.6; }
+    .pills { display: flex; gap: 8px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+    .pill { background: #e8eef7; color: var(--primary); padding: 4px 12px; border-radius: 99px; font-size: 0.78rem; font-weight: 600; }
+    .input-group { text-align: left; margin-bottom: 14px; }
+    .input-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+    .input-group input, .input-group select {
+      width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+      border-radius: 10px; font-size: 0.95rem; font-family: 'Segoe UI', Arial, sans-serif;
+      outline: none; background: white; transition: border-color 0.2s;
+    }
+    .input-group input:focus, .input-group select:focus { border-color: var(--primary); }
+    .btn-primary {
+      width: 100%; padding: 13px; background: var(--primary); color: white; border: none;
+      border-radius: 10px; font-size: 1rem; font-weight: 600; font-family: 'Segoe UI', Arial, sans-serif;
+      cursor: pointer; margin-top: 6px; transition: background 0.2s, transform 0.1s;
+    }
+    .btn-primary:hover { background: #0f2540; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    /* TABS */
+    .tabs { display: flex; background: white; border-bottom: 1.5px solid var(--border); padding: 0 24px; overflow-x: auto; }
+    .tab {
+      padding: 15px 20px; font-size: 0.82rem; font-weight: 600; color: var(--neutral);
+      cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s; user-select: none;
+    }
+    .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .tab.done { color: var(--correct); }
+    .tab.done::after { content: ' ✓'; font-size: 0.75rem; }
+
+    /* QUIZ AREA */
+    .quiz-area { max-width: 740px; margin: 0 auto; padding: 28px 20px; }
+    .section-panel { display: none; }
+    .section-panel.active { display: block; }
+
+    .sec-meta { margin-bottom: 24px; }
+    .sec-tag { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .sec-title { font-family: Georgia, serif; font-size: 1.55rem; color: var(--primary); }
+    .sec-hint { font-size: 0.84rem; color: var(--neutral); margin-top: 6px; }
+
+    /* QUESTION CARD */
+    .q-card {
+      background: white; border-radius: 14px; padding: 26px 28px;
+      margin-bottom: 18px; border: 1.5px solid var(--border); transition: border-color 0.3s, background 0.3s;
+    }
+    .q-card.card-correct { border-color: var(--correct); background: #f0fdf4; }
+    .q-card.card-wrong   { border-color: var(--wrong);   background: #fff5f5; }
+
+    .q-num { font-size: 0.72rem; font-weight: 700; color: var(--neutral); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+    .q-text { font-size: 0.97rem; line-height: 1.65; color: var(--text); margin-bottom: 18px; }
+    .q-text strong { color: var(--primary); }
+
+    /* Inline data tables */
+    .data-table { border-collapse: collapse; margin: 12px 0 16px; font-size: 0.88rem; overflow-x: auto; display: block; width: fit-content; max-width: 100%; }
+    .data-table th, .data-table td { border: 1.5px solid #c9d1dc; padding: 7px 14px; text-align: center; }
+    .data-table th { background: #e8eef7; font-weight: 600; color: var(--primary); }
+    .data-table .rh { background: #e8eef7; font-weight: 600; color: var(--primary); text-align: left; }
+
+    /* OPTIONS */
+    .options { display: flex; flex-direction: column; gap: 9px; }
+    .opt {
+      display: flex; align-items: center; gap: 11px; padding: 11px 15px;
+      border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer;
+      transition: border-color 0.18s, background 0.18s; font-size: 0.93rem;
+      background: white; user-select: none;
+    }
+    .opt:hover:not(.locked) { border-color: var(--primary); background: #f5f8ff; }
+    .opt.selected { border-color: var(--primary); background: #edf1fb; }
+    .opt.selected .badge { background: var(--primary); color: white; }
+    .opt.show-correct { border-color: var(--correct); background: #f0fdf4; }
+    .opt.show-correct .badge { background: var(--correct); color: white; }
+    .opt.show-wrong   { border-color: var(--wrong);   background: #fff5f5; }
+    .opt.show-wrong   .badge { background: var(--wrong); color: white; }
+    .opt.locked { cursor: default; }
+    .badge {
+      width: 26px; height: 26px; border-radius: 50%; background: #f0f0f4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--neutral); flex-shrink: 0;
+      transition: background 0.18s, color 0.18s;
+    }
+    .feedback {
+      font-size: 0.82rem; line-height: 1.5; margin-top: 12px;
+      padding: 9px 13px; border-radius: 8px; display: none;
+    }
+    .feedback.show { display: block; }
+    .feedback.ok  { background: #dcfce7; color: #14532d; }
+    .feedback.bad { background: #fee2e2; color: #7f1d1d; }
+
+    /* SECTION SUBMIT / NEXT */
+    .sec-footer { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 12px; align-items: center; }
+    .unanswered-warn { font-size: 0.83rem; color: var(--wrong); flex: 1; display: none; }
+    .btn-submit {
+      padding: 12px 28px; background: var(--primary); color: white; border: none;
+      border-radius: 10px; font-size: 0.95rem; font-weight: 600; font-family: 'Segoe UI', Arial, sans-serif;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #0f2540; }
+    .btn-submit:disabled { background: #aab3c2; cursor: not-allowed; }
+    .btn-next-sec {
+      padding: 12px 28px; background: var(--accent); color: white; border: none;
+      border-radius: 10px; font-size: 0.95rem; font-weight: 600; font-family: 'Segoe UI', Arial, sans-serif;
+      cursor: pointer; transition: background 0.2s; display: none;
+    }
+    .btn-next-sec:hover { background: #b94e20; }
+
+    /* RESULTS */
+    #results-screen { max-width: 740px; margin: 0 auto; padding: 28px 20px; display: none; }
+    .results-top { text-align: center; margin-bottom: 32px; }
+    .results-top h2 { font-family: Georgia, serif; font-size: 2rem; color: var(--primary); margin-bottom: 6px; }
+    .results-top .student-name { font-size: 1.05rem; color: var(--neutral); margin-bottom: 24px; }
+    .score-ring-wrap { display: flex; justify-content: center; margin: 20px 0 28px; }
+    .score-ring {
+      width: 150px; height: 150px; border-radius: 50%;
+      background: conic-gradient(var(--primary) 0deg var(--ring-deg), #e0ddd6 var(--ring-deg));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .score-ring-inner {
+      width: 116px; height: 116px; background: white; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .score-ring-inner .big { font-size: 2.2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .score-ring-inner .lbl { font-size: 0.73rem; color: var(--neutral); }
+
+    .sec-score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+    @media (max-width: 500px) { .sec-score-grid { grid-template-columns: 1fr; } }
+    .sec-score-card { background: white; border-radius: 12px; padding: 20px; text-align: center; border: 1.5px solid var(--border); }
+    .sec-score-card .s-num { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
+    .sec-score-card .s-lbl { font-size: 0.78rem; color: var(--neutral); margin-top: 3px; line-height: 1.4; }
+
+    .wrong-review h3 { font-family: Georgia, serif; font-size: 1.25rem; color: var(--primary); margin-bottom: 14px; }
+    .wrong-item { background: white; border-left: 4px solid var(--wrong); border-radius: 0 12px 12px 0; padding: 16px 18px; margin-bottom: 12px; }
+    .wrong-item .wi-tag { font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+    .wrong-item .wi-q   { font-size: 0.91rem; color: var(--text); margin-bottom: 9px; line-height: 1.5; }
+    .answer-row { font-size: 0.83rem; margin-top: 3px; }
+    .your-ans { color: var(--wrong); }
+    .right-ans { color: var(--correct); font-weight: 600; }
+
+    .no-wrong { background: white; border-radius: 12px; padding: 24px; text-align: center; border: 1.5px solid var(--correct); color: var(--correct); font-weight: 600; font-size: 1rem; margin-bottom: 20px; }
+
+    .submit-status { text-align: center; font-size: 0.83rem; color: var(--neutral); margin-top: 18px; padding: 13px; background: white; border-radius: 10px; border: 1px solid var(--border); }
+
+    .hidden { display: none !important; }
+    #results-screen { display: none; }
+  </style>
+</head>
+
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║         TEACHER: GOOGLE FORM SETUP (5 min)             ║
+  ╠══════════════════════════════════════════════════════════╣
+  ║  1. Go to forms.google.com → New Blank Form             ║
+  ║  2. Add these SHORT ANSWER fields in order:             ║
+  ║     • Student Name                                       ║
+  ║     • Period                                             ║
+  ║     • Section 10.1 Score                                 ║
+  ║     • Section 10.2 Score                                 ║
+  ║     • Section 10.4 Score                                 ║
+  ║     • Total Score                                        ║
+  ║     • Questions Missed                                   ║
+  ║  3. Click ⋮ → Get pre-filled link → fill dummy values   ║
+  ║     Copy each  entry.XXXXXXXXXX  from the URL           ║
+  ║  4. Copy the form ID from the URL:                       ║
+  ║     https://docs.google.com/forms/d/e/[FORM_ID]/viewform ║
+  ║  5. Paste values in the TEACHER CONFIG block below      ║
+  ║  6. Form → Responses → Spreadsheet icon → link to Sheet ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <h1>Chapter 10: Data Analysis &amp; Displays</h1>
+    <div class="sub" id="hdr-student"></div>
+  </div>
+  <div class="progress-wrap" id="prog-wrap">
+    <div class="progress-fill" id="prog-fill"></div>
+  </div>
+</header>
+
+<!-- ── START SCREEN ── -->
+<div id="start-screen">
+  <div class="start-card">
+    <div class="icon">📊</div>
+    <h2>Chapter 10 Quiz</h2>
+    <p class="desc">Data Analysis &amp; Displays — three sections, 10 questions each. Answer every question, then submit each section to see your score.</p>
+    <div class="pills">
+      <span class="pill">10.1 Data Displays</span>
+      <span class="pill">10.2 Two-Way Tables</span>
+      <span class="pill">10.4 Sample Surveys</span>
+    </div>
+    <div class="input-group">
+      <label for="inp-name">Your Full Name</label>
+      <input type="text" id="inp-name" placeholder="First Last" autocomplete="name">
+    </div>
+    <div class="input-group">
+      <label for="inp-period">Period</label>
+      <select id="inp-period">
+        <option value="">— Select —</option>
+        <option>1</option><option>2</option><option>3</option>
+        <option>4</option><option>5</option><option>6</option><option>7</option>
+      </select>
+    </div>
+    <button class="btn-primary" id="start-btn" onclick="startQuiz()">Start Quiz →</button>
+  </div>
+</div>
+
+<!-- ── QUIZ SCREEN ── -->
+<div id="quiz-screen" class="hidden">
+  <div class="tabs" id="tab-bar"></div>
+  <div class="quiz-area" id="quiz-area"></div>
+</div>
+
+<!-- ── RESULTS SCREEN ── -->
+<div id="results-screen">
+  <div class="results-top">
+    <h2>Quiz Complete! 🎉</h2>
+    <div class="student-name" id="res-name"></div>
+    <div class="score-ring-wrap">
+      <div class="score-ring" id="score-ring">
+        <div class="score-ring-inner">
+          <div class="big" id="ring-num">0/30</div>
+          <div class="lbl">Total Score</div>
+        </div>
+      </div>
+    </div>
+    <div class="sec-score-grid" id="sec-score-grid"></div>
+  </div>
+  <div class="wrong-review">
+    <h3>Questions to Review</h3>
+    <div id="wrong-list"></div>
+  </div>
+  <div class="submit-status" id="submit-status">Submitting your results to your teacher…</div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+//  TEACHER CONFIG — paste your Google Form values here
+// ══════════════════════════════════════════════════════════════
+const FORM_ID      = '1FAIpQLScu-0aHy9S9DviK-3bxPU3sPTaHJACG3sBducvKhAqa7HA-oQ';
+const ENTRY_NAME   = 'entry.1002261866';
+const ENTRY_PER    = 'entry.1035001370';
+const ENTRY_S1     = 'entry.355512165';
+const ENTRY_S2     = 'entry.1146852221';
+const ENTRY_S3     = 'entry.1391251243';
+const ENTRY_TOT    = 'entry.752987228';
+const ENTRY_MISSED = 'entry.113221189';
+// ══════════════════════════════════════════════════════════════
+
+// ── QUESTIONS DATA ──────────────────────────────────────────
+const SECTIONS = [
+  {
+    id:'s1', num:'10.1', title:'Choosing a Data Display',
+    questions:[
+      {
+        q:'Which type of data consists of labels or nonnumerical entries that can be separated into categories?',
+        opts:['Numerical (quantitative) data','Bivariate data','Categorical (qualitative) data','Univariate data'],
+        ans:2,
+        exp:'Categorical data consists of labels or nonnumerical entries (colors, names, yes/no). Numerical data consists of numbers that represent counts or measurements.'
+      },
+      {
+        q:'Prices <strong>and</strong> ages of used cars at a dealership represent which type of data?',
+        opts:['Categorical and univariate','Numerical and univariate','Categorical and bivariate','Numerical and bivariate'],
+        ans:3,
+        exp:'Prices and ages are both numerical measurements, and they measure <em>two</em> characteristics — making the data numerical and bivariate.'
+      },
+      {
+        q:'Which data display is best for showing data <strong>as parts of a whole</strong>?',
+        opts:['Histogram','Circle (pie) graph','Scatter plot','Box-and-whisker plot'],
+        ans:1,
+        exp:'A circle graph shows each category as a slice of the whole, making it ideal for showing how parts relate to a total (e.g., eye color distribution).'
+      },
+      {
+        q:'You want to show how a school\'s total enrollment has <strong>changed each year</strong> from 2015 to 2024. Which display is most appropriate?',
+        opts:['Circle graph','Histogram','Line graph','Stem-and-leaf plot'],
+        ans:2,
+        exp:'A line graph shows how numerical data change <em>over time</em>. Connecting data points with a line makes trends easy to see.'
+      },
+      {
+        q:'Jersey numbers for a basketball team are best classified as which type of data?',
+        opts:['Numerical and bivariate','Categorical and univariate','Numerical and univariate','Categorical and bivariate'],
+        ans:1,
+        exp:'Jersey numbers are numerical-looking labels, but they cannot be meaningfully added, averaged, or measured — they are just identifiers. They represent <em>one</em> characteristic, so they are categorical and univariate.'
+      },
+      {
+        q:'You want to display the <strong>distribution of test scores</strong> (out of 100) for a class of 30 students, grouped into intervals. Which display is most appropriate?',
+        opts:['Circle graph','Scatter plot','Bar graph','Histogram'],
+        ans:3,
+        exp:'A histogram shows the frequency of numerical data values in equal-width intervals. It is the correct choice for displaying a distribution of scores across ranges.'
+      },
+      {
+        q:'A bar graph\'s vertical axis starts at $19,500 instead of $0, and there is <strong>no break symbol</strong> shown on the axis. This graph is best described as:',
+        opts:['More accurate than a graph starting at 0','Misleading','A scatter plot','Bivariate data'],
+        ans:1,
+        exp:'When a scale does not start at zero and no break is shown, the differences between bars can appear much larger than they really are, misleading the viewer.'
+      },
+      {
+        q:'Which display shows the <strong>relationship between two numerical data sets</strong> using ordered pairs plotted in a coordinate plane?',
+        opts:['Bar graph','Dot plot','Scatter plot','Stem-and-leaf plot'],
+        ans:2,
+        exp:'A scatter plot places ordered pairs on a coordinate plane so you can see whether two numerical variables are related (correlated).'
+      },
+      {
+        q:'Zodiac signs <strong>and</strong> last names of students in a class represent which type of data?',
+        opts:['Numerical and bivariate','Categorical and univariate','Numerical and univariate','Categorical and bivariate'],
+        ans:3,
+        exp:'Both zodiac signs and last names are nonnumerical (categorical) labels, and they measure <em>two</em> characteristics of the same group — making the data categorical and bivariate.'
+      },
+      {
+        q:'A line graph\'s vertical axis jumps from 8.92 to 8.94, then directly to 9.00, and then to 9.03 — the intervals are <strong>not equal</strong>. What problem does this create?',
+        opts:['The graph is missing a title','The bars are not the same width','The unequal intervals make rate-of-change comparisons misleading','The graph needs a color key'],
+        ans:2,
+        exp:'When axis intervals are unequal, the visual slope between points does not reflect the true rate of change. This makes some changes look larger or smaller than they really are.'
+      }
+    ]
+  },
+  {
+    id:'s2', num:'10.2', title:'Two-Way Tables',
+    questions:[
+      {
+        q:`A survey asked freshmen and sophomores whether they have ever ridden an electric bicycle. Results are shown below.<br><br>
+<table class="data-table">
+  <tr><th></th><th colspan="2">Ridden an Electric Bicycle</th></tr>
+  <tr><th></th><th>Yes</th><th>No</th></tr>
+  <tr><td class="rh">Freshman</td><td>13</td><td>62</td></tr>
+  <tr><td class="rh">Sophomore</td><td>21</td><td>56</td></tr>
+</table>
+What does the value <strong>62</strong> represent?`,
+        opts:['Total freshmen surveyed','Freshmen who <em>have</em> ridden an electric bicycle','Freshmen who have <em>NOT</em> ridden an electric bicycle','Total students who have not ridden'],
+        ans:2,
+        exp:'62 is in the "Freshman" row and the "No" column — it is a joint frequency representing the number of freshmen who have never ridden an electric bicycle.'
+      },
+      {
+        q:`Using the same electric bicycle survey table, how many <strong>total students</strong> were surveyed?<br><br>
+<table class="data-table">
+  <tr><th></th><th>Yes</th><th>No</th></tr>
+  <tr><td class="rh">Freshman</td><td>13</td><td>62</td></tr>
+  <tr><td class="rh">Sophomore</td><td>21</td><td>56</td></tr>
+</table>`,
+        opts:['75','118','34','152'],
+        ans:3,
+        exp:'Add all four joint frequencies: 13 + 62 + 21 + 56 = 152. The grand total is always the sum of all cells in the table.'
+      },
+      {
+        q:'The row and column <strong>sums</strong> in a two-way table are called:',
+        opts:['Joint frequencies','Marginal frequencies','Bivariate totals','Sample statistics'],
+        ans:1,
+        exp:'The sums of rows and columns are marginal frequencies. Each individual entry (before summing) is called a joint frequency.'
+      },
+      {
+        q:`A survey of 286 students asked whether they play a sport or a musical instrument.
+        <ul style="margin:12px 0 0 20px;font-size:0.9rem;line-height:1.8">
+          <li>118 students play a sport</li>
+          <li>64 of those also play an instrument</li>
+          <li>93 students play <strong>neither</strong></li>
+        </ul><br>
+How many total students play an <strong>instrument</strong> (with or without a sport)?`,
+        opts:['64','93','118','139'],
+        ans:3,
+        exp:'Students who don\'t play a sport: 286 − 118 = 168. Students who don\'t play a sport but DO play an instrument: 168 − 93 = 75. Total who play an instrument: 64 + 75 = <strong>139</strong>.'
+      },
+      {
+        q:`Using the same survey (118 play sport, 64 play both, 93 play neither, 286 total), how many students <strong>play a sport but NOT an instrument</strong>?`,
+        opts:['54','64','75','93'],
+        ans:0,
+        exp:'Of the 118 who play a sport, 64 also play an instrument. So 118 − 64 = <strong>54</strong> play a sport but not an instrument.'
+      },
+      {
+        q:'In a <strong>segmented bar graph</strong>, the total height of each bar represents:',
+        opts:['A joint frequency (one cell in the table)','A marginal frequency (a row or column total)','The number of categories','The percentage of the largest segment'],
+        ans:1,
+        exp:'Each bar in a segmented bar graph is divided into segments (joint frequencies). The full height of the bar equals the sum of those segments — which is a marginal frequency.'
+      },
+      {
+        q:`A survey of 100 students found: 45 exercise regularly, 41 eat vegetables daily, and 44 do neither. The completed table is below.<br><br>
+<table class="data-table">
+  <tr><th></th><th>Exercises: Yes</th><th>Exercises: No</th><th>Total</th></tr>
+  <tr><td class="rh">Veggies: Yes</td><td>30</td><td>11</td><td>41</td></tr>
+  <tr><td class="rh">Veggies: No</td><td>15</td><td>44</td><td>59</td></tr>
+  <tr><td class="rh">Total</td><td>45</td><td>55</td><td>100</td></tr>
+</table>
+Of the students who <strong>exercise regularly</strong>, what fraction eat vegetables daily?`,
+        opts:['11 out of 55 (≈ 20%)','41 out of 100 (41%)','30 out of 45 (≈ 67%)','15 out of 45 (≈ 33%)'],
+        ans:2,
+        exp:'Look only at the "Exercises: Yes" column. 30 eat vegetables and 15 do not, out of 45 total exercisers. 30 ÷ 45 ≈ <strong>66.7%</strong>.'
+      },
+      {
+        q:`Using the exercise/vegetables table from the previous question, which statement is TRUE?<br><br>
+<table class="data-table" style="font-size:0.82rem">
+  <tr><th></th><th>Exercises Yes</th><th>Exercises No</th></tr>
+  <tr><td class="rh">Veggies Yes</td><td>30</td><td>11</td></tr>
+  <tr><td class="rh">Veggies No</td><td>15</td><td>44</td></tr>
+</table>`,
+        opts:[
+          'There is no association between exercising and eating vegetables',
+          'Students who do NOT exercise are more likely to eat vegetables daily',
+          'Students who exercise regularly are more likely to eat vegetables daily',
+          'Every student who exercises also eats vegetables daily'
+        ],
+        ans:2,
+        exp:'Of exercisers: 30/45 ≈ 67% eat vegetables. Of non-exercisers: 11/55 = 20% eat vegetables. Because the ratio is so different, there IS an association — exercisers are far more likely to eat vegetables.'
+      },
+      {
+        q:'A two-way table displays bivariate _______ data.',
+        opts:['Numerical','Categorical','Univariate','Inferential'],
+        ans:1,
+        exp:'Two-way tables show data from <em>two categories</em> (e.g., class and activity choice). Both categories are non-numerical labels, making the data bivariate categorical.'
+      },
+      {
+        q:'In a two-way table, each individual cell entry — <em>before</em> any row or column is summed — is called a:',
+        opts:['Marginal frequency','Population parameter','Joint frequency','Sample statistic'],
+        ans:2,
+        exp:'Each cell where a row category and column category intersect gives a joint frequency. The word "joint" reflects that it sits at the intersection of two categories.'
+      }
+    ]
+  },
+  {
+    id:'s3', num:'10.4', title:'Making Inferences from Sample Surveys',
+    questions:[
+      {
+        q:'A survey of 2,184 adults ages 18 and over found that 1,328 of them own at least one pet. The <strong>population</strong> is:',
+        opts:[
+          'The 1,328 adults who own pets',
+          'The 2,184 adults surveyed',
+          'All adults ages 18 and over in the United States',
+          'Adults in the survey who do not own pets'
+        ],
+        ans:2,
+        exp:'The population is the entire group of interest — <em>all</em> adults 18 and over in the U.S. The 2,184 adults surveyed are only the <strong>sample</strong> (a subset of that population).'
+      },
+      {
+        q:'For all students who took the SAT in a recent year, the mean mathematics score was 531. This value is a:',
+        opts:['Statistic','Parameter','Sample proportion','Margin of error'],
+        ans:1,
+        exp:'A <strong>parameter</strong> describes the entire population. Because this mean is based on <em>all</em> students who took the SAT (not just a sample), it is a parameter.'
+      },
+      {
+        q:'A survey of 1,060 women ages 20–29 found that their median height is about 63.5 inches. This value is a:',
+        opts:['Parameter','Census result','Statistic','Population mean (μ)'],
+        ans:2,
+        exp:'There are far more than 1,060 women ages 20–29 in the U.S. The survey measured only a <em>subset</em>, so the median height is a <strong>statistic</strong> — a numerical description of a sample characteristic.'
+      },
+      {
+        q:'You survey 50 randomly chosen dog owners and find that 16 of them let their dogs sleep on their bed. What is the <strong>sample proportion</strong>?',
+        opts:['50%','40%','32%','16%'],
+        ans:2,
+        exp:'Sample proportion = (number with the characteristic) ÷ (sample size) = 16 ÷ 50 = 0.32 = <strong>32%</strong>.'
+      },
+      {
+        q:'As the <strong>sample size</strong> of a survey increases, what happens to the margin of error?',
+        opts:['It increases','It stays the same','It decreases','It doubles'],
+        ans:2,
+        exp:'Larger samples are more representative of the population, so results vary less from the true value. This means the margin of error <strong>decreases</strong> as sample size increases.'
+      },
+      {
+        q:'A survey of 1,500 residents found that <strong>47%</strong> regularly eat organic foods. The margin of error is <strong>±2.6%</strong>. Which interval is likely to contain the exact percent of all residents who eat organic foods?',
+        opts:['44.4% to 49.6%','42% to 52%','47% to 49.6%','44.4% to 47%'],
+        ans:0,
+        exp:'Subtract and add the margin of error: 47% − 2.6% = 44.4% and 47% + 2.6% = 49.6%. The interval is <strong>44.4% to 49.6%</strong>.'
+      },
+      {
+        q:'The branch of statistics that involves using a <strong>sample</strong> to draw conclusions about a <strong>population</strong> is called:',
+        opts:['Descriptive statistics','Census analysis','Inferential statistics','Parameter estimation'],
+        ans:2,
+        exp:'<strong>Inferential statistics</strong> uses sample data to make inferences (predictions or conclusions) about a larger population. Descriptive statistics only organizes and summarizes the data itself.'
+      },
+      {
+        q:'A survey claims that 32% of U.S. adults think using robots for medical procedures is unsafe. The interval containing the true percent is <strong>28.6% to 35.4%</strong>. What is the margin of error?',
+        opts:['±1.1%','±3.4%','±6.8%','±64%'],
+        ans:1,
+        exp:'The margin of error equals the distance from the sample statistic to either end of the interval: 35.4% − 32% = 3.4%, so the margin of error is <strong>±3.4%</strong>. This is a B.E.S.T. test prep style question!'
+      },
+      {
+        q:'"The color of every third car in a parking lot" — this data is collected from a:',
+        opts:['Population','Parameter','Census','Sample'],
+        ans:3,
+        exp:'Not every car is recorded — only every third one. This is a <strong>sample</strong> (a subset) of the population of all cars in the lot. A census would require recording the color of <em>every</em> car.'
+      },
+      {
+        q:'A survey of 920 U.S. teenagers found that <strong>81%</strong> think helping others will be very important to them as adults. The margin of error is <strong>±3.3%</strong>. Which interval likely contains the true percentage?',
+        opts:['77.7% to 84.3%','78.3% to 83.7%','75% to 87%','81% to 84.3%'],
+        ans:0,
+        exp:'81% − 3.3% = 77.7% and 81% + 3.3% = 84.3%. The interval is <strong>77.7% to 84.3%</strong>. With about 21 million U.S. teenagers, that\'s roughly 16.4 to 17.7 million teens.'
+      }
+    ]
+  }
+];
+
+// ── STATE ──────────────────────────────────────────────────
+let studentName = '';
+let studentPeriod = '';
+let answers = {};       // { 's1_q0': 2, ... }
+let submitted = {};     // { 's1': true, ... }
+let sectionScores = {}; // { 's1': 8, ... }
+let currentSection = 0;
+
+// ── START ───────────────────────────────────────────────────
+function startQuiz() {
+  const n = document.getElementById('inp-name').value.trim();
+  const p = document.getElementById('inp-period').value;
+  if (!n || !p) { alert('Please enter your name and select your period.'); return; }
+  studentName = n;
+  studentPeriod = p;
+
+  document.getElementById('hdr-student').textContent = n + ' · Period ' + p;
+  document.getElementById('start-screen').classList.add('hidden');
+  document.getElementById('quiz-screen').classList.remove('hidden');
+  document.getElementById('prog-wrap').style.display = 'block';
+
+  buildQuiz();
+  showSection(0);
+}
+
+// ── BUILD QUIZ ──────────────────────────────────────────────
+function buildQuiz() {
+  const tabBar  = document.getElementById('tab-bar');
+  const area    = document.getElementById('quiz-area');
+  tabBar.innerHTML = '';
+  area.innerHTML   = '';
+
+  SECTIONS.forEach((sec, si) => {
+    // Tab
+    const tab = document.createElement('div');
+    tab.className = 'tab';
+    tab.id = 'tab-' + si;
+    tab.textContent = sec.num + ' ' + sec.title.split(' ').slice(0,2).join(' ');
+    tab.onclick = () => { if (si <= currentSection) showSection(si); };
+    tabBar.appendChild(tab);
+
+    // Panel
+    const panel = document.createElement('div');
+    panel.className = 'section-panel';
+    panel.id = 'panel-' + si;
+
+    let html = `<div class="sec-meta">
+      <div class="sec-tag">Section ${sec.num}</div>
+      <div class="sec-title">${sec.title}</div>
+      <div class="sec-hint">Answer all 10 questions, then click Submit to see your score.</div>
+    </div>`;
+
+    sec.questions.forEach((qObj, qi) => {
+      const key = sec.id + '_q' + qi;
+      html += `<div class="q-card" id="card-${key}">
+        <div class="q-num">Question ${qi + 1} of 10</div>
+        <div class="q-text">${qObj.q}</div>
+        <div class="options" id="opts-${key}">` +
+          qObj.opts.map((opt, oi) => `
+          <div class="opt" id="opt-${key}-${oi}" onclick="selectAnswer('${key}',${oi})">
+            <div class="badge">${['A','B','C','D'][oi]}</div>
+            <span>${opt}</span>
+          </div>`).join('') +
+        `</div>
+        <div class="feedback" id="fb-${key}"></div>
+      </div>`;
+    });
+
+    html += `<div class="sec-footer">
+      <div class="unanswered-warn" id="warn-${si}">⚠ Please answer all 10 questions before submitting.</div>
+      <button class="btn-submit" id="submit-btn-${si}" onclick="submitSection(${si})">Submit Section ${sec.num}</button>
+      <button class="btn-next-sec" id="next-btn-${si}" onclick="nextSection(${si})">` +
+        (si < SECTIONS.length - 1 ? 'Next Section →' : 'View My Results →') +
+      `</button>
+    </div>`;
+
+    panel.innerHTML = html;
+    area.appendChild(panel);
+  });
+}
+
+// ── SELECT ANSWER ────────────────────────────────────────────
+function selectAnswer(key, oi) {
+  const secIdx = SECTIONS.findIndex(s => key.startsWith(s.id + '_'));
+  if (submitted['s' + (secIdx + 1)]) return;
+
+  // Deselect old
+  const allOpts = document.querySelectorAll(`[id^="opt-${key}-"]`);
+  allOpts.forEach(el => el.classList.remove('selected'));
+  // Select new
+  document.getElementById('opt-' + key + '-' + oi).classList.add('selected');
+  answers[key] = oi;
+  updateProgress();
+}
+
+// ── SUBMIT SECTION ───────────────────────────────────────────
+function submitSection(si) {
+  const sec = SECTIONS[si];
+  const allAnswered = sec.questions.every((_, qi) => answers[sec.id + '_q' + qi] !== undefined);
+  const warn = document.getElementById('warn-' + si);
+
+  if (!allAnswered) {
+    warn.style.display = 'block';
+    setTimeout(() => warn.style.display = 'none', 3000);
+    return;
+  }
+
+  let score = 0;
+  sec.questions.forEach((qObj, qi) => {
+    const key = sec.id + '_q' + qi;
+    const chosen = answers[key];
+    const correct = qObj.ans;
+    const card = document.getElementById('card-' + key);
+    const fb   = document.getElementById('fb-' + key);
+
+    // Lock all options
+    document.querySelectorAll(`[id^="opt-${key}-"]`).forEach(el => el.classList.add('locked'));
+
+    if (chosen === correct) {
+      score++;
+      card.classList.add('card-correct');
+      document.getElementById('opt-' + key + '-' + chosen).classList.remove('selected');
+      document.getElementById('opt-' + key + '-' + chosen).classList.add('show-correct');
+      fb.textContent = '✓ Correct! ' + qObj.exp;
+      fb.className = 'feedback show ok';
+    } else {
+      card.classList.add('card-wrong');
+      document.getElementById('opt-' + key + '-' + chosen).classList.remove('selected');
+      document.getElementById('opt-' + key + '-' + chosen).classList.add('show-wrong');
+      document.getElementById('opt-' + key + '-' + correct).classList.add('show-correct');
+      fb.textContent = '✗ The correct answer is ' + ['A','B','C','D'][correct] + '. ' + qObj.exp;
+      fb.className = 'feedback show bad';
+    }
+  });
+
+  sectionScores[sec.id] = score;
+  submitted[sec.id] = true;
+
+  // Mark tab done
+  document.getElementById('tab-' + si).classList.add('done');
+  document.getElementById('submit-btn-' + si).style.display = 'none';
+  document.getElementById('next-btn-' + si).style.display = 'inline-block';
+
+  updateProgress();
+}
+
+// ── NEXT SECTION ─────────────────────────────────────────────
+function nextSection(si) {
+  if (si < SECTIONS.length - 1) {
+    currentSection = si + 1;
+    showSection(si + 1);
+  } else {
+    showResults();
+  }
+}
+
+// ── SHOW SECTION ─────────────────────────────────────────────
+function showSection(si) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + si).classList.add('active');
+  document.getElementById('tab-' + si).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ── PROGRESS ─────────────────────────────────────────────────
+function updateProgress() {
+  const total = SECTIONS.reduce((a, s) => a + s.questions.length, 0);
+  const done  = Object.keys(answers).length;
+  const pct   = Math.round((done / total) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+}
+
+// ── RESULTS ──────────────────────────────────────────────────
+function showResults() {
+  document.getElementById('quiz-screen').classList.add('hidden');
+  const rs = document.getElementById('results-screen');
+  rs.style.display = 'block';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  document.getElementById('res-name').textContent = studentName + ' · Period ' + studentPeriod;
+
+  let total = 0;
+  SECTIONS.forEach(s => { total += (sectionScores[s.id] || 0); });
+
+  // Ring
+  const pct = Math.round((total / 30) * 360);
+  const ring = document.getElementById('score-ring');
+  ring.style.setProperty('--ring-deg', pct + 'deg');
+  document.getElementById('ring-num').textContent = total + '/30';
+
+  // Section cards
+  const grid = document.getElementById('sec-score-grid');
+  grid.innerHTML = SECTIONS.map(s => {
+    const sc = sectionScores[s.id] || 0;
+    return `<div class="sec-score-card">
+      <div class="s-num">${sc}/10</div>
+      <div class="s-lbl">Section ${s.num}<br>${s.title}</div>
+    </div>`;
+  }).join('');
+
+  // Wrong answers
+  const wrongList = document.getElementById('wrong-list');
+  let wrongItems = [];
+  SECTIONS.forEach(sec => {
+    sec.questions.forEach((qObj, qi) => {
+      const key = sec.id + '_q' + qi;
+      const chosen = answers[key];
+      if (chosen !== qObj.ans) {
+        const cleanQ = qObj.q.replace(/<[^>]+>/g, '').replace(/\s+/g,' ').trim().substring(0, 120) + (qObj.q.length > 120 ? '…' : '');
+        wrongItems.push(`<div class="wrong-item">
+          <div class="wi-tag">Section ${sec.num} · Q${qi+1}</div>
+          <div class="wi-q">${cleanQ}</div>
+          <div class="answer-row"><span class="your-ans">✗ You chose: ${chosen !== undefined ? ['A','B','C','D'][chosen] : 'No answer'}</span></div>
+          <div class="answer-row"><span class="right-ans">✓ Correct: ${['A','B','C','D'][qObj.ans]} — ${qObj.opts[qObj.ans]}</span></div>
+        </div>`);
+      }
+    });
+  });
+
+  if (wrongItems.length === 0) {
+    wrongList.innerHTML = '<div class="no-wrong">🏆 Perfect score! Every question correct!</div>';
+  } else {
+    wrongList.innerHTML = wrongItems.join('');
+  }
+
+  // Submit to Google Form
+  submitToForm(total, wrongItems.length);
+}
+
+// ── GOOGLE FORM SUBMISSION ────────────────────────────────────
+function submitToForm(total, wrongCount) {
+  const status = document.getElementById('submit-status');
+
+  if (FORM_ID === 'YOUR_FORM_ID_HERE') {
+    status.textContent = '📋 Teacher: Google Form not yet configured. See setup instructions in the HTML file comments.';
+    return;
+  }
+
+  const missedArr = [];
+  SECTIONS.forEach(sec => {
+    sec.questions.forEach((qObj, qi) => {
+      const key = sec.id + '_q' + qi;
+      if (answers[key] !== qObj.ans) missedArr.push(sec.num + ' Q' + (qi+1));
+    });
+  });
+
+  const params = new URLSearchParams({
+    [ENTRY_NAME]:   studentName,
+    [ENTRY_PER]:    studentPeriod,
+    [ENTRY_S1]:     (sectionScores['s1'] || 0) + '/10',
+    [ENTRY_S2]:     (sectionScores['s2'] || 0) + '/10',
+    [ENTRY_S3]:     (sectionScores['s3'] || 0) + '/10',
+    [ENTRY_TOT]:    total + '/30',
+    [ENTRY_MISSED]: missedArr.length ? missedArr.join(', ') : 'None'
+  });
+
+  const url = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse?${params.toString()}`;
+
+  fetch(url, { method: 'POST', mode: 'no-cors' })
+    .then(() => {
+      status.textContent = '✅ Results submitted to your teacher successfully!';
+      status.style.color = '#2a7d46';
+    })
+    .catch(() => {
+      status.textContent = '⚠ Could not submit automatically. Please show your teacher this screen.';
+    });
+}
+</script>
+</body>
+</html>
