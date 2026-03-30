@@ -274,7 +274,13 @@
     <h3>Questions to Review</h3>
     <div id="wrong-list"></div>
   </div>
-  <div class="submit-status" id="submit-status">Submitting your results to your teacher…</div>
+  <div class="submit-status">
+    <div style="font-weight:700;color:#1b3a5c;font-size:0.95rem;margin-bottom:8px;">&#x1F4CB; Submit Your Results</div>
+    <div style="font-size:0.82rem;color:#6b7280;margin-bottom:12px;">Copy the code below and paste it into the Google Form your teacher shared with your class.</div>
+    <div id="result-code" style="background:#f4f3ef;border:1.5px solid #e0ddd6;border-radius:8px;padding:10px 14px;font-family:monospace;font-size:0.85rem;color:#1a1a2e;word-break:break-all;text-align:left;margin-bottom:10px;"></div>
+    <button onclick="copyCode()" style="padding:9px 22px;background:#1b3a5c;color:white;border:none;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;font-family:inherit;">Copy Code</button>
+    <span id="copy-confirm" style="margin-left:10px;font-size:0.82rem;color:#2a7d46;display:none;">&#x2713; Copied!</span>
+  </div>
 </div>
 
 <script>
@@ -760,15 +766,8 @@ function showResults() {
   submitToForm(total, wrongItems.length);
 }
 
-// ── GOOGLE FORM SUBMISSION ────────────────────────────────────
+// ── BUILD RESULT CODE & COPY ─────────────────────────────────
 function submitToForm(total, wrongCount) {
-  const status = document.getElementById('submit-status');
-
-  if (FORM_ID === 'YOUR_FORM_ID_HERE') {
-    status.textContent = '📋 Teacher: Google Form not yet configured. See setup instructions in the HTML file comments.';
-    return;
-  }
-
   const missedArr = [];
   SECTIONS.forEach(sec => {
     sec.questions.forEach((qObj, qi) => {
@@ -777,26 +776,26 @@ function submitToForm(total, wrongCount) {
     });
   });
 
-  const params = new URLSearchParams({
-    [ENTRY_NAME]:   studentName,
-    [ENTRY_PER]:    studentPeriod,
-    [ENTRY_S1]:     (sectionScores['s1'] || 0) + '/10',
-    [ENTRY_S2]:     (sectionScores['s2'] || 0) + '/10',
-    [ENTRY_S3]:     (sectionScores['s3'] || 0) + '/10',
-    [ENTRY_TOT]:    total + '/30',
-    [ENTRY_MISSED]: missedArr.length ? missedArr.join(', ') : 'None'
+  const code = [
+    'Name: ' + studentName,
+    'Period: ' + studentPeriod,
+    '10.1: ' + (sectionScores['s1'] || 0) + '/10',
+    '10.2: ' + (sectionScores['s2'] || 0) + '/10',
+    '10.4: ' + (sectionScores['s3'] || 0) + '/10',
+    'Total: ' + total + '/30',
+    'Missed: ' + (missedArr.length ? missedArr.join(', ') : 'None')
+  ].join(' | ');
+
+  document.getElementById('result-code').textContent = code;
+}
+
+function copyCode() {
+  const code = document.getElementById('result-code').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const c = document.getElementById('copy-confirm');
+    c.style.display = 'inline';
+    setTimeout(() => c.style.display = 'none', 2500);
   });
-
-  const url = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse?${params.toString()}`;
-
-  fetch(url, { method: 'POST', mode: 'no-cors' })
-    .then(() => {
-      status.textContent = '✅ Results submitted to your teacher successfully!';
-      status.style.color = '#2a7d46';
-    })
-    .catch(() => {
-      status.textContent = '⚠ Could not submit automatically. Please show your teacher this screen.';
-    });
 }
 </script>
 </body>
