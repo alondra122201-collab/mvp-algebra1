@@ -316,12 +316,12 @@
       "difficulty_pct": 34,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table could represent a quadratic function? A: f=3,9,27,81. B: g=–2,–4,–6,–8. C: h=6,5,6,9. D: j=7,7,7,7.",
+      "stem": "Which table could represent a quadratic function?",
       "choices": {
-        "A": "Table A",
-        "B": "Table B",
-        "C": "Table C",
-        "D": "Table D"
+        "A": "x=0,1,2,3 → f(x)=3,9,27,81",
+        "B": "x=0,1,2,3 → g(x)=–2,–4,–6,–8",
+        "C": "x=–1,0,1,2 → h(x)=6,5,6,9",
+        "D": "x=–3,–2,–1,0 → j(x)=7,7,7,7"
       },
       "answer": "C",
       "item_id": "10500",
@@ -6850,18 +6850,17 @@
       "reporting_category": "Linear Relationships",
       "topic": "Graphing Linear Functions",
       "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Linear function: x-intercept 3, slope 1.5. Which graph?",
+      "has_image": false,
+      "stem": "A linear function has an x-intercept at 3 and slope 1.5. Which equation represents this function?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "y = 1.5x + 3",
+        "B": "y = 1.5x – 4.5",
+        "C": "y = 3x – 1.5",
+        "D": "y = –1.5x + 4.5"
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-012_stem.png"
+      "level_label": "Level 3 – Passing (On Grade Level)"
     },
     {
       "id": "AR24-013",
@@ -10294,7 +10293,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential growth? Choices: (A) Aidan adds $10 to jar each week, (B) Pine tree grows 1.5ft/year, (C) Ella earns $20/hr babysitting, (D) Computer science majors double every 5 years",
+      "stem": "Which situation represents exponential growth? Choices: (A) Aidan adds $10 to jar each week, (B) Pine tree grows 1.5ft/year, (C) Ella earns $20/hr babysitting, (D) Computer science majors double every 5 years?",
       "choices": {
         "A": "Aidan adds $10 to jar each week",
         "B": "Pine tree grows 1.5ft/year",
@@ -10313,12 +10312,12 @@
       "topic": "Classifying Exponential Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents exponential growth? A: x=–4,–1,0,3 y=626,6,2,1.008. B: x=3,5,7,9 y=4.5,12.5,24.5,40.5. C: x=–8,–5,0,3 y=64,25,0,9. D: x=–1,1,3,5 y=0.5,2,8,32.",
+      "stem": "Which table represents exponential growth?",
       "choices": {
-        "A": "Table A",
-        "B": "Table B",
-        "C": "Table C",
-        "D": "Table D"
+        "A": "x=–4,–1,0,3 → y=626,6,2,1.008",
+        "B": "x=3,5,7,9 → y=4.5,12.5,24.5,40.5",
+        "C": "x=–8,–5,0,3 → y=64,25,0,9",
+        "D": "x=–1,1,3,5 → y=0.5,2,8,32"
       },
       "answer": "D",
       "level": 3,
@@ -10332,12 +10331,12 @@
       "topic": "Classifying Exponential Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents exponential decay? A: x=–1,0,1,2 y=100,5,0.25,0.0125. B: x=3,5,7,9 y=4.5,12.5,24.5,40.5. C: x=0,1,2,3 y=5,6,7.2,8.64. D: x=–4,–3,0,1 y=80,45,0,5.",
+      "stem": "Which table represents exponential decay?",
       "choices": {
-        "A": "Table A",
-        "B": "Table B",
-        "C": "Table C",
-        "D": "Table D"
+        "A": "x=–1,0,1,2 → y=100,5,0.25,0.0125",
+        "B": "x=3,5,7,9 → y=4.5,12.5,24.5,40.5",
+        "C": "x=0,1,2,3 → y=5,6,7.2,8.64",
+        "D": "x=–4,–3,0,1 → y=80,45,0,5"
       },
       "answer": "A",
       "level": 3,
@@ -10370,7 +10369,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential growth? Choices: (A) Backpack price reduced 20%, (B) Bacteria triples every hour, (C) Student saves $10 from each paycheck, (D) Tree grows 1.5ft each year",
+      "stem": "Which situation represents exponential growth? Choices: (A) Backpack price reduced 20%, (B) Bacteria triples every hour, (C) Student saves $10 from each paycheck, (D) Tree grows 1.5ft each year?",
       "choices": {
         "A": "Backpack price reduced 20%",
         "B": "Bacteria triples every hour",
@@ -12766,12 +12765,12 @@
       "topic": "Classifying Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents an exponential function? A: linear pattern. B: quadratic pattern. C: x=0,1,2,4,5 f=1,0.3,0.09,0.0081,0.00243. D: quadratic pattern.",
+      "stem": "Which table represents an exponential function?",
       "choices": {
-        "A": "Table A",
-        "B": "Table B",
-        "C": "Table C",
-        "D": "Table D"
+        "A": "x=0,1,2,3 → values 2,5,8,11 (linear: equal differences)",
+        "B": "x=0,1,2,3 → values 0,1,4,9 (quadratic: differences of differences are equal)",
+        "C": "x=0,1,2,4,5 → f(x)=1, 0.3, 0.09, 0.0081, 0.00243",
+        "D": "x=–2,–1,0,1,2 → values 4,1,0,1,4 (quadratic)"
       },
       "answer": "C",
       "level": 3,
@@ -12811,12 +12810,12 @@
       "topic": "Classifying Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents a quadratic function? A: x=–2,–1,1,3,4 m=–2,1,1,–7,–14. B: linear pattern. C: exponential pattern. D: exponential pattern.",
+      "stem": "Which table represents a quadratic function?",
       "choices": {
-        "A": "Table A",
-        "B": "Table B",
-        "C": "Table C",
-        "D": "Table D"
+        "A": "x=–2,–1,1,3,4 → m(x)=–2,1,1,–7,–14",
+        "B": "x=0,1,2,3 → values 5,8,11,14 (linear: equal differences)",
+        "C": "x=0,1,2,3 → values 1,2,4,8 (exponential: equal ratios)",
+        "D": "x=0,1,2,3 → values 3,9,27,81 (exponential)"
       },
       "answer": "A",
       "level": 3,
