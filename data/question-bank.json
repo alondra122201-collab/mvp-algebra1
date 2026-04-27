@@ -5,14 +5,14 @@
       "Algebra_1_Expressions_Functions_and_Data_Analysis_Key_1",
       "Algebra_1_Linear_Relationships_AK_1"
     ],
-    "total_questions": 841,
+    "total_questions": 810,
     "generated": "2026-04-25",
     "level_counts": {
       "level_1": 43,
       "level_2": 12,
-      "level_3": 416,
-      "level_4": 268,
-      "level_5": 102
+      "level_3": 405,
+      "level_4": 251,
+      "level_5": 99
     },
     "patch_version": "441-images-2026-04-25"
   },
@@ -9455,134 +9455,6 @@
       "level_label": "Level 4 – Above Grade Level"
     },
     {
-      "id": "AR34-007",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. Which quadratic equation is represented?",
-      "choices": {
-        "A": "y=–(x+2)²–3",
-        "B": "y=(x+2)²–3",
-        "C": "y=–(x–2)²–3",
-        "D": "y=(x–2)²–3"
-      },
-      "answer": "B",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-007_stem.png"
-    },
-    {
-      "id": "AR34-008",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. Which quadratic equation is represented?",
-      "choices": {
-        "A": "y=–3(x+1)²–7",
-        "B": "y=–3(x–1)²–7",
-        "C": "y=3(x+1)²–7",
-        "D": "y=3(x–1)²–7"
-      },
-      "answer": "D",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-008_stem.png"
-    },
-    {
-      "id": "AR34-009",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. Which quadratic equation is represented?",
-      "choices": {
-        "A": "y=x²+8x–11",
-        "B": "y=x²–8x+11",
-        "C": "y=–x²+8x–11",
-        "D": "y=–x²+8x+11"
-      },
-      "answer": "C",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-009_stem.png"
-    },
-    {
-      "id": "AR34-010",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. Which quadratic equation is represented?",
-      "choices": {
-        "A": "y=–2x²–20x–45",
-        "B": "y=–2x²–20x+45",
-        "C": "y=–2x²+20x–45",
-        "D": "y=–2x²+20x+45"
-      },
-      "answer": "A",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-010_stem.png"
-    },
-    {
-      "id": "AR34-011",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs - Real World",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Jennifer's stock portfolio graph (v=value in hundreds, t=months). Which function models it?",
-      "choices": {
-        "A": "v(t)=5+8t+4t²",
-        "B": "v(t)=5–8t+4t²",
-        "C": "v(t)=5–8t–4t²",
-        "D": "v(t)=5+8t–4t²"
-      },
-      "answer": "D",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-011_stem.png"
-    },
-    {
-      "id": "AR34-012",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs - Real World",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph shows dolphin depth (d) vs time (t), d=0 at surface, t=0 when at surface. Write the quadratic equation.",
-      "answer": "d = –2t²",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-012_stem.png"
-    },
-    {
-      "id": "AR34-013",
-      "source": "MA.912.AR.3.4_Key",
-      "benchmark": "MA.912.AR.3.4",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs - Real World",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph shows fencing area y (sq ft) vs width x (ft). Part A: Write equation. Part B: If width ≥ 4ft, range of areas?",
-      "answer": "Part A: y=–x²+32x. Part B: 112≤y≤256",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-013_stem.png"
-    },
-    {
       "id": "AR34-014",
       "source": "MA.912.AR.3.4_Key",
       "benchmark": "MA.912.AR.3.4",
@@ -9653,166 +9525,6 @@
       "level_label": "Level 4 – Above Grade Level"
     },
     {
-      "id": "AR35-001",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown (x-intercepts visible). What is the equation?",
-      "choices": {
-        "A": "y=4x(x–3)",
-        "B": "y=4x(x+3)",
-        "C": "y=–4x(x+3)",
-        "D": "y=–4(x–3)"
-      },
-      "answer": "A",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-001_stem.png"
-    },
-    {
-      "id": "AR35-002",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. What is the equation?",
-      "choices": {
-        "A": "y=(x+2)(x+2)",
-        "B": "y=–(x+2)(x+2)",
-        "C": "y=–(x+2)(x–2)",
-        "D": "y=(x+2)(x–2)"
-      },
-      "answer": "C",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-002_stem.png"
-    },
-    {
-      "id": "AR35-003",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. What is the equation?",
-      "choices": {
-        "A": "y=(x–1)(x–3)",
-        "B": "y=(x–1)(x+3)",
-        "C": "y=(x+1)(x–3)",
-        "D": "y=(x+1)(x+3)"
-      },
-      "answer": "D",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-003_stem.png"
-    },
-    {
-      "id": "AR35-004",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. What is the equation?",
-      "choices": {
-        "A": "y=–(x+1)(x+5)",
-        "B": "y=–(x–1)(x–5)",
-        "C": "y=(x–1)(x–5)",
-        "D": "y=(x+1)(x+5)"
-      },
-      "answer": "B",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-004_stem.png"
-    },
-    {
-      "id": "AR35-005",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. What is the equation?",
-      "choices": {
-        "A": "y=–(x–1)(x–3)",
-        "B": "y=(x–1)(x–3)",
-        "C": "y=–4(x–1)(x–3)",
-        "D": "y=4(x–1)(x–3)"
-      },
-      "answer": "D",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-005_stem.png"
-    },
-    {
-      "id": "AR35-006",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. What is the equation in standard form?",
-      "choices": {
-        "A": "y=x²+6x+8",
-        "B": "y=x²–6x–8",
-        "C": "y=x²+6x–8",
-        "D": "y=x²–6x+8"
-      },
-      "answer": "A",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-006_stem.png"
-    },
-    {
-      "id": "AR35-007",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph shown. What is the equation?",
-      "choices": {
-        "A": "y=2x²+6x+4",
-        "B": "y=2x²–6x–4",
-        "C": "y=x²–3x–2",
-        "D": "y=x²+3x+2"
-      },
-      "answer": "A",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-007_stem.png"
-    },
-    {
-      "id": "AR35-008",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts - Real World",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Archway: bases 12ft apart, 5ft tall at 2ft from left base. x-intercepts at 0 and 12. Which function?",
-      "choices": {
-        "A": "h(x)=–x²+2x",
-        "B": "h(x)=–x²+12x",
-        "C": "h(x)=–(1/4)x²+3x",
-        "D": "h(x)=–(1/2)x²+x"
-      },
-      "answer": "C",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-008_stem.png"
-    },
-    {
       "id": "AR35-009",
       "source": "MA.912.AR.3.5_Key",
       "benchmark": "MA.912.AR.3.5",
@@ -9830,46 +9542,6 @@
       "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
-    },
-    {
-      "id": "AR35-010",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from Graphs - Real World",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Precipitation graph (P(x) in inches, x=month). Which function best models precipitation?",
-      "choices": {
-        "A": "y=–(1/5)x²+0.8x–4.6",
-        "B": "y=–(1/5)x²–0.8x+4.6",
-        "C": "y=(1/5)x²+2.8x–9.8",
-        "D": "y=(1/5)x²–2.8x+9.8"
-      },
-      "answer": "D",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-010_stem.png"
-    },
-    {
-      "id": "AR35-011",
-      "source": "MA.912.AR.3.5_Key",
-      "benchmark": "MA.912.AR.3.5",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Writing Quadratic Functions from x-intercepts - Real World",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Fountain: max height 16ft at x=4ft, hits ground at x=8ft. x-intercepts at 0 and 8. Which function?",
-      "choices": {
-        "A": "h(x)=–x(x–8)",
-        "B": "h(x)=–2x(x–8)",
-        "C": "h(x)=–x(x–16)",
-        "D": "h(x)=–(1/2)x(x–16)"
-      },
-      "answer": "A",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-011_stem.png"
     },
     {
       "id": "AR35-012",
@@ -9951,146 +9623,6 @@
       "level_label": "Level 5 – Mastery"
     },
     {
-      "id": "AR37-003",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Key Features of Quadratic Functions from Graphs",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Graph of quadratic function r shown. Which best represents the intercepts?",
-      "choices": {
-        "A": "x-int:(5,0), y-ints:(0,10)&(0,–2)",
-        "B": "x-ints:(0,–10)&(0,2), y-int:(–5,0)",
-        "C": "x-int:(0,5), y-ints:(10,0)&(–2,0)",
-        "D": "x-ints:(–10,0)&(2,0), y-int:(0,–5)"
-      },
-      "answer": "D",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-003_stem.png"
-    },
-    {
-      "id": "AR37-004",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Which graph best represents h(x)=(x+1)(x–3)?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "A",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-004_stem.png"
-    },
-    {
-      "id": "AR37-005",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Which graph best represents a quadratic function with range {y|y≥3}?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "D",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-005_stem.png"
-    },
-    {
-      "id": "AR37-006",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "p(x): axis of symmetry x=–3, exactly one zero. Which graph represents p?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "A",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-006_stem.png"
-    },
-    {
-      "id": "AR37-007",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Key Features of Quadratic Functions from Graphs",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Quadratic graphed. Which best represents domain and range?",
-      "choices": {
-        "A": "Domain x≥–3, Range y≥5",
-        "B": "Domain all reals, Range y≥5",
-        "C": "Domain x≥–3, Range all reals",
-        "D": "Domain x≥5, Range y≥–3"
-      },
-      "answer": "B",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-007_stem.png"
-    },
-    {
-      "id": "AR37-008",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Which graph best represents f(x)=(x+3)²–9?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "D",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-008_stem.png"
-    },
-    {
-      "id": "AR37-009",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Which graph best represents f(x)=x²+2x–3?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "A",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-009_stem.png"
-    },
-    {
       "id": "AR37-010",
       "source": "MA.912.AR.3.7_Key",
       "benchmark": "MA.912.AR.3.7",
@@ -10112,49 +9644,6 @@
       "level_label": "Level 5 – Mastery"
     },
     {
-      "id": "AR37-011",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Key Features of Quadratic Functions from Graphs",
-      "type": "select_all",
-      "has_image": true,
-      "stem": "Graph of h(x) shown. Which are true?",
-      "choices": {
-        "A": "Vertex is (–1,–4)",
-        "B": "(–3,0) is an x-intercept",
-        "C": "(0,–3) is an x-intercept",
-        "D": "Minimum at x=–1",
-        "E": "Range {y|y≥–4}",
-        "F": "Domain –3≤x≤1"
-      },
-      "answer": "A, B, D, E",
-      "level": 5,
-      "level_label": "Level 5 – Mastery",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-011_stem.png"
-    },
-    {
-      "id": "AR37-012",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Key Features of Quadratic Functions from Graphs",
-      "type": "select_all",
-      "has_image": true,
-      "stem": "Graph of q(x) shown. Which are true?",
-      "choices": {
-        "A": "Axis of symmetry x=2",
-        "B": "(0,2) is an x-intercept",
-        "C": "(0,2) is the y-intercept",
-        "D": "Range {y|y≤6}",
-        "E": "Domain all reals"
-      },
-      "answer": "A, C, D, E",
-      "level": 5,
-      "level_label": "Level 5 – Mastery",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-012_stem.png"
-    },
-    {
       "id": "AR37-013",
       "source": "MA.912.AR.3.7_Key",
       "benchmark": "MA.912.AR.3.7",
@@ -10174,28 +9663,6 @@
       "answer": "A, B, C, E, F",
       "level": 5,
       "level_label": "Level 5 – Mastery"
-    },
-    {
-      "id": "AR37-014",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Key Features of Quadratic Functions from Graphs",
-      "type": "select_all",
-      "has_image": true,
-      "stem": "Graph of k(x) shown. Which are true?",
-      "choices": {
-        "A": "Axis of symmetry x=–6",
-        "B": "Domain all reals",
-        "C": "Increasing for x>–6",
-        "D": "Positive for x>–6",
-        "E": "Negative for –9<x<–3",
-        "F": "As x→–∞, k(x)→+∞"
-      },
-      "answer": "A, B, C, E, F",
-      "level": 5,
-      "level_label": "Level 5 – Mastery",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-014_stem.png"
     },
     {
       "id": "AR37-015",
@@ -10220,60 +9687,6 @@
       "level_label": "Level 5 – Mastery"
     },
     {
-      "id": "AR37-016",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Which graph best represents y=–(x–2)²+3?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "C",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-016_stem.png"
-    },
-    {
-      "id": "AR37-017",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "k(x): axis of symmetry x=–1.5, negative for –3.5<x<0.5. Sketch the graph.",
-      "answer": "Opens upward, vertex at (–1.5, negative value), x-intercepts at –3.5 and 0.5",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-017_stem.png"
-    },
-    {
-      "id": "AR37-018",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "p(x): y-intercept –3, zeros at x=–1 and x=3. Which graph?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "D",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-018_stem.png"
-    },
-    {
       "id": "AR37-019",
       "source": "MA.912.AR.3.7_Key",
       "benchmark": "MA.912.AR.3.7",
@@ -10292,26 +9705,6 @@
       "answer": "B, C, D",
       "level": 5,
       "level_label": "Level 5 – Mastery"
-    },
-    {
-      "id": "AR37-020",
-      "source": "MA.912.AR.3.7_Key",
-      "benchmark": "MA.912.AR.3.7",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Graphing Quadratic Functions",
-      "type": "multiple_choice",
-      "has_image": true,
-      "stem": "Which graph best represents y=(1/2)x²+x–4?",
-      "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
-      },
-      "answer": "B",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-020_stem.png"
     },
     {
       "id": "AR41-P01",
