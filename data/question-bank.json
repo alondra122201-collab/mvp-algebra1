@@ -5,15 +5,16 @@
       "Algebra_1_Expressions_Functions_and_Data_Analysis_Key_1",
       "Algebra_1_Linear_Relationships_AK_1"
     ],
-    "total_questions": 832,
-    "generated": "2026-04-11",
+    "total_questions": 841,
+    "generated": "2026-04-25",
     "level_counts": {
       "level_1": 43,
       "level_2": 12,
-      "level_3": 411,
-      "level_4": 264,
+      "level_3": 416,
+      "level_4": 268,
       "level_5": 102
-    }
+    },
+    "patch_version": "441-images-2026-04-25"
   },
   "questions": [
     {
@@ -45,13 +46,13 @@
       "topic": "Graphing Linear Functions",
       "difficulty_pct": 49,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "7x + 4y = 14. Which graph represents the function?",
       "choices": {
-        "A": "Intercepts (2,0) and (0,3.5)",
-        "B": "Intercepts (0,2) and (3.5,0)",
-        "C": "Intercepts (-2,0) and (0,3.5)",
-        "D": "Intercepts (0,2) and (-3.5,0)"
+        "A": "Line with x-intercept (2, 0) and y-intercept (0, 3.5), negative slope ≈ -1.75",
+        "B": "Line with x-intercept (2, 0) and y-intercept (0, 3.5), positive slope ≈ 1.75",
+        "C": "Line with x-intercept (-2, 0) and y-intercept (0, 3.5), positive slope",
+        "D": "Line with x-intercept (2, 0) and y-intercept (0, -3.5), positive slope"
       },
       "answer": "A",
       "item_id": "10487",
@@ -66,13 +67,13 @@
       "topic": "Graphing Linear Inequalities",
       "difficulty_pct": 42,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "4x + 5y ≥ 10. Which graph represents the solution set?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "Solid line through (2.5, 0) and (0, 2), shaded ABOVE/RIGHT",
+        "B": "Dashed line through (2.5, 0) and (0, 2), shaded BELOW/LEFT",
+        "C": "Solid line through (2.5, 0) and (0, 2), shaded BELOW/LEFT",
+        "D": "Dashed line through (-2.5, 0) and (0, -2), shaded ABOVE/RIGHT"
       },
       "answer": "C",
       "item_id": "10488",
@@ -87,13 +88,13 @@
       "topic": "Compound Inequalities",
       "difficulty_pct": 51,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "2x – 1 ≤ 3 or (1/2)x + 4 > 7. Which number line represents the solution?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "Number line with closed dot at 2 (shaded LEFT) AND open dot at 6 (shaded RIGHT) — two separate shaded regions",
+        "B": "Number line with closed dot at 2 and open dot at 6, shaded BETWEEN",
+        "C": "Number line with open dot at 2 and closed dot at 6, shaded BETWEEN",
+        "D": "Number line with closed dot at -2 and open dot at 6, shaded LEFT and RIGHT"
       },
       "answer": "A",
       "item_id": "10489",
@@ -203,7 +204,8 @@
       "answer": "C",
       "item_id": "10494",
       "level": 2,
-      "level_label": "Level 2 – Approaching Grade Level"
+      "level_label": "Level 2 – Approaching Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-009_stem.png"
     },
     {
       "id": "2024-010",
@@ -239,7 +241,8 @@
       "answer": "B",
       "item_id": "10496",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-011_stem.png"
     },
     {
       "id": "2024-012",
@@ -270,13 +273,13 @@
       "topic": "Graphing Linear Functions",
       "difficulty_pct": 36,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "y + 1 = 2(x + 3). Which graph represents the function?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "Line passing through (-3, -1) and y-intercept (0, 5), slope +2",
+        "B": "Line passing through (-3, 1) and y-intercept (0, 7), slope +2",
+        "C": "Line passing through (3, -1) and y-intercept (0, -7), slope +2",
+        "D": "Line passing through (-3, -1) and y-intercept (0, 5), slope -2"
       },
       "answer": "A",
       "item_id": "10498",
@@ -334,12 +337,12 @@
       "difficulty_pct": 49,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which function has the greatest slope?",
+      "stem": "Which function has the greatest slope: y=(5/3)x+1, y=–x+8, y=(3/4)x–(5/4), or y=(3/2)x+3?",
       "choices": {
-        "A": "y=(3/5)x+1",
-        "B": "y=x–8",
-        "C": "y=–(3/4)x–(5/4)",
-        "D": "y=(2/3)x+3"
+        "A": "y=(5/3)x+1",
+        "B": "y=–x+8",
+        "C": "y=(3/4)x–(5/4)",
+        "D": "y=(3/2)x+3"
       },
       "answer": "A",
       "item_id": "10501",
@@ -354,13 +357,13 @@
       "topic": "Systems of Inequalities",
       "difficulty_pct": 59,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "x < 3 and y ≥ –3. Which graph represents the solution set?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "Dashed vertical line at x=3 shaded LEFT, solid horizontal line at y=-3 shaded ABOVE, intersection region is upper-left quadrant bounded",
+        "B": "Solid vertical line at x=3 shaded LEFT, dashed horizontal line at y=-3 shaded ABOVE",
+        "C": "Dashed vertical line at x=3 shaded RIGHT, solid horizontal line at y=-3 shaded ABOVE",
+        "D": "Dashed vertical line at x=3 shaded LEFT, solid horizontal line at y=-3 shaded BELOW"
       },
       "answer": "A",
       "item_id": "10502",
@@ -533,7 +536,8 @@
       "answer": "B",
       "item_id": "10510",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-025_stem.png"
     },
     {
       "id": "2024-026",
@@ -575,7 +579,8 @@
       "answer": "D",
       "item_id": "10512",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-027_stem.png"
     },
     {
       "id": "2024-028",
@@ -590,7 +595,8 @@
       "answer": "371.65",
       "item_id": "10513",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-028_stem.png"
     },
     {
       "id": "2024-029",
@@ -714,13 +720,13 @@
       "topic": "Systems of Inequalities",
       "difficulty_pct": 41,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "x ≥ 5 and y < –3. Which graph represents the solution set?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "Solid vertical line at x=5 shaded RIGHT, dashed horizontal line at y=-3 shaded BELOW, intersection in lower-right quadrant",
+        "B": "Dashed vertical line at x=5 shaded RIGHT, solid horizontal line at y=-3 shaded BELOW",
+        "C": "Solid vertical line at x=5 shaded LEFT, dashed horizontal line at y=-3 shaded BELOW",
+        "D": "Solid vertical line at x=5 shaded RIGHT, dashed horizontal line at y=-3 shaded ABOVE"
       },
       "answer": "A",
       "item_id": "10520",
@@ -811,7 +817,8 @@
       "answer": "A",
       "item_id": "10525",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-040_stem.png"
     },
     {
       "id": "2024-041",
@@ -821,13 +828,13 @@
       "topic": "Graphing Linear Inequalities - Real World",
       "difficulty_pct": 32,
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "40 ≥ 6x + 2y (hot wings x, soda y). Which graph shows all solutions?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "Solid line through (20/3, 0) ≈ (6.67, 0) and (0, 20), shaded BELOW/LEFT",
+        "B": "Dashed line through (6.67, 0) and (0, 20), shaded BELOW/LEFT",
+        "C": "Solid line through (6.67, 0) and (0, 20), shaded ABOVE/RIGHT",
+        "D": "Solid line through (-6.67, 0) and (0, -20), shaded BELOW/LEFT"
       },
       "answer": "A",
       "item_id": "10526",
@@ -889,7 +896,8 @@
       "answer": "A",
       "item_id": "10529",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-044_stem.png"
     },
     {
       "id": "2024-045",
@@ -1060,7 +1068,8 @@
       },
       "answer": "Part A: C, Part B: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-008_stem.png"
     },
     {
       "id": "EFDA-009",
@@ -1079,7 +1088,8 @@
       },
       "answer": "B, C, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-009_stem.png"
     },
     {
       "id": "EFDA-010",
@@ -1313,7 +1323,8 @@
       },
       "answer": "Part A: D, Part B: A, B, D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-021_stem.png"
     },
     {
       "id": "EFDA-022",
@@ -1351,7 +1362,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-023_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-023_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-023_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-023_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-023_D.png"
+      }
     },
     {
       "id": "EFDA-024",
@@ -1467,7 +1485,8 @@
       },
       "answer": "Part A: –40, Part B: D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-029_stem.png"
     },
     {
       "id": "EFDA-030",
@@ -1505,7 +1524,14 @@
       },
       "answer": "B",
       "level": 2,
-      "level_label": "Level 2 – Approaching Grade Level"
+      "level_label": "Level 2 – Approaching Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-031_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-031_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-031_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-031_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-031_D.png"
+      }
     },
     {
       "id": "EFDA-032",
@@ -1623,7 +1649,8 @@
       },
       "answer": "A, C, D, E, F",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-037_stem.png"
     },
     {
       "id": "EFDA-038",
@@ -1758,7 +1785,8 @@
       },
       "answer": "Part A: D, Part B: A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-044_stem.png"
     },
     {
       "id": "EFDA-045",
@@ -1854,7 +1882,15 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-049_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-049_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-049_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-049_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-049_D.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/EFDA-049_stem.png"
+      }
     },
     {
       "id": "EFDA-050",
@@ -1932,7 +1968,8 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-003_stem.png"
     },
     {
       "id": "LR-004",
@@ -2060,7 +2097,14 @@
       },
       "answer": "Part A: C, Part B: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-009_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-009_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-009_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-009_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-009_D.png"
+      }
     },
     {
       "id": "LR-010",
@@ -2174,7 +2218,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-015_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-015_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-015_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-015_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-015_D.png"
+      }
     },
     {
       "id": "LR-016",
@@ -2215,7 +2266,14 @@
       },
       "answer": "Part A: D, Part B: C, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-017_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-017_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-017_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-017_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-017_D.png"
+      }
     },
     {
       "id": "LR-018",
@@ -2335,7 +2393,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-023_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-023_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-023_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-023_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-023_D.png"
+      }
     },
     {
       "id": "LR-024",
@@ -2377,7 +2442,8 @@
       },
       "answer": "Part A: B, Part B: A, C, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-025_stem.png"
     },
     {
       "id": "LR-026",
@@ -2396,7 +2462,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-026_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-026_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-026_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-026_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-026_D.png"
+      }
     },
     {
       "id": "LR-027",
@@ -2415,7 +2488,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-027_stem.png"
     },
     {
       "id": "LR-028",
@@ -2436,7 +2510,8 @@
       },
       "answer": "Part A: B, Part B: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-028_stem.png"
     },
     {
       "id": "LR-029",
@@ -2460,7 +2535,14 @@
       },
       "answer": "Part A: C, Part B: A, B, C, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-029_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-029_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-029_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-029_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-029_D.png"
+      }
     },
     {
       "id": "LR-030",
@@ -2503,7 +2585,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-031_stem.png"
     },
     {
       "id": "LR-032",
@@ -2543,7 +2626,8 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/LR-033_stem.png"
     },
     {
       "id": "NLR-001",
@@ -2659,25 +2743,6 @@
       "level_label": "Level 3 – Passing (On Grade Level)"
     },
     {
-      "id": "NLR-007",
-      "source": "Algebra_1_Non_Linear_Relationships_AK_1",
-      "benchmark": "MA.912.AR.5.3",
-      "reporting_category": "Non-Linear Relationships",
-      "topic": "Exponential Growth vs Decay",
-      "type": "multiple_choice",
-      "has_image": false,
-      "stem": "Which situation represents exponential growth?",
-      "choices": {
-        "A": "Aidan adds $10 to a jar each week",
-        "B": "Pine tree grows 1.5 feet per year",
-        "C": "Ella earns $20/hr babysitting",
-        "D": "Computer science majors double every 5 years"
-      },
-      "answer": "D",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
-    },
-    {
       "id": "NLR-008",
       "source": "Algebra_1_Non_Linear_Relationships_AK_1",
       "benchmark": "MA.912.AR.3.1",
@@ -2760,7 +2825,14 @@
       },
       "answer": "Part A: C, Part B: A, C, D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-011_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-011_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-011_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-011_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-011_D.png"
+      }
     },
     {
       "id": "NLR-012",
@@ -2813,7 +2885,8 @@
       },
       "answer": "C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-014_stem.png"
     },
     {
       "id": "NLR-015",
@@ -3038,7 +3111,8 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-026_stem.png"
     },
     {
       "id": "NLR-027",
@@ -3097,7 +3171,8 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-029_stem.png"
     },
     {
       "id": "NLR-030",
@@ -3154,7 +3229,8 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-032_stem.png"
     },
     {
       "id": "NLR-033",
@@ -3195,7 +3271,14 @@
       },
       "answer": "Part A: A, Part B: A, F",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-034_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-034_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-034_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-034_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-034_D.png"
+      }
     },
     {
       "id": "NLR-035",
@@ -3237,7 +3320,14 @@
       },
       "answer": "Part A: B, Part B: A, B, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-036_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-036_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-036_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-036_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-036_D.png"
+      }
     },
     {
       "id": "NLR-037",
@@ -3258,7 +3348,12 @@
       },
       "answer": "Part B: A, B, C, D",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-037_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-037_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-037_stem.png"
+      }
     },
     {
       "id": "NLR-038",
@@ -3356,7 +3451,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-042_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-042_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-042_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-042_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-042_D.png"
+      }
     },
     {
       "id": "NLR-043",
@@ -3458,7 +3560,14 @@
       },
       "answer": "Part A: A, Part B: A, C, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-047_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-047_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-047_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-047_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-047_D.png"
+      }
     },
     {
       "id": "NLR-048",
@@ -3471,7 +3580,8 @@
       "stem": "Milkshake price analysis graph. Fill in: current weekly profit given by [y-intercept]. Max at x=2.5. Max weekly profit $106. Sell each milkshake for $8.50.",
       "answer": "y-intercept=$94, max at x=2.5, max profit=$106, price=$8.50",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-048_stem.png"
     },
     {
       "id": "NLR-049",
@@ -3494,7 +3604,14 @@
       },
       "answer": "Part A: C, Part B: B, D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-049_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-049_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-049_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-049_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/NLR-049_D.png"
+      }
     },
     {
       "id": "NLR-050",
@@ -3650,7 +3767,7 @@
       "topic": "Comparing Linear Functions",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which function has the greatest slope?",
+      "stem": "Which function has the greatest slope: y=(2/3)x+5, y=–2x+7, y=(5/2)x–1, or y=(3/5)x–4?",
       "choices": {
         "A": "y=(2/3)x+5",
         "B": "y=–2x+7",
@@ -3760,7 +3877,8 @@
       "stem": "y=1.5x+2.75 (tree height, x=years since 2000). Projected height in 2030?",
       "answer": "47.75",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-014_stem.png"
     },
     {
       "id": "BEST-015",
@@ -3792,7 +3910,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-016_stem.png"
     },
     {
       "id": "BEST-017",
@@ -3830,7 +3949,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-018_stem.png"
     },
     {
       "id": "BEST-019",
@@ -3926,7 +4046,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-023_stem.png"
     },
     {
       "id": "BEST-024",
@@ -4015,7 +4136,13 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-028_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-028_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-028_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-028_C.png"
+      }
     },
     {
       "id": "BEST-029",
@@ -4034,7 +4161,8 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-029_stem.png"
     },
     {
       "id": "BEST-030",
@@ -4053,7 +4181,14 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-030_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-030_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-030_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-030_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-030_D.png"
+      }
     },
     {
       "id": "BEST-031",
@@ -4149,7 +4284,8 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-035_stem.png"
     },
     {
       "id": "BEST-036",
@@ -4168,7 +4304,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-036_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-036_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-036_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-036_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-036_D.png"
+      }
     },
     {
       "id": "BEST-037",
@@ -4187,7 +4330,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-037_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-037_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-037_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-037_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-037_D.png"
+      }
     },
     {
       "id": "BEST-038",
@@ -4206,7 +4356,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-038_stem.png"
     },
     {
       "id": "BEST-039",
@@ -4244,7 +4395,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-040_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-040_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-040_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-040_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-040_D.png"
+      }
     },
     {
       "id": "BEST-041",
@@ -4265,7 +4423,8 @@
       },
       "answer": "Part A: 400 miles, Part B: A",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-041_stem.jpeg"
     },
     {
       "id": "BEST-042",
@@ -4289,7 +4448,14 @@
       },
       "answer": "Part A: D, Part B: A, B, C, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-042_A.jpeg",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-042_A.jpeg",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-042_B.jpeg",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-042_C.jpeg",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-042_D.jpeg"
+      }
     },
     {
       "id": "BEST-043",
@@ -4308,7 +4474,8 @@
       },
       "answer": "C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-043_stem.jpeg"
     },
     {
       "id": "BEST-044",
@@ -4351,7 +4518,14 @@
       },
       "answer": "Part A: C, Part B: B, D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-045_A.jpeg",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-045_A.jpeg",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-045_B.jpeg",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-045_C.jpeg",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-045_D.jpeg"
+      }
     },
     {
       "id": "BEST-046",
@@ -4725,7 +4899,8 @@
       },
       "answer": "A, C, F",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR13-015_stem.png"
     },
     {
       "id": "AR13-016",
@@ -5065,7 +5240,8 @@
       },
       "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR13-034_stem.png"
     },
     {
       "id": "AR13-035",
@@ -5903,7 +6079,7 @@
       "reporting_category": "Linear Relationships",
       "topic": "Writing and Solving Linear Equations",
       "type": "multiple_choice_multipart",
-      "has_image": false,
+      "has_image": true,
       "stem": "Julian sold candles: Mon=2,Tue=5,Wed=3,Thu=11,Fri=9. Total=$45. Part A: Which equation finds price p? Part B: Price per candle?",
       "choices": {
         "part_a": {
@@ -5915,7 +6091,8 @@
       },
       "answer": "Part A: B, Part B: $1.50",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR21-005_stem.png"
     },
     {
       "id": "AR21-006",
@@ -5943,11 +6120,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Writing and Solving Linear Equations",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "Sara sold cookie packs: Mon=3,Tue=4,Wed=6,Thu=5,Fri=2. Total=$40. Write equation and find price p per pack.",
       "answer": "3p+4p+6p+5p+2p=40; p=$2.00",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR21-007_stem.png"
     },
     {
       "id": "AR21-008",
@@ -5969,11 +6147,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Writing and Solving Linear Equations",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "Pizza A: $10 + $1.50/topping. Pizza B: $12.50 + $1.00/topping. Write and solve equation for equal cost.",
       "answer": "10+1.5t=12.5+t; t=5 toppings",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR21-009_stem.png"
     },
     {
       "id": "AR21-010",
@@ -6182,7 +6361,8 @@
       "stem": "Graph shown. Write the equation of the line.",
       "answer": "y = (3/2)x + 1/2",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-012_stem.png"
     },
     {
       "id": "AR22-013",
@@ -6195,7 +6375,8 @@
       "stem": "Graph shown. Write the equation of the line.",
       "answer": "y = (1/3)x + 2/3",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-013_stem.png"
     },
     {
       "id": "AR22-014",
@@ -6208,7 +6389,8 @@
       "stem": "Graph shown. Write the equation of the line.",
       "answer": "y = –(1/4)x + 3/4",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-014_stem.png"
     },
     {
       "id": "AR22-015",
@@ -6221,7 +6403,8 @@
       "stem": "Graph shown. Write the equation of the line.",
       "answer": "y = –(1/2)x + 3/2",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-015_stem.png"
     },
     {
       "id": "AR22-016",
@@ -6234,7 +6417,8 @@
       "stem": "Graph shown (horizontal line). Write the equation.",
       "answer": "y = 0.5",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-016_stem.png"
     },
     {
       "id": "AR22-017",
@@ -6247,7 +6431,8 @@
       "stem": "Graph shown (vertical line). Write the equation.",
       "answer": "x = 1.5",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-017_stem.png"
     },
     {
       "id": "AR22-018",
@@ -6558,7 +6743,14 @@
       },
       "answer": "Part A: D, Part B: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-007_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-007_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-007_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-007_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-007_D.png"
+      }
     },
     {
       "id": "AR24-008",
@@ -6577,7 +6769,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-008_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-008_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-008_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-008_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-008_D.png"
+      }
     },
     {
       "id": "AR24-009",
@@ -6615,7 +6814,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-010_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-010_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-010_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-010_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-010_D.png"
+      }
     },
     {
       "id": "AR24-011",
@@ -6624,7 +6830,7 @@
       "reporting_category": "Linear Relationships",
       "topic": "Key Features of Linear Functions",
       "type": "multiple_choice",
-      "has_image": false,
+      "has_image": true,
       "stem": "Table: x=–1.5,–1.5,–1.5,–1.5,–1.5 y=50,55,60,65,70. Which is true?",
       "choices": {
         "A": "No x-intercept",
@@ -6634,7 +6840,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-011_stem.png"
     },
     {
       "id": "AR24-012",
@@ -6653,7 +6860,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-012_stem.png"
     },
     {
       "id": "AR24-013",
@@ -6691,7 +6899,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-014_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-014_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-014_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-014_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-014_D.png"
+      }
     },
     {
       "id": "AR24-015",
@@ -6736,7 +6951,14 @@
       },
       "answer": "Part A: D, Part B: B, E, F",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-016_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-016_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-016_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-016_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-016_D.png"
+      }
     },
     {
       "id": "AR24-017",
@@ -6756,7 +6978,12 @@
       },
       "answer": "B, C",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-017_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-017_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-017_stem.png"
+      }
     },
     {
       "id": "AR24-018",
@@ -6794,7 +7021,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-019_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-019_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-019_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-019_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-019_D.png"
+      }
     },
     {
       "id": "AR24-020",
@@ -6813,7 +7047,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-020_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-020_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-020_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-020_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-020_D.png"
+      }
     },
     {
       "id": "AR24-021",
@@ -6822,7 +7063,7 @@
       "reporting_category": "Linear Relationships",
       "topic": "Key Features of Linear Functions",
       "type": "select_all",
-      "has_image": false,
+      "has_image": true,
       "stem": "Table: x=–5,–3,2,5,7 y=0,0.8,2.8,4,4.8. Which are true?",
       "choices": {
         "A": "No y-intercept",
@@ -6832,7 +7073,12 @@
       },
       "answer": "C",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-021_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-021_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-021_stem.png"
+      }
     },
     {
       "id": "AR24-022",
@@ -6851,7 +7097,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-022_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-022_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-022_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-022_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-022_D.png"
+      }
     },
     {
       "id": "AR26-P01",
@@ -6860,11 +7113,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "5 + k/(–2) ≥ 2. Solve and graph.",
       "answer": "k ≤ 6",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P01_stem.png"
     },
     {
       "id": "AR26-P02",
@@ -6873,11 +7127,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "24 ≥ 6(w–2). Solve.",
       "answer": "w ≤ 6",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P02_stem.png"
     },
     {
       "id": "AR26-P03",
@@ -6886,11 +7141,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "5(4+y) > 2(y+7). Solve.",
       "answer": "y > –2",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P03_stem.png"
     },
     {
       "id": "AR26-P04",
@@ -6899,11 +7155,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "–5n – 4 > 7n + 20. Solve.",
       "answer": "n < –2",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P04_stem.png"
     },
     {
       "id": "AR26-P05",
@@ -6912,11 +7169,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "–4 < 2p + 8 < 18. Solve.",
       "answer": "–6 < p < 5",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P05_stem.png"
     },
     {
       "id": "AR26-P06",
@@ -6925,11 +7183,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "42 < 6(3–k) or (1/2)(14k–8) ≥ 10. Solve.",
       "answer": "k < –4 or k ≥ 2",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P06_stem.png"
     },
     {
       "id": "AR26-P07",
@@ -6938,11 +7197,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "–6 < (1/3)(6y+12) < 14. Solve.",
       "answer": "–5 < y < 5",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P07_stem.png"
     },
     {
       "id": "AR26-P08",
@@ -6951,11 +7211,12 @@
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
       "type": "gridded_response",
-      "has_image": false,
+      "has_image": true,
       "stem": "–13 > q+2 or 5q ≥ –15. Solve.",
       "answer": "q < –15 or q ≥ –3",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P08_stem.png"
     },
     {
       "id": "AR26-P09",
@@ -7057,7 +7318,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-004_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-004_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-004_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-004_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-004_D.png"
+      }
     },
     {
       "id": "AR26-005",
@@ -7256,7 +7524,8 @@
       },
       "answer": "Part A: A, Part B: C, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-001_stem.png"
     },
     {
       "id": "AR27-002",
@@ -7284,7 +7553,8 @@
       },
       "answer": "Part A: C, Part B: A, C, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-002_stem.png"
     },
     {
       "id": "AR27-003",
@@ -7312,7 +7582,8 @@
       },
       "answer": "Part A: B, Part B: B, C, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-003_stem.png"
     },
     {
       "id": "AR27-004",
@@ -7340,7 +7611,8 @@
       },
       "answer": "Part A: C, Part B: A, C, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-004_stem.png"
     },
     {
       "id": "AR27-005",
@@ -7353,7 +7625,8 @@
       "stem": "Graph shown. Write the inequality in standard form.",
       "answer": "x – 2y ≥ 4",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-005_stem.png"
     },
     {
       "id": "AR27-006",
@@ -7381,7 +7654,8 @@
       },
       "answer": "Part A: B, Part B: A, B, C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-006_stem.png"
     },
     {
       "id": "AR27-007",
@@ -7409,7 +7683,8 @@
       },
       "answer": "Part A: B, Part B: A, D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-007_stem.png"
     },
     {
       "id": "AR27-008",
@@ -7437,7 +7712,8 @@
       },
       "answer": "Part A: B, Part B: D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-008_stem.png"
     },
     {
       "id": "AR27-009",
@@ -7465,7 +7741,8 @@
       },
       "answer": "Part A: D, Part B: A, B, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-009_stem.png"
     },
     {
       "id": "AR27-010",
@@ -7478,7 +7755,8 @@
       "stem": "Graph shown. Write inequality in point-slope form.",
       "answer": "y+2>–(1/2)(x+3)",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-010_stem.png"
     },
     {
       "id": "AR27-011",
@@ -7491,7 +7769,8 @@
       "stem": "Graph shown (vertical line). Write inequality.",
       "answer": "x ≤ 4",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-011_stem.png"
     },
     {
       "id": "AR27-012",
@@ -7716,7 +7995,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-024_stem.png"
     },
     {
       "id": "AR27-025",
@@ -7794,7 +8074,12 @@
       },
       "answer": "Part A: A, Part B: y≥10x+75",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-028_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-028_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-028_stem.png"
+      }
     },
     {
       "id": "AR28-001",
@@ -7813,7 +8098,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-001_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-001_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-001_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-001_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-001_D.png"
+      }
     },
     {
       "id": "AR28-002",
@@ -7826,7 +8118,12 @@
       "stem": "Graph the inequality y > –2 on a coordinate plane.",
       "answer": "Horizontal dashed line at y=–2, shade above",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-002_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-002_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-002_stem.png"
+      }
     },
     {
       "id": "AR28-003",
@@ -7845,7 +8142,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_D.png"
+      }
     },
     {
       "id": "AR28-004",
@@ -7858,7 +8162,12 @@
       "stem": "Graph the inequality y–2 > –3(x+1) on a coordinate plane.",
       "answer": "Dashed line, slope –3, through (–1,2), shade above-right",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-004_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-004_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-004_stem.png"
+      }
     },
     {
       "id": "AR28-005",
@@ -7877,7 +8186,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-005_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-005_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-005_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-005_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-005_D.png"
+      }
     },
     {
       "id": "AR28-006",
@@ -7904,7 +8220,14 @@
       },
       "answer": "Part A: A, Part B: A",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-006_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-006_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-006_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-006_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-006_D.png"
+      }
     },
     {
       "id": "AR28-007",
@@ -7917,7 +8240,12 @@
       "stem": "Graph x + (3/2)y ≥ 5 on a coordinate plane.",
       "answer": "Solid line, y-intercept 10/3, x-intercept 5, shade above",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-007_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-007_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-007_stem.png"
+      }
     },
     {
       "id": "AR28-008",
@@ -7944,7 +8272,14 @@
       },
       "answer": "Part A: B, Part B: C",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-008_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-008_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-008_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-008_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-008_D.png"
+      }
     },
     {
       "id": "AR28-009",
@@ -7957,7 +8292,12 @@
       "stem": "Graph –3x – 2y > 8 on a coordinate plane.",
       "answer": "Dashed line, shade below-left region",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-009_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-009_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-009_stem.png"
+      }
     },
     {
       "id": "AR28-010",
@@ -7976,7 +8316,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-010_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-010_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-010_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-010_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-010_D.png"
+      }
     },
     {
       "id": "AR28-011",
@@ -7989,7 +8336,12 @@
       "stem": "Graph y ≤ –5x + 1 on a coordinate plane.",
       "answer": "Solid line, slope –5, y-intercept 1, shade below",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-011_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-011_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-011_stem.png"
+      }
     },
     {
       "id": "AR28-012",
@@ -8008,7 +8360,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-012_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-012_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-012_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-012_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-012_D.png"
+      }
     },
     {
       "id": "AR28-013",
@@ -8021,7 +8380,12 @@
       "stem": "Graph 2x – 5y ≤ 3 on a coordinate plane.",
       "answer": "Solid line, shade above/left",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-013_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-013_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-013_stem.png"
+      }
     },
     {
       "id": "AR28-014",
@@ -8040,7 +8404,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-014_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-014_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-014_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-014_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-014_D.png"
+      }
     },
     {
       "id": "AR28-015",
@@ -8053,7 +8424,12 @@
       "stem": "Graph –5x ≥ –15 on a coordinate plane.",
       "answer": "Solid vertical line at x=3, shade left",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-015_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-015_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-015_stem.png"
+      }
     },
     {
       "id": "AR28-016",
@@ -8072,7 +8448,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-016_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-016_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-016_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-016_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-016_D.png"
+      }
     },
     {
       "id": "AR28-017",
@@ -8085,7 +8468,12 @@
       "stem": "Graph y–3 > –(2/5)(x+10) on a coordinate plane.",
       "answer": "Dashed line, slope –2/5, through (–10,3), shade above",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-017_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-017_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-017_stem.png"
+      }
     },
     {
       "id": "AR28-018",
@@ -8104,7 +8492,14 @@
       },
       "answer": "C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-018_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-018_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-018_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-018_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-018_D.png"
+      }
     },
     {
       "id": "AR28-019",
@@ -8117,7 +8512,12 @@
       "stem": "4x+2y≤75 (balloons $4, confetti $2, max $75). Graph the inequality.",
       "answer": "Solid line, x-intercept ~18.75, y-intercept 37.5, shade below in first quadrant",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-019_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-019_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-019_stem.png"
+      }
     },
     {
       "id": "AR28-020",
@@ -8136,7 +8536,14 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-020_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-020_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-020_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-020_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-020_D.png"
+      }
     },
     {
       "id": "AR28-021",
@@ -8149,7 +8556,12 @@
       "stem": "28x+14y≤182 (jeans $28, shirts $14, max $182). Graph the inequality.",
       "answer": "Solid line, x-intercept 6.5, y-intercept 13, shade below in first quadrant",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-021_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-021_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-021_stem.png"
+      }
     },
     {
       "id": "AR28-022",
@@ -8168,7 +8580,14 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_D.png"
+      }
     },
     {
       "id": "AR28-023",
@@ -8181,7 +8600,12 @@
       "stem": "7w+5d≤40 (wings $7, hot dogs $5, max $40). Graph the inequality.",
       "answer": "Solid line, x-intercept ~5.7, y-intercept 8, shade below in first quadrant",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-023_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-023_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-023_stem.png"
+      }
     },
     {
       "id": "AR28-024",
@@ -8209,7 +8633,14 @@
       },
       "answer": "Part A: B, Part B: C, D",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-024_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-024_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-024_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-024_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-024_D.png"
+      }
     },
     {
       "id": "AR28-025",
@@ -8237,7 +8668,14 @@
       },
       "answer": "Part A: A, Part B: B, C, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-025_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-025_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-025_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-025_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-025_D.png"
+      }
     },
     {
       "id": "AR31-001",
@@ -9033,7 +9471,8 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-007_stem.png"
     },
     {
       "id": "AR34-008",
@@ -9052,7 +9491,8 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-008_stem.png"
     },
     {
       "id": "AR34-009",
@@ -9071,7 +9511,8 @@
       },
       "answer": "C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-009_stem.png"
     },
     {
       "id": "AR34-010",
@@ -9090,7 +9531,8 @@
       },
       "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-010_stem.png"
     },
     {
       "id": "AR34-011",
@@ -9109,7 +9551,8 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-011_stem.png"
     },
     {
       "id": "AR34-012",
@@ -9122,7 +9565,8 @@
       "stem": "Graph shows dolphin depth (d) vs time (t), d=0 at surface, t=0 when at surface. Write the quadratic equation.",
       "answer": "d = –2t²",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-012_stem.png"
     },
     {
       "id": "AR34-013",
@@ -9135,7 +9579,8 @@
       "stem": "Graph shows fencing area y (sq ft) vs width x (ft). Part A: Write equation. Part B: If width ≥ 4ft, range of areas?",
       "answer": "Part A: y=–x²+32x. Part B: 112≤y≤256",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR34-013_stem.png"
     },
     {
       "id": "AR34-014",
@@ -9224,7 +9669,8 @@
       },
       "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-001_stem.png"
     },
     {
       "id": "AR35-002",
@@ -9243,7 +9689,8 @@
       },
       "answer": "C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-002_stem.png"
     },
     {
       "id": "AR35-003",
@@ -9262,7 +9709,8 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-003_stem.png"
     },
     {
       "id": "AR35-004",
@@ -9281,7 +9729,8 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-004_stem.png"
     },
     {
       "id": "AR35-005",
@@ -9300,7 +9749,8 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-005_stem.png"
     },
     {
       "id": "AR35-006",
@@ -9319,7 +9769,8 @@
       },
       "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-006_stem.png"
     },
     {
       "id": "AR35-007",
@@ -9338,7 +9789,8 @@
       },
       "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-007_stem.png"
     },
     {
       "id": "AR35-008",
@@ -9357,7 +9809,8 @@
       },
       "answer": "C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-008_stem.png"
     },
     {
       "id": "AR35-009",
@@ -9395,7 +9848,8 @@
       },
       "answer": "D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-010_stem.png"
     },
     {
       "id": "AR35-011",
@@ -9414,7 +9868,8 @@
       },
       "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR35-011_stem.png"
     },
     {
       "id": "AR35-012",
@@ -9512,7 +9967,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-003_stem.png"
     },
     {
       "id": "AR37-004",
@@ -9531,7 +9987,8 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-004_stem.png"
     },
     {
       "id": "AR37-005",
@@ -9550,7 +10007,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-005_stem.png"
     },
     {
       "id": "AR37-006",
@@ -9569,7 +10027,8 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-006_stem.png"
     },
     {
       "id": "AR37-007",
@@ -9588,7 +10047,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-007_stem.png"
     },
     {
       "id": "AR37-008",
@@ -9607,7 +10067,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-008_stem.png"
     },
     {
       "id": "AR37-009",
@@ -9626,7 +10087,8 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-009_stem.png"
     },
     {
       "id": "AR37-010",
@@ -9668,7 +10130,8 @@
       },
       "answer": "A, B, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-011_stem.png"
     },
     {
       "id": "AR37-012",
@@ -9688,7 +10151,8 @@
       },
       "answer": "A, C, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-012_stem.png"
     },
     {
       "id": "AR37-013",
@@ -9730,7 +10194,8 @@
       },
       "answer": "A, B, C, E, F",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-014_stem.png"
     },
     {
       "id": "AR37-015",
@@ -9771,7 +10236,8 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-016_stem.png"
     },
     {
       "id": "AR37-017",
@@ -9784,7 +10250,8 @@
       "stem": "k(x): axis of symmetry x=–1.5, negative for –3.5<x<0.5. Sketch the graph.",
       "answer": "Opens upward, vertex at (–1.5, negative value), x-intercepts at –3.5 and 0.5",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-017_stem.png"
     },
     {
       "id": "AR37-018",
@@ -9803,7 +10270,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-018_stem.png"
     },
     {
       "id": "AR37-019",
@@ -9842,7 +10310,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR37-020_stem.png"
     },
     {
       "id": "AR41-P01",
@@ -10219,13 +10688,13 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Graphing Absolute Value Functions",
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "Which is the graph of g(x)=2|x|+1?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "V-shape with vertex at (0, 1), opening UP, slope of ±2 (steep)",
+        "B": "V-shape with vertex at (0, 1), opening UP, slope of ±1 (standard)",
+        "C": "V-shape with vertex at (0, -1), opening DOWN, slope of ±2",
+        "D": "V-shape with vertex at (1, 0), opening UP, slope of ±2"
       },
       "answer": "A",
       "level": 3,
@@ -10238,13 +10707,13 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Graphing Absolute Value Functions",
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "Which is the graph of g(x)=|x–2|?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "V-shape with vertex at (-2, 0), opening UP, slope ±1",
+        "B": "V-shape with vertex at (0, -2), opening UP, slope ±1",
+        "C": "V-shape with vertex at (2, 0), opening UP, slope ±1",
+        "D": "V-shape with vertex at (0, 2), opening UP, slope ±1"
       },
       "answer": "B",
       "level": 3,
@@ -10257,13 +10726,13 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Graphing Absolute Value Functions",
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "Which is the graph of g(x)=–|x+1|+2?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "V-shape with vertex at (-1, 2), opening DOWN (inverted V), slope ±1",
+        "B": "V-shape with vertex at (1, 2), opening DOWN, slope ±1",
+        "C": "V-shape with vertex at (-1, -2), opening UP, slope ±1",
+        "D": "V-shape with vertex at (1, -2), opening DOWN, slope ±1"
       },
       "answer": "C",
       "level": 3,
@@ -10276,13 +10745,13 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Graphing Absolute Value Functions",
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "Which is the graph of g(x)=4|x+3|–4?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "V-shape with vertex at (3, -4), opening UP, slope ±4 (very steep)",
+        "B": "V-shape with vertex at (-3, -4), opening UP, slope ±4 (very steep)",
+        "C": "V-shape with vertex at (-3, 4), opening UP, slope ±4",
+        "D": "V-shape with vertex at (-3, -4), opening UP, slope ±1 (standard)"
       },
       "answer": "C",
       "level": 3,
@@ -10295,13 +10764,13 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Graphing Absolute Value Functions",
       "type": "multiple_choice",
-      "has_image": true,
+      "has_image": false,
       "stem": "Which is the graph of p(x)=(3/2)|x–1|+2?",
       "choices": {
-        "A": "Graph A",
-        "B": "Graph B",
-        "C": "Graph C",
-        "D": "Graph D"
+        "A": "V-shape with vertex at (-1, 2), opening UP, slope ±1.5",
+        "B": "V-shape with vertex at (1, -2), opening UP, slope ±1.5",
+        "C": "V-shape with vertex at (1, 2), opening UP, slope ±1.5 (moderately steep)",
+        "D": "V-shape with vertex at (1, 2), opening DOWN, slope ±1.5"
       },
       "answer": "A",
       "level": 3,
@@ -10377,7 +10846,8 @@
       },
       "answer": "Part A: B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR43-011_stem.png"
     },
     {
       "id": "AR43-012",
@@ -10407,7 +10877,8 @@
       },
       "answer": "Part A: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR43-012_stem.png"
     },
     {
       "id": "AR53-001",
@@ -10430,7 +10901,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential growth?",
+      "stem": "Which situation represents exponential growth? Choices: (A) Aidan adds $10 to jar each week, (B) Pine tree grows 1.5ft/year, (C) Ella earns $20/hr babysitting, (D) Computer science majors double every 5 years",
       "choices": {
         "A": "Aidan adds $10 to jar each week",
         "B": "Pine tree grows 1.5ft/year",
@@ -10506,7 +10977,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential growth?",
+      "stem": "Which situation represents exponential growth? Choices: (A) Backpack price reduced 20%, (B) Bacteria triples every hour, (C) Student saves $10 from each paycheck, (D) Tree grows 1.5ft each year",
       "choices": {
         "A": "Backpack price reduced 20%",
         "B": "Bacteria triples every hour",
@@ -10603,7 +11074,7 @@
       "topic": "Classifying Exponential Functions from Equations",
       "type": "select_all",
       "has_image": false,
-      "stem": "Which represent exponential decay?",
+      "stem": "Which of the following functions represent exponential decay? Select all that apply.",
       "choices": {
         "A": "y=0.7(1)^x",
         "B": "y=50(0.7)^x",
@@ -10623,7 +11094,7 @@
       "topic": "Classifying Exponential Functions",
       "type": "select_all",
       "has_image": false,
-      "stem": "Which represent exponential decay?",
+      "stem": "Which expressions or situations represent exponential decay? Select all that apply.",
       "choices": {
         "A": "f(x)=400(1/2)^x",
         "B": "Item's value drops 20%/year",
@@ -10716,7 +11187,8 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR54-001_stem.png"
     },
     {
       "id": "AR54-002",
@@ -10735,7 +11207,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR54-002_stem.png"
     },
     {
       "id": "AR54-003",
@@ -10754,7 +11227,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR54-003_stem.png"
     },
     {
       "id": "AR54-004",
@@ -10887,7 +11361,8 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR54-010_stem.png"
     },
     {
       "id": "AR54-011",
@@ -11090,7 +11565,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-002_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-002_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-002_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-002_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-002_D.png"
+      }
     },
     {
       "id": "AR56-003",
@@ -11130,7 +11612,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-004_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-004_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-004_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-004_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-004_D.png"
+      }
     },
     {
       "id": "AR56-005",
@@ -11191,7 +11680,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-007_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-007_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-007_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-007_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-007_D.png"
+      }
     },
     {
       "id": "AR56-008",
@@ -11232,7 +11728,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-009_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-009_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-009_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-009_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-009_D.png"
+      }
     },
     {
       "id": "AR56-010",
@@ -11245,7 +11748,8 @@
       "stem": "Graph of f(x) shown. True or False: decay function, y-intercept 5, range all reals, decreasing entire domain, negative entire domain, as x→–∞ f(x)→∞, as x→∞ f(x)→–∞.",
       "answer": "Decay: False. y-int 5: True. Range all reals: False. Decreasing: False. Negative: False. As x→–∞ →∞: False. As x→∞ →–∞: False",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-010_stem.png"
     },
     {
       "id": "AR56-011",
@@ -11264,7 +11768,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-011_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-011_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-011_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-011_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-011_D.png"
+      }
     },
     {
       "id": "AR56-012",
@@ -11303,7 +11814,14 @@
       },
       "answer": "Part A: C, Part B: A, D, F",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-013_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-013_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-013_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-013_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-013_D.png"
+      }
     },
     {
       "id": "AR56-014",
@@ -11348,7 +11866,14 @@
       },
       "answer": "Part A: C, Part B: A, B, C, E, F",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-015_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-015_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-015_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-015_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR56-015_D.png"
+      }
     },
     {
       "id": "AR91-001",
@@ -11472,6 +11997,12 @@
       "has_image": true,
       "stem": "Company A: $200 for 2hr, $275 for 5hr. Company B: $200 for 3hr, $350 for 6hr. Part A: Which system? Part B: Interpret intersection.",
       "choices": {
+        "part_a": {
+          "A": "Graph: Company A is y=25x+150 (less steep, higher intercept); Company B is y=50x+50 (steeper, lower intercept). Lines intersect near (4, 250).",
+          "B": "Graph: both companies start at y≈200; Company A above Company B throughout.",
+          "C": "Graph: Company A is y=50x+50 (steeper); Company B is y=25x+150. Companies labels swapped.",
+          "D": "Graph: Company A nearly flat at y≈200; Company B steep starting near origin."
+        },
         "part_b": {
           "A": "4 hours, both charge $250",
           "B": "4 hours, both charge $300",
@@ -11481,7 +12012,14 @@
       },
       "answer": "Part A: A (y=25x+150 and y=50x+50), Part B: A",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-007_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-007_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-007_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-007_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-007_D.png"
+      }
     },
     {
       "id": "AR91-008",
@@ -11499,7 +12037,14 @@
       },
       "answer": "Part A: D, Part B: 7.5 seconds",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-008_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-008_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-008_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-008_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-008_D.png"
+      }
     },
     {
       "id": "AR91-009",
@@ -11523,7 +12068,14 @@
       },
       "answer": "Part A: A, Part B: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-009_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-009_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-009_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-009_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-009_D.png"
+      }
     },
     {
       "id": "AR91-010",
@@ -11547,7 +12099,14 @@
       },
       "answer": "Part A: D, Part B: C",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-010_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-010_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-010_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-010_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-010_D.png"
+      }
     },
     {
       "id": "AR91-011",
@@ -11676,7 +12235,8 @@
       "stem": "Balloons $2, party hats $1.50, total $30, hats = 2× balloons (x=balloons, y=hats). Write system, graph, find intersection.",
       "answer": "System: 2x+1.5y=30 and y=2x. Intersection: (6,12) — 6 balloons and 12 party hats",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR91-017_stem.png"
     },
     {
       "id": "AR91-018",
@@ -11828,7 +12388,12 @@
       "stem": "Graph the solution set: y<–3 and x<5.",
       "answer": "Dashed horizontal line at y=–3, shade below. Dashed vertical line at x=5, shade left. Solution is intersection region.",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-003_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-003_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-003_stem.png"
+      }
     },
     {
       "id": "AR94-004",
@@ -11847,7 +12412,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-004_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-004_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-004_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-004_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-004_D.png"
+      }
     },
     {
       "id": "AR94-005",
@@ -11860,7 +12432,12 @@
       "stem": "Graph the solution set: y<–2x+5 and y<3x+2.",
       "answer": "Two dashed lines, shade below both — intersection region below both lines",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-005_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-005_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-005_stem.png"
+      }
     },
     {
       "id": "AR94-006",
@@ -11879,7 +12456,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_D.png"
+      }
     },
     {
       "id": "AR94-007",
@@ -11892,7 +12476,12 @@
       "stem": "Graph the solution set: –3x+2y≥–3 and x–1.5y<–4.5.",
       "answer": "Solid line for first inequality shade above; dashed line for second shade above — intersection region",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-007_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-007_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-007_stem.png"
+      }
     },
     {
       "id": "AR94-008",
@@ -11911,7 +12500,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-008_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-008_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-008_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-008_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-008_D.png"
+      }
     },
     {
       "id": "AR94-009",
@@ -11933,7 +12529,12 @@
       },
       "answer": "Part B: C, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-009_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-009_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-009_stem.png"
+      }
     },
     {
       "id": "AR94-010",
@@ -11952,7 +12553,14 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-010_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-010_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-010_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-010_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-010_D.png"
+      }
     },
     {
       "id": "AR94-011",
@@ -11971,7 +12579,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-011_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-011_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-011_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-011_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-011_D.png"
+      }
     },
     {
       "id": "AR94-012",
@@ -11994,7 +12609,12 @@
       },
       "answer": "Part B: A, C, E, F",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-012_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-012_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-012_stem.png"
+      }
     },
     {
       "id": "AR94-013",
@@ -12013,7 +12633,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-013_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-013_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-013_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-013_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-013_D.png"
+      }
     },
     {
       "id": "AR94-014",
@@ -12026,7 +12653,12 @@
       "stem": "3y+2x≤15 and y–x>1. Graph the system and state a point in the solution.",
       "answer": "Solid line for 3y+2x=15 shade below; dashed line for y–x=1 shade above. Sample point: (0,2)",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-014_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-014_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-014_stem.png"
+      }
     },
     {
       "id": "AR94-015",
@@ -12045,7 +12677,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-015_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-015_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-015_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-015_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-015_D.png"
+      }
     },
     {
       "id": "AR96-001",
@@ -12232,7 +12871,7 @@
       "benchmark": "MA.912.AR.9.6",
       "reporting_category": "Linear Relationships",
       "topic": "Writing and Solving Systems of Inequalities - Real World",
-      "type": "multiple_choice_multipart",
+      "type": "select_all",
       "has_image": false,
       "stem": "Tammy: 10x+5y>200. Keith: 12x+3y>180. Same lawns/yards. Keith met goal, Tammy did not. Which combos are possible?",
       "choices": {
@@ -12306,7 +12945,12 @@
       "stem": "Fruit salad $2/lb (x), potato salad $4/lb (y). Jane needs ≥6 lbs, max $20. Part A: Write system. Part B: Graph. Part C: List 2 viable combos.",
       "answer": "Part A: x+y≥6 and 2x+4y≤20. Part C: Sample: (5,2) and (6,1)",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR96-014_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR96-014_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR96-014_stem.png"
+      }
     },
     {
       "id": "AR96-015",
@@ -12334,7 +12978,12 @@
       },
       "answer": "Part A: 160a+85c+200≤1200 and a+c≤8. Part C: A. Part D: A, C, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR96-015_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR96-015_A.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR96-015_stem.png"
+      }
     },
     {
       "id": "F11-001",
@@ -12391,7 +13040,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-003_stem.png"
     },
     {
       "id": "F11-004",
@@ -12442,7 +13092,8 @@
       },
       "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-006_stem.png"
     },
     {
       "id": "F11-007",
@@ -12480,7 +13131,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-008_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-008_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-008_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-008_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-008_D.png"
+      }
     },
     {
       "id": "F11-009",
@@ -12518,7 +13176,14 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-010_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-010_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-010_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-010_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-010_D.png"
+      }
     },
     {
       "id": "F11-011",
@@ -12575,7 +13240,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-013_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-013_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-013_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-013_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-013_D.png"
+      }
     },
     {
       "id": "F11-014",
@@ -12632,7 +13304,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-016_stem.png"
     },
     {
       "id": "F11-017",
@@ -12689,7 +13362,8 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-019_stem.png"
     },
     {
       "id": "F11-020",
@@ -12727,7 +13401,14 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-021_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-021_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-021_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-021_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-021_D.png"
+      }
     },
     {
       "id": "F11-022",
@@ -12840,7 +13521,13 @@
       "stem": "Match each to function type: k(x) table (x=–3,–1,0,1 k=2.25,0.25,0,0.25), y–3=|x|–3, p(x) table (x=0,1,2,3 p=10,15,22.5,33.75), graph shown, f(x)=(3/2)^x.",
       "answer": "k(x) table=Quadratic; y–3=|x|–3=Absolute value; p(x) table=Exponential; graph=Square root; f(x)=(3/2)^x=Exponential",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-027_A.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-027_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-027_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F11-027_C.png"
+      }
     },
     {
       "id": "F12-001",
@@ -13184,7 +13871,8 @@
       },
       "answer": "A, B, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-001_stem.gif"
     },
     {
       "id": "F13-002",
@@ -13197,7 +13885,8 @@
       "stem": "Graph shows school transportation budget 2010–2023. What is average rate of change from 2010 to 2023? Round to nearest dollar.",
       "answer": "$4,846/year",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-002_stem.png"
     },
     {
       "id": "F13-003",
@@ -13243,7 +13932,8 @@
       },
       "answer": "A, B, D, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-005_stem.jpeg"
     },
     {
       "id": "F13-006",
@@ -13263,7 +13953,8 @@
       },
       "answer": "A, B, C, E",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-006_stem.png"
     },
     {
       "id": "F13-007",
@@ -13309,7 +14000,8 @@
       },
       "answer": "Part A: B, Part B: C",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-008_stem.jpeg"
     },
     {
       "id": "F13-009",
@@ -13425,7 +14117,8 @@
       },
       "answer": "A, B, C, D",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-014_stem.png"
     },
     {
       "id": "F13-015",
@@ -13464,7 +14157,14 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-001_A.jpeg",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-001_A.jpeg",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-001_B.jpeg",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-001_C.jpeg",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-001_D.jpeg"
+      }
     },
     {
       "id": "F21-002",
@@ -13517,7 +14217,8 @@
       },
       "answer": "B, C, F",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-004_stem.png"
     },
     {
       "id": "F21-005",
@@ -13557,7 +14258,15 @@
       },
       "answer": "B",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-006_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-006_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-006_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-006_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-006_D.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-006_stem.png"
+      }
     },
     {
       "id": "F21-007",
@@ -13621,7 +14330,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-010_stem.png"
     },
     {
       "id": "F21-011",
@@ -13642,7 +14352,8 @@
       },
       "answer": "C, D, E",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-011_stem.png"
     },
     {
       "id": "F21-012",
@@ -13726,7 +14437,15 @@
       },
       "answer": "C",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-015_stem.png",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-015_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-015_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-015_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-015_D.png",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-015_stem.png"
+      }
     },
     {
       "id": "F21-016",
@@ -13745,7 +14464,8 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-016_stem.png"
     },
     {
       "id": "F21-017",
@@ -13764,7 +14484,15 @@
       },
       "answer": "D",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-017_stem.jpeg",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-017_A.jpeg",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-017_B.jpeg",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-017_C.jpeg",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-017_D.jpeg",
+        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F21-017_stem.jpeg"
+      }
     },
     {
       "id": "F21-018",
@@ -15118,7 +15846,8 @@
       },
       "answer": "B",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR36-001_stem.png"
     },
     {
       "id": "AR36-002",
@@ -15131,7 +15860,8 @@
       "stem": "Quadratic function h models rocket height. What is the maximum value of the graph?",
       "answer": "225",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR36-002_stem.png"
     },
     {
       "id": "AR36-003",
@@ -15170,7 +15900,8 @@
       },
       "answer": "B, D",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR36-004_stem.png"
     },
     {
       "id": "AR36-005",
@@ -15268,7 +15999,8 @@
       },
       "answer": "A, B, C, D",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR38-001_stem.png"
     },
     {
       "id": "AR38-002",
@@ -15309,7 +16041,8 @@
       },
       "answer": "A, B, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR38-003_stem.png"
     },
     {
       "id": "AR38-004",
@@ -15377,7 +16110,8 @@
       },
       "answer": "A, B, D, E",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR38-006_stem.png"
     },
     {
       "id": "AR38-007",
@@ -15543,7 +16277,148 @@
       },
       "answer": "Part A: C, Part B: C, Part C: D, Part D: D",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR38-012_stem.png"
+    },
+    {
+      "id": "AR23-NEW-001",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Parallel Lines from Graph",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line parallel to f through P.",
+      "answer": "y = –1",
+      "level": 4,
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-001_stem.png"
+    },
+    {
+      "id": "AR23-NEW-002",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Parallel Lines from Graph",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line parallel to g through P.",
+      "answer": "y = 2x + 3",
+      "level": 4,
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-002_stem.png"
+    },
+    {
+      "id": "AR23-NEW-003",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Perpendicular Lines from Graph",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line perpendicular to f through Q.",
+      "answer": "x = 3",
+      "level": 4,
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-003_stem.png"
+    },
+    {
+      "id": "AR23-NEW-004",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Perpendicular Lines from Graph",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line perpendicular to g through Q.",
+      "answer": "y = –(1/2)x – (1/2)",
+      "level": 4,
+      "level_label": "Level 4 – Above Grade Level",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-004_stem.png"
+    },
+    {
+      "id": "AR23-NEW-005",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Writing Parallel Line Equations",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Line p is shown on the coordinate plane. Write the equation of the line parallel to line p and passes through (3, 2).",
+      "answer": "y = –(7/3)x + 9",
+      "level": 3,
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-005_stem.png"
+    },
+    {
+      "id": "AR23-NEW-006",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Writing Perpendicular Line Equations",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Line p is shown on the coordinate plane. Write the equation of the line perpendicular to line p and passes through (2, 1).",
+      "answer": "y = (3/7)x + 1/7",
+      "level": 3,
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-006_stem.png"
+    },
+    {
+      "id": "AR23-NEW-007",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Writing Parallel Line Equations",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Line h is shown on the coordinate plane. Write the equation of the line parallel to line h and passes through (1, 4).",
+      "answer": "y = (2/3)x + 10/3",
+      "level": 3,
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-007_stem.png"
+    },
+    {
+      "id": "AR23-NEW-008",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Writing Perpendicular Line Equations",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Line h is shown on the coordinate plane. Write the equation of the line perpendicular to line h and passes through (2, 1).",
+      "answer": "y = –(3/2)x + 4",
+      "level": 3,
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-008_stem.png"
+    },
+    {
+      "id": "AR23-NEW-009",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Writing Parallel Line Equations",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Line z is shown on the coordinate plane. Write the equation of the line parallel to line z and passes through (–1, –1).",
+      "answer": "y = 4x + 3",
+      "level": 3,
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-009_stem.png"
+    },
+    {
+      "id": "AR23-NEW-010",
+      "source": "Algebra_1_Linear_Relationships_AK_1",
+      "benchmark": "MA.912.AR.2.3",
+      "reporting_category": "Linear Relationships",
+      "topic": "Writing Perpendicular Line Equations",
+      "type": "gridded_response",
+      "has_image": true,
+      "stem": "Line z is shown on the coordinate plane. Write the equation of the line perpendicular to line z and passes through (1, 0).",
+      "answer": "y = –(1/4)x + 1/4",
+      "level": 3,
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-010_stem.png"
     }
   ]
 }
