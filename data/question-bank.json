@@ -5,13 +5,13 @@
       "Algebra_1_Expressions_Functions_and_Data_Analysis_Key_1",
       "Algebra_1_Linear_Relationships_AK_1"
     ],
-    "total_questions": 810,
+    "total_questions": 801,
     "generated": "2026-04-25",
     "level_counts": {
       "level_1": 43,
       "level_2": 12,
-      "level_3": 405,
-      "level_4": 251,
+      "level_3": 399,
+      "level_4": 248,
       "level_5": 99
     },
     "patch_version": "441-images-2026-04-25"
@@ -26,7 +26,7 @@
       "difficulty_pct": 37,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "In baseball, A = 9E/N. Which equation correctly solves for E?",
+      "stem": "In baseball, a pitcher's earned run average is used to measure how effective the pitcher is. The earned run average, A, is calculated using the formula shown, where E is the number of earned runs and N is the number of innings the pitcher pitched. A = 9E/N. Which equation correctly solves the formula for the variable E?",
       "choices": {
         "A": "E = A/(9N)",
         "B": "E = AN/9",
@@ -46,8 +46,8 @@
       "topic": "Graphing Linear Functions",
       "difficulty_pct": 49,
       "type": "multiple_choice",
-      "has_image": false,
-      "stem": "7x + 4y = 14. Which graph represents the function?",
+      "has_image": true,
+      "stem": "A function is shown. 7x + 4y = 14. Which graph represents the function?",
       "choices": {
         "A": "Line with x-intercept (2, 0) and y-intercept (0, 3.5), negative slope ≈ -1.75",
         "B": "Line with x-intercept (2, 0) and y-intercept (0, 3.5), positive slope ≈ 1.75",
@@ -57,7 +57,13 @@
       "answer": "A",
       "item_id": "10487",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-002_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-002_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-002_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-002_D.png"
+      }
     },
     {
       "id": "2024-003",
@@ -67,8 +73,8 @@
       "topic": "Graphing Linear Inequalities",
       "difficulty_pct": 42,
       "type": "multiple_choice",
-      "has_image": false,
-      "stem": "4x + 5y ≥ 10. Which graph represents the solution set?",
+      "has_image": true,
+      "stem": "An inequality is shown. 4x + 5y ≥ 10. Which graph represents the solution set of the inequality?",
       "choices": {
         "A": "Solid line through (2.5, 0) and (0, 2), shaded ABOVE/RIGHT",
         "B": "Dashed line through (2.5, 0) and (0, 2), shaded BELOW/LEFT",
@@ -78,7 +84,13 @@
       "answer": "C",
       "item_id": "10488",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-003_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-003_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-003_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-003_D.png"
+      }
     },
     {
       "id": "2024-004",
@@ -88,8 +100,8 @@
       "topic": "Compound Inequalities",
       "difficulty_pct": 51,
       "type": "multiple_choice",
-      "has_image": false,
-      "stem": "2x – 1 ≤ 3 or (1/2)x + 4 > 7. Which number line represents the solution?",
+      "has_image": true,
+      "stem": "A compound inequality is shown. 2x – 1 ≤ 3 or (1/2)x + 4 > 7. Which graph represents the solution set of the compound inequality?",
       "choices": {
         "A": "Number line with closed dot at 2 (shaded LEFT) AND open dot at 6 (shaded RIGHT) — two separate shaded regions",
         "B": "Number line with closed dot at 2 and open dot at 6, shaded BETWEEN",
@@ -99,7 +111,13 @@
       "answer": "A",
       "item_id": "10489",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-004_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-004_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-004_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-004_D.png"
+      }
     },
     {
       "id": "2024-005",
@@ -110,7 +128,7 @@
       "difficulty_pct": 38,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "–3x + 7 ≥ –x – 5. What is the solution set for x?",
+      "stem": "An inequality is shown. –3x + 7 ≥ –x – 5. What is the solution set for x?",
       "choices": {
         "A": "{x | x ≤ 6}",
         "B": "{x | x ≥ 6}",
@@ -152,7 +170,7 @@
       "difficulty_pct": 41,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "y = 2x + 2 and 2x + 5y = 19. What is the solution?",
+      "stem": "A system of equations is shown. y = 2x + 2 and 2x + 5y = 19. What is the solution to the system?",
       "choices": {
         "A": "(1/3, 2 1/4)",
         "B": "(1/8, 4 1/4)",
@@ -173,7 +191,7 @@
       "difficulty_pct": 45,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which expression is equivalent to ∛2?",
+      "stem": "Which expression is equivalent to √3?",
       "choices": {
         "A": "2^(1/3)",
         "B": "3^(1/2)",
@@ -194,7 +212,7 @@
       "difficulty_pct": 59,
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Scatter plot of U.S. national debt 2001–2016. Which statement correctly interprets it?",
+      "stem": "A scatter plot of the U.S. national debt from 2001 to 2016, including a linear equation and its residuals modeling the data, is shown. Which statement correctly interprets the scatter plot?",
       "choices": {
         "A": "Weak positive correlation",
         "B": "Weak negative correlation",
@@ -214,13 +232,19 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Quadratic Equations",
       "difficulty_pct": 34,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
-      "stem": "3x² – 21 = 222. What is one exact solution?",
-      "answer": "9 or –9",
+      "stem": "An equation is shown. 3x² – 21 = 222. What is one exact solution to the equation?",
+      "answer": "A",
       "item_id": "10495",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "9",
+        "B": "–9",
+        "C": "81",
+        "D": "27"
+      }
     },
     {
       "id": "2024-011",
@@ -231,7 +255,7 @@
       "difficulty_pct": 43,
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Five points plotted in first quadrant. Which equation could represent the function?",
+      "stem": "Five points from a function, f, are plotted in the first quadrant of the coordinate plane, as shown. Which equation could represent the function?",
       "choices": {
         "A": "f(x)=0.2(1–0.1)^x",
         "B": "f(x)=0.2(1–0.5)^x",
@@ -253,7 +277,7 @@
       "difficulty_pct": 52,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which is equivalent to (7k + 2)(5k – 9)?",
+      "stem": "Which expression is equivalent to (7k + 2)(5k – 9)?",
       "choices": {
         "A": "35k² – 18",
         "B": "–18k – 18",
@@ -274,7 +298,7 @@
       "difficulty_pct": 36,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "y + 1 = 2(x + 3). Which graph represents the function?",
+      "stem": "A function is shown. y + 1 = 2(x + 3). Which graph represents the function?",
       "choices": {
         "A": "Line passing through (-3, -1) and y-intercept (0, 5), slope +2",
         "B": "Line passing through (-3, 1) and y-intercept (0, 7), slope +2",
@@ -295,7 +319,7 @@
       "difficulty_pct": 53,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Garrett feeds dog 2 cups/day from a bag. What type of function models amount remaining?",
+      "stem": "Garrett buys a large bag of dog food. He feeds his dog 2 cups of dog food each day. Which statement describes the type of function that represents the amount of dog food in the bag after x days?",
       "choices": {
         "A": "positive linear",
         "B": "negative linear",
@@ -316,12 +340,12 @@
       "difficulty_pct": 34,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table could represent a quadratic function?",
+      "stem": "Which table could represent a quadratic function? A: x=0,1,2,3 → f(x)=3,9,27,81. B: x=0,1,2,3 → g(x)=–2,–4,–6,–8. C: x=–1,0,1,2 → h(x)=6,5,6,9. D: x=–3,–2,–1,0 → j(x)=7,7,7,7.",
       "choices": {
-        "A": "x=0,1,2,3 → f(x)=3,9,27,81",
-        "B": "x=0,1,2,3 → g(x)=–2,–4,–6,–8",
-        "C": "x=–1,0,1,2 → h(x)=6,5,6,9",
-        "D": "x=–3,–2,–1,0 → j(x)=7,7,7,7"
+        "A": "Table A",
+        "B": "Table B",
+        "C": "Table C",
+        "D": "Table D"
       },
       "answer": "C",
       "item_id": "10500",
@@ -337,7 +361,7 @@
       "difficulty_pct": 49,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which function has the greatest slope: y=(5/3)x+1, y=–x+8, y=(3/4)x–(5/4), or y=(3/2)x+3?",
+      "stem": "Which function has the greatest slope? A: y=(5/3)x+1. B: y=–x+8. C: y=(3/4)x–(5/4). D: y=(3/2)x+3.",
       "choices": {
         "A": "y=(5/3)x+1",
         "B": "y=–x+8",
@@ -357,8 +381,8 @@
       "topic": "Systems of Inequalities",
       "difficulty_pct": 59,
       "type": "multiple_choice",
-      "has_image": false,
-      "stem": "x < 3 and y ≥ –3. Which graph represents the solution set?",
+      "has_image": true,
+      "stem": "A system of inequalities is shown. x < 3 and y ≥ –3. Which graph represents the solution set?",
       "choices": {
         "A": "Dashed vertical line at x=3 shaded LEFT, solid horizontal line at y=-3 shaded ABOVE, intersection region is upper-left quadrant bounded",
         "B": "Solid vertical line at x=3 shaded LEFT, dashed horizontal line at y=-3 shaded ABOVE",
@@ -368,7 +392,13 @@
       "answer": "A",
       "item_id": "10502",
       "level": 2,
-      "level_label": "Level 2 – Approaching Grade Level"
+      "level_label": "Level 2 – Approaching Grade Level",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-017_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-017_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-017_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-017_D.png"
+      }
     },
     {
       "id": "2024-018",
@@ -379,7 +409,7 @@
       "difficulty_pct": 31,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Ball dropped from 20ft: y = –16t² + 20. What is the range in context?",
+      "stem": "A ball was dropped from a balcony at a height of 20 feet above level ground. The height, in feet, of the ball after t seconds is modeled by the function shown. y = –16t² + 20. What is the range of the function in terms of the situation described?",
       "choices": {
         "A": "0 ≤ t",
         "B": "0 ≤ y",
@@ -442,7 +472,7 @@
       "difficulty_pct": 46,
       "type": "select_fill",
       "has_image": false,
-      "stem": "Slope –0.2 through (11,5). y – [?] = [?](x – [?])",
+      "stem": "A line with a slope of –0.2 passes through the point (11, 5). Select numbers to complete the equation of the line in point-slope form. y – [?] = [?](x – [?]).",
       "choices": {
         "A": "–0.2",
         "B": "0",
@@ -463,7 +493,7 @@
       "difficulty_pct": 45,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "(4x² – 18x + 6) / (2x), x≠0. Which is equivalent?",
+      "stem": "An expression is given, where x ≠ 0. (4x² – 18x + 6)/(2x). Which expression is equivalent?",
       "choices": {
         "A": "2x – 9 + 3/x",
         "B": "2x² – 16x + 4",
@@ -484,7 +514,7 @@
       "difficulty_pct": 51,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "y = (x – 3)² + 1. Which type of function?",
+      "stem": "An equation is given. y = (x – 3)² + 1. Which type of function does the equation represent?",
       "choices": {
         "A": "cubic",
         "B": "quadratic",
@@ -505,7 +535,7 @@
       "difficulty_pct": 48,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "h(x)=(1/5)x². How can h(15) be evaluated?",
+      "stem": "A function is given. h(x) = (1/5)x². How can h(15) be evaluated?",
       "choices": {
         "A": "Multiply 1/5 by square of 15",
         "B": "Multiply square of 1/5 by square of 15",
@@ -526,7 +556,7 @@
       "difficulty_pct": 52,
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Segmented bar: grade level vs travel method. Which terms describe data?",
+      "stem": "Maribel asked a random group of upper-class students at her school which grade they are in and how they traveled to school in the morning. The data are shown in the segmented bar chart. Which pair of terms describes the data?",
       "choices": {
         "A": "bivariate and numerical",
         "B": "bivariate and categorical",
@@ -548,7 +578,7 @@
       "difficulty_pct": 60,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "42r³s² – 35r²s³. Which is equivalent?",
+      "stem": "An expression is given. 42r³s² – 35r²s³. Which expression is equivalent?",
       "choices": {
         "A": "7rs(6s–5r)",
         "B": "7rs(6rs–5rs)",
@@ -569,7 +599,7 @@
       "difficulty_pct": 36,
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Graph of a line. Which equation represents it?",
+      "stem": "The graph of a line is shown. Which equation represents the line?",
       "choices": {
         "A": "y=(3/5)x–13/5",
         "B": "y=(3/5)x+13/3",
@@ -589,14 +619,20 @@
       "reporting_category": "Linear Relationships",
       "topic": "Line of Best Fit",
       "difficulty_pct": 27,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
-      "stem": "y=2.33x+92.05, x=years since 1920. Projected U.S. population (millions) for 2040?",
-      "answer": "371.65",
+      "stem": "Darren collects data on the U.S. population from 1920 to 2020. He graphs the population and the number of years since 1920 in the scatter plot shown. He determines the equation for the line of best fit to be y = 2.33x + 92.05 where y represents the population, in millions of people, and x represents the number of years since 1920. Based on Darren's model, what is the projected U.S. population, in millions of people, for 2040?",
+      "answer": "A",
       "item_id": "10513",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-028_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-028_stem.png",
+      "choices": {
+        "A": "371.65",
+        "B": "325.65",
+        "C": "279.60",
+        "D": "371.05"
+      }
     },
     {
       "id": "2024-029",
@@ -607,7 +643,7 @@
       "difficulty_pct": 62,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Bashir: $3410 in Account A (6%) and B (2%), wants ≥$196 interest. Which system?",
+      "stem": "Bashir has $3410 to invest in two different investment accounts, Account A and Account B. The accounts earn simple interest for one year. • Account A earns 6% interest. • Account B earns 2% interest. • He wants to earn at least $196 in interest. Bashir puts x dollars in Account A and y dollars in Account B. Which system of constraints represents the situation?",
       "choices": {
         "A": "x+y=3410 and 0.02x+0.06y≥196",
         "B": "x+y=3410 and 0.06x+0.02y≥196",
@@ -628,7 +664,7 @@
       "difficulty_pct": 76,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Bicycle rental $2/hr. Which function models price vs time?",
+      "stem": "A rental company charges $2 per hour to rent a bicycle. A table showing the prices of renting one bicycle for different amounts of time is shown. Time (hours): 1, 2, 3. Price (dollars): 2, 4, 6. Which type of function models the price for renting one bicycle as a function of time?",
       "choices": {
         "A": "increasing linear",
         "B": "decreasing linear",
@@ -649,7 +685,7 @@
       "difficulty_pct": 39,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "P=(200y+23.25)–(10.53y). Which represents cost of making y paintings?",
+      "stem": "An artist earns a profit from selling y paintings. His profit, P, in dollars, is modeled with the given equation. P = (200y + 23.25) – (10.53y). His profit is the difference in the amount of money he earns from selling his paintings and the cost of making the paintings. Which expression represents the cost of making y paintings?",
       "choices": {
         "A": "23.25",
         "B": "10.53y",
@@ -668,13 +704,19 @@
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Literal Equations",
       "difficulty_pct": 36,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
-      "stem": "D = V × R. Express V in terms of D and R.",
-      "answer": "D/R",
+      "stem": "Cardiac output, D, is the amount of blood that the heart pumps per minute. The value of D can be found using the formula shown, where V is the amount of blood that the heart pumps with each heartbeat and R is the number of heartbeats per minute. D = V • R. Complete the equation to represent V in terms of D and R. V = ?",
+      "answer": "A",
       "item_id": "10517",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "D/R",
+        "B": "R/D",
+        "C": "D – R",
+        "D": "D·R"
+      }
     },
     {
       "id": "2024-033",
@@ -683,13 +725,19 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Absolute Value Equations",
       "difficulty_pct": 27,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
-      "stem": "|x – 32| = 11. The other diver is at a depth of either ___ or ___ meters.",
-      "answer": "21 and 43",
+      "stem": "Two divers are underwater. One diver is at a depth of 32 meters, while the other diver is at a different depth. The given equation can be used to find the possible depths, x, in meters, of the other diver. |x – 32| = 11. Enter values to complete the sentence about the other diver's depth, in meters. The other diver is at a depth of either ___ or ___ meters.",
+      "answer": "A",
       "item_id": "10518",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "21 and 43",
+        "B": "21 only",
+        "C": "43 only",
+        "D": "11 and 32"
+      }
     },
     {
       "id": "2024-034",
@@ -700,7 +748,7 @@
       "difficulty_pct": 31,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "q(x)=2x–1. r(x): x=0,1,2,3 → r=–2,4,10,16. Which statement compares them?",
+      "stem": "The equation of a linear function, q, and a table of values of a linear function, r, are shown. q(x) = 2x – 1. Table for r: x=0,1,2,3 → r(x)=–2,4,10,16. Which statement correctly compares the slopes and y-intercepts of the two functions?",
       "choices": {
         "A": "r: lesser y-int, slope 2x q",
         "B": "r: lesser y-int, slope 3x q",
@@ -720,8 +768,8 @@
       "topic": "Systems of Inequalities",
       "difficulty_pct": 41,
       "type": "multiple_choice",
-      "has_image": false,
-      "stem": "x ≥ 5 and y < –3. Which graph represents the solution set?",
+      "has_image": true,
+      "stem": "A system of inequalities is given. x ≥ 5 and y < –3. Which graph represents the solution set?",
       "choices": {
         "A": "Solid vertical line at x=5 shaded RIGHT, dashed horizontal line at y=-3 shaded BELOW, intersection in lower-right quadrant",
         "B": "Dashed vertical line at x=5 shaded RIGHT, solid horizontal line at y=-3 shaded BELOW",
@@ -731,7 +779,13 @@
       "answer": "A",
       "item_id": "10520",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-035_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-035_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-035_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-035_D.png"
+      }
     },
     {
       "id": "2024-036",
@@ -740,13 +794,19 @@
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Quadratic Equations",
       "difficulty_pct": 19,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
-      "stem": "x² – 15x = –14. What are the two solutions?",
-      "answer": "1 and 14",
+      "stem": "An equation is shown. x² – 15x = –14. What are the two solutions to the equation?",
+      "answer": "A",
       "item_id": "10521",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "choices": {
+        "A": "1 and 14",
+        "B": "–1 and –14",
+        "C": "1 and –14",
+        "D": "2 and 7"
+      }
     },
     {
       "id": "2024-037",
@@ -757,7 +817,7 @@
       "difficulty_pct": 12,
       "type": "select_fill",
       "has_image": false,
-      "stem": "f(x)=x²+12x+20. As x→–∞, f(x)→[?]. As x→∞, f(x)→[?].",
+      "stem": "A function, f, is given. f(x) = x² + 12x + 20. Select terms to describe the end behavior of the function. As x approaches –∞, f(x) approaches ___. As x approaches ∞, f(x) approaches ___.",
       "choices": {
         "A": "–∞",
         "B": "∞",
@@ -775,13 +835,19 @@
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
       "difficulty_pct": 16,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
-      "stem": "∛18 × ∛(6^(3/5)) = x^(3/15). What is x?",
-      "answer": "4",
+      "stem": "The expression ∛18 • 5∛6 is equivalent to 15∛x. What is the value of x?",
+      "answer": "A",
       "item_id": "10523",
       "level": 5,
-      "level_label": "Level 5 – Mastery"
+      "level_label": "Level 5 – Mastery",
+      "choices": {
+        "A": "4",
+        "B": "108",
+        "C": "24",
+        "D": "12"
+      }
     },
     {
       "id": "2024-039",
@@ -792,7 +858,7 @@
       "difficulty_pct": 68,
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Honey Mustard: J=26,S=22. Sweet & Sour: J=11,S=12. How many more chose honey mustard?",
+      "stem": "Margo surveys 150 high school juniors and seniors about their favorite types of dipping sauce. She records the results in the table shown. Favorite Dipping Sauce — Juniors: Barbeque 19, Honey Mustard 26, Ranch 23, Sweet and Sour 11. Seniors: Barbeque 7, Honey Mustard 22, Ranch 30, Sweet and Sour 12. How many more high school juniors and seniors chose honey mustard sauce than sweet and sour sauce?",
       "answer": "25",
       "item_id": "10524",
       "level": 2,
@@ -807,7 +873,7 @@
       "difficulty_pct": 40,
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "f(x) graph and g(x) table: x=–2→0.25, x=0→1, x=2→4. Which statement compares them?",
+      "stem": "The graph of y = f(x) and a table of values for an exponential function y = g(x) are shown. Table for g: x=–2,–1,0,1,2 → g(x)=0.25, 0.5, 1, 2, 4. Which statement correctly compares the graphs of the functions?",
       "choices": {
         "A": "As x increases, g(x) eventually > f(x)",
         "B": "As x increases, f(x) eventually > g(x)",
@@ -828,8 +894,8 @@
       "topic": "Graphing Linear Inequalities - Real World",
       "difficulty_pct": 32,
       "type": "multiple_choice",
-      "has_image": false,
-      "stem": "40 ≥ 6x + 2y (hot wings x, soda y). Which graph shows all solutions?",
+      "has_image": true,
+      "stem": "Sanjay buys x boxes of hot wings and y bottles of soda for a party. The numbers of boxes of hot wings and bottles of soda he can buy with $40 can be represented with the inequality shown. 40 ≥ 6x + 2y. Which graph represents all possible solutions for x and y?",
       "choices": {
         "A": "Solid line through (20/3, 0) ≈ (6.67, 0) and (0, 20), shaded BELOW/LEFT",
         "B": "Dashed line through (6.67, 0) and (0, 20), shaded BELOW/LEFT",
@@ -839,7 +905,13 @@
       "answer": "A",
       "item_id": "10526",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "image_urls": {
+        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-041_A.png",
+        "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-041_B.png",
+        "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-041_C.png",
+        "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/2024-041_D.png"
+      }
     },
     {
       "id": "2024-042",
@@ -848,13 +920,19 @@
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities",
       "difficulty_pct": 25,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
-      "stem": "Blackberries $8/lb, raspberries $9/lb, max $40. Write the inequality.",
-      "answer": "8b + 9r ≤ 40",
+      "stem": "Janelle buys blackberries and raspberries to make pies. • Blackberries cost $8 per pound. • Raspberries cost $9 per pound. • Janelle can spend a maximum of $40. Create an inequality to represent how many pounds of blackberries, b, and raspberries, r, Janelle can buy.",
+      "answer": "A",
       "item_id": "10527",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "8b + 9r ≤ 40",
+        "B": "8b + 9r ≥ 40",
+        "C": "9b + 8r ≤ 40",
+        "D": "8b + 9r = 40"
+      }
     },
     {
       "id": "2024-043",
@@ -865,7 +943,7 @@
       "difficulty_pct": 14,
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Tools worth $380 after yr 1, $361 after yr 2. Which equation represents V?",
+      "stem": "Cynthia buys some tools. She creates exponential function V to predict the value of her tools after t years. She predicts her tools will have a value of $380 after 1 year and a value of $361 after 2 years. Which equation represents function V?",
       "choices": {
         "A": "V(t)=400(1–0.05)^t",
         "B": "V(t)=399(1–0.19)^t",
@@ -886,7 +964,7 @@
       "difficulty_pct": 42,
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Graph of quadratic shown. Which equation represents it?",
+      "stem": "The graph of a quadratic function is shown. Which equation represents the function?",
       "choices": {
         "A": "y=–2(x+3)²+4",
         "B": "y=–(x–3)²+4",
@@ -908,7 +986,7 @@
       "difficulty_pct": 15,
       "type": "select_all",
       "has_image": false,
-      "stem": "Select all values equivalent to ∛(8/24).",
+      "stem": "Select all the values that are equivalent to √24 / √8.",
       "choices": {
         "A": "3",
         "B": "1/√3",
@@ -1312,6 +1390,9 @@
       "stem": "Box plot of jogging times. Part A: Which terms? Part B: True statements?",
       "choices": {
         "part_a": {
+          "A": "Bivariate numerical",
+          "B": "Bivariate categorical",
+          "C": "Univariate categorical",
           "D": "Univariate numerical"
         },
         "part_b": {
@@ -3640,7 +3721,7 @@
       "topic": "Domain and Range of Quadratic Functions",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Stone thrown from bridge 30ft above river: y=–16t²+30. What is the range in context?",
+      "stem": "A stone is thrown from a bridge at a height of 30 feet above a river. The height, in feet, of the stone after (t) seconds is modeled by the function: y = –16t² + 30. What is the range of the function in terms of the situation described?",
       "choices": {
         "A": "0≤t",
         "B": "0≤y",
@@ -3697,7 +3778,7 @@
       "topic": "Operations with Radicals",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "⁴√32 · ⁴√2 is equivalent to ⁴√x. What is x?",
+      "stem": "The expression ∜32 · ∜2 is equivalent to ∜x. What is the value of x?",
       "answer": "64",
       "level": 1,
       "level_label": "Level 1 – Building Foundations"
@@ -3710,7 +3791,7 @@
       "topic": "Point-Slope Form",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Slope –0.5 through (8,6). Write equation in point-slope form.",
+      "stem": "A line with a slope of –0.5 passes through the point (8, 6). Write the equation of the line in point-slope form.",
       "choices": {
         "A": "y–6=–0.5(x–8)",
         "B": "y–8=–0.5(x–6)",
@@ -3729,7 +3810,7 @@
       "topic": "Dividing Polynomials by Monomials",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "(6x³–24x²+18x)/(3x). Which is equivalent?",
+      "stem": "Given the expression (6x³ – 24x² + 18x)/(3x), which of the following is equivalent?",
       "choices": {
         "A": "2x²–8x+6",
         "B": "2x²–8x+3x",
@@ -3748,7 +3829,7 @@
       "topic": "Identifying Function Types - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Parking $3/hr: 1hr=$3,2hr=$6,3hr=$9. Which function models price vs time?",
+      "stem": "A parking garage charges $3 per hour to park a car. A table showing the prices of parking a car for different amounts of time is shown. Time (hours): 1, 2, 3. Price (dollars): 3, 6, 9. Which type of function models the price for parking one car as a function of time?",
       "choices": {
         "A": "increasing linear",
         "B": "decreasing linear",
@@ -3767,7 +3848,7 @@
       "topic": "Comparing Linear Functions",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which function has the greatest slope: y=(2/3)x+5, y=–2x+7, y=(5/2)x–1, or y=(3/5)x–4?",
+      "stem": "Which function has the greatest slope? A: y=(2/3)x+5. B: y=–2x+7. C: y=(5/2)x–1. D: y=(3/5)x–4.",
       "choices": {
         "A": "y=(2/3)x+5",
         "B": "y=–2x+7",
@@ -3786,7 +3867,7 @@
       "topic": "Absolute Value Equations",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "|y–200|=45. Other hiker is at elevation of either ___ or ___ meters.",
+      "stem": "Two hikers are exploring a mountain. One hiker is at an elevation of 200 meters, while the other hiker is at a different elevation. The given equation can be used to find the possible elevations, y, in meters, of the other hiker. |y – 200| = 45. Enter values to complete the sentence about the other hiker's elevation, in meters. The other hiker is at an elevation of either ___ or ___.",
       "answer": "155 and 245",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)"
@@ -3799,7 +3880,7 @@
       "topic": "Writing Exponential Functions - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Car worth $20,000 after yr 1, $18,000 after yr 2. Which equation represents V?",
+      "stem": "John purchases a new car. He creates an exponential function V to predict the value of his car after t years. He predicts his car will have a value of $20,000 after 1 year and a value of $18,000 after 2 years. Which equation represents function V?",
       "choices": {
         "A": "V(t)=21000(1–0.05)^t",
         "B": "V(t)=20000(1–0.10)^t",
@@ -3818,7 +3899,7 @@
       "topic": "Systems of Inequalities - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "$4000: Account A (5%), Account B (3%), wants ≥$150. Which system?",
+      "stem": "Emily has $4000 to invest in two different savings accounts, Account A and Account B. The accounts earn simple interest for one year. • Account A earns 5% interest. • Account B earns 3% interest. • She wants to earn at least $150 in interest. Emily puts x dollars in Account A and y dollars in Account B. Which system of constraints represents the situation?",
       "choices": {
         "A": "x+y=4000 and 0.03x+0.05y≥150",
         "B": "0.05x+0.03y=4000 and x+y≥150",
@@ -3837,7 +3918,7 @@
       "topic": "End Behavior of Quadratic Functions",
       "type": "select_fill",
       "has_image": false,
-      "stem": "g(x)=–2x²+3x–5. As x→–∞, g(x)→[?]. As x→∞, g(x)→[?].",
+      "stem": "A function, g, is given. g(x) = –2x² + 3x – 5. Select terms to describe the end behavior of the function. As x approaches –∞, g(x) approaches ___. As x approaches ∞, g(x) approaches ___.",
       "choices": {
         "A": "–∞",
         "B": "∞",
@@ -3855,7 +3936,7 @@
       "topic": "Solving Quadratic Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "x²–7x=–12. Solve.",
+      "stem": "Solve the quadratic equation: x² – 7x = –12.",
       "choices": {
         "A": "x=3, x=4",
         "B": "x=4, x=–3",
@@ -3874,7 +3955,7 @@
       "topic": "Line of Best Fit",
       "type": "gridded_response",
       "has_image": true,
-      "stem": "y=1.5x+2.75 (tree height, x=years since 2000). Projected height in 2030?",
+      "stem": "Emily collects data on the growth of a tree from 2000 to 2020. She graphs the height of the tree and the number of years since 2000 in the scatter plot shown. She determines the equation for the line of best fit to be y = 1.5x + 2.75 where y represents the height of the tree, in feet, and x represents the number of years since 2000. Based on Emily's model, what is the projected height of the tree, in feet, for 2030?",
       "answer": "47.75",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
@@ -3888,7 +3969,7 @@
       "topic": "Writing Linear Inequalities",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Cupcakes $3, cookies $2, max $30. Write inequality for c cupcakes and k cookies.",
+      "stem": "David is planning a party and wants to buy cupcakes and cookies. • Cupcakes cost $3 each. • Cookies cost $2 each. • David can spend a maximum of $30. Create an inequality to represent how many cupcakes, c, and cookies, k, David can buy.",
       "answer": "3c + 2k ≤ 30",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)"
@@ -3901,7 +3982,7 @@
       "topic": "Writing Linear Equations from Graphs",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Graph of a line shown. Which equation represents it?",
+      "stem": "The graph of a line is shown. Which equation represents the line?",
       "choices": {
         "A": "y=(4/5)x–11/5",
         "B": "y=(5/4)x+11/5",
@@ -3921,7 +4002,7 @@
       "topic": "Factoring - GCF",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "54m⁴n²–36m²n⁴. Which is equivalent?",
+      "stem": "An expression is given. 54m⁴n² – 36m²n⁴. Which expression is equivalent?",
       "choices": {
         "A": "9m²n²(6m²n–4n²)",
         "B": "9m²n²(6m²–4n²)",
@@ -3940,7 +4021,7 @@
       "topic": "Comparing Linear and Nonlinear Functions",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "h(x) graph and k(x): x=–2→0.5,0→2,2→8. Which statement compares them?",
+      "stem": "The graph of y = h(x) and a table of values for an exponential function y = k(x) are shown. Table for k: x=–2,–1,0,1,2 → k(x)=0.5, 1, 2, 4, 8. Which statement correctly compares the graphs of the functions?",
       "choices": {
         "A": "As x increases, h(x) eventually > k(x)",
         "B": "As x increases, k(x) eventually > h(x)",
@@ -3960,7 +4041,7 @@
       "topic": "Classifying Functions",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "y=3x²+6x–2. Which function type?",
+      "stem": "Given the equation: y = 3x² + 6x – 2. Which function type does this equation represent?",
       "choices": {
         "A": "Cubic",
         "B": "Exponential",
@@ -3979,7 +4060,7 @@
       "topic": "Operations with Radicals",
       "type": "select_all",
       "has_image": false,
-      "stem": "Select all values equivalent to √50/√2.",
+      "stem": "Select all the values that are equivalent to √50/√2.",
       "choices": {
         "A": "√25",
         "B": "1/√2",
@@ -3999,7 +4080,7 @@
       "topic": "Interpreting Expressions",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "P=(15z+8.75)–(3.5z). Which represents cost of making z cakes?",
+      "stem": "A baker earns a profit from selling z cakes. His profit, P, in dollars, is modeled with the given equation. P = (15z + 8.75) – (3.5z). His profit is the difference in the amount of money he earns from selling his cakes and the cost of making the cakes. Which expression represents the cost of making z cakes?",
       "choices": {
         "A": "8.75",
         "B": "3.5z",
@@ -4018,7 +4099,7 @@
       "topic": "Compound Interest",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "$1,000 at 5% compounded annually for 3 years. Value?",
+      "stem": "Anna invested $1,000 in a savings account that pays an annual interest rate of 5%, compounded annually. How much will her investment be worth after 3 years?",
       "choices": {
         "A": "$1,300.00",
         "B": "$1,150.00",
@@ -4037,7 +4118,7 @@
       "topic": "Data Analysis - Univariate vs Bivariate",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Segmented bar: free time preference by grade. Which terms describe the data?",
+      "stem": "A teacher asked a random group of middle school students how they prefer to spend their free time and which grade they are in. The data are shown in the segmented bar chart. Which pair of terms describes the data?",
       "choices": {
         "A": "bivariate and numerical",
         "B": "bivariate and categorical",
@@ -4057,7 +4138,7 @@
       "topic": "Writing and Solving Linear Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Samantha: $150 saved, $30/week, needs $450. How many weeks?",
+      "stem": "Samantha is saving money to buy a new bicycle that costs $450. She already has $150 and plans to save an additional $30 per week from her allowance. How many weeks will it take her to save enough money to buy the bicycle?",
       "choices": {
         "A": "8",
         "B": "10",
@@ -4076,7 +4157,7 @@
       "topic": "Key Features of Quadratic Functions - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "P(x)=–2x²+12x+20 (profit in thousands). What does vertex mean?",
+      "stem": "A company's profit P(x), in thousands of dollars, depending on the number of units sold x, can be modeled by the quadratic function: P(x) = –2x² + 12x + 20. Determine the vertex of the function and interpret its meaning in the context of the problem.",
       "choices": {
         "A": "(3,20) max profit $20,000 at 3 units",
         "B": "(3,20) min profit $20,000 at 3 units",
@@ -4095,7 +4176,7 @@
       "topic": "Two-Way Frequency Tables",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Bananas: F=18,S=25. Oranges: F=14,S=21. How many more chose bananas than oranges?",
+      "stem": "Alex surveyed 160 high school freshmen and sophomores about their favorite types of fruit. He records the results in the table shown. Freshmen: Apples 24, Bananas 18, Grapes 22, Oranges 14. Sophomores: Apples 20, Bananas 25, Grapes 16, Oranges 21. How many more high school freshmen and sophomores chose bananas than oranges?",
       "answer": "8",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)"
@@ -4108,7 +4189,7 @@
       "topic": "Operations with Radicals",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "√72 ÷ √2 = ?",
+      "stem": "Simplify the following expression: √72 ÷ √2.",
       "choices": {
         "A": "36",
         "B": "6√2",
@@ -4127,7 +4208,7 @@
       "topic": "Compound Inequalities",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "–1 ≤ 2x–3 < 5. Which graph represents the solution?",
+      "stem": "Solve the compound inequality and graph the solution set: –1 ≤ 2x – 3 < 5.",
       "choices": {
         "A": "Graph A",
         "B": "Graph B",
@@ -4152,7 +4233,7 @@
       "topic": "Writing Quadratic Functions from Graphs",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Graph of quadratic shown. Which equation?",
+      "stem": "The graph of a quadratic function is shown. Which equation represents the function?",
       "choices": {
         "A": "y=–4(x–2)²+3",
         "B": "y=–(1/4)(x–2)²+3",
@@ -4172,7 +4253,7 @@
       "topic": "Graphing Linear Inequalities - Real World",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "50≥5x+3y (markers x, notebooks y). Which graph shows all solutions?",
+      "stem": "Lisa buys x packs of markers and y notebooks for her art class. The numbers of packs of markers and notebooks she can buy with $50 can be represented with the inequality shown. 50 ≥ 5x + 3y. Which graph represents all possible solutions for x and y?",
       "choices": {
         "A": "Graph A",
         "B": "Graph B",
@@ -4198,7 +4279,7 @@
       "topic": "Key Features of Quadratic Functions - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "h(t)=–16t²+32t+48. Which is true?",
+      "stem": "Given the quadratic equation: h(t) = –16t² + 32t + 48. This equation models the height h (in feet) of an object at time t (in seconds) after it is launched. Which of the following statements is true about the function represented by this equation?",
       "choices": {
         "A": "Max height 48 feet",
         "B": "Max height at t=1 sec",
@@ -4217,7 +4298,7 @@
       "topic": "Parallel Lines",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "y=(2/3)x+4. Parallel line through (3,5)?",
+      "stem": "Consider the line given by the equation y = (2/3)x + 4. Write the equation of a line that is parallel to the given line and goes through the point (3, 5).",
       "choices": {
         "A": "y=–(2/3)x+3",
         "B": "y=–(3/2)x+1",
@@ -4236,7 +4317,7 @@
       "topic": "Evaluating Functions - Real World",
       "type": "select_all",
       "has_image": false,
-      "stem": "h(t)=–16t²+32t+10. Which are true?",
+      "stem": "The height h in feet of a projectile launched upward from a platform is modeled by the function h(t) = –16t² + 32t + 10, where t is the time in seconds after launch. Based on the function, which of the following statements are true?",
       "choices": {
         "A": "h(1)=26 — height after 1 sec",
         "B": "h(2)=10 — height after 2 sec",
@@ -4256,7 +4337,7 @@
       "topic": "Systems of Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "y=2x+3 and 3x+2y=18. Solution?",
+      "stem": "A system of equations is shown. y = 2x + 3 and 3x + 2y = 18. What is the solution to the system?",
       "choices": {
         "A": "(2 1/2, 6 3/7)",
         "B": "(1 5/7, 6 3/7)",
@@ -4275,7 +4356,7 @@
       "topic": "Scatter Plots and Correlation",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Scatter plot of U.S. electric car sales 2010–2025. Which correctly interprets correlation?",
+      "stem": "A scatter plot of the number of electric cars sold in the U.S. from 2010 to 2025, including a linear equation and its residuals modeling the data, is shown below. Which statement correctly interprets the scatter plot?",
       "choices": {
         "A": "Weak positive",
         "B": "Weak negative",
@@ -4295,7 +4376,7 @@
       "topic": "Systems of Inequalities",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "x>4 and y≤4. Which graph represents the solution set?",
+      "stem": "A system of inequalities is shown: x > 4 and y ≤ 4. Which graph represents the solution set?",
       "choices": {
         "A": "Graph A",
         "B": "Graph B",
@@ -4321,7 +4402,7 @@
       "topic": "Graphing Linear Functions",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "2x–3y=15. Which graph represents the function?",
+      "stem": "A function is shown. 2x – 3y = 15. Which graph represents the function?",
       "choices": {
         "A": "Graph A",
         "B": "Graph B",
@@ -4347,7 +4428,7 @@
       "topic": "Writing Exponential Functions from Graphs",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Five points plotted in first quadrant. Which equation represents g(x)?",
+      "stem": "Five points from a function, g, are plotted in the first quadrant of the coordinate plane, as shown below. Which equation represents g?",
       "choices": {
         "A": "g(x)=0.3(1–0.15)^x",
         "B": "g(x)=0.3(1–0.4)^x",
@@ -4367,7 +4448,7 @@
       "topic": "Average Rate of Change",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "p(t)=–5t²+40t+100. Avg rate of change t=2 to t=6?",
+      "stem": "The function p(t) = –5t² + 40t + 100 represents the population of a small town (in hundreds) t years after a certain year. Calculate and interpret the average rate of change in the town's population from t = 2 to t = 6.",
       "choices": {
         "A": "–5 — decreases 5 hundred/yr",
         "B": "40 — increases 40 hundred/yr",
@@ -4386,7 +4467,7 @@
       "topic": "Graphing Linear Inequalities",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "5x–6y>12. Which graph represents the solution set?",
+      "stem": "An inequality is shown. 5x – 6y > 12. Which graph represents the solution set of the inequality?",
       "choices": {
         "A": "Graph A",
         "B": "Graph B",
@@ -4412,7 +4493,7 @@
       "topic": "Key Features of Linear Functions - Real World",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "C(d)=50+0.25d, budget $150. Part A: Max miles? Part B: Domain/range?",
+      "stem": "John is planning a road trip and uses the function C(d) = 50 + 0.25d, where C(d) represents the total cost of renting a car for d miles driven. John has a budget of $150 for the car rental. Part A: Graph the function and determine the maximum number of miles d that John can drive without exceeding his budget. John can drive a maximum of ___ miles without exceeding his budget. Part B: Identify the domain and range of the function within the context.",
       "choices": {
         "part_b": {
           "A": "Domain 0≤d≤400, Range 50≤C≤150",
@@ -4434,7 +4515,7 @@
       "topic": "Graphing Exponential Functions",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "f(x)=2(1.5)^x. Part A: Which graph? Part B: True statements?",
+      "stem": "Consider the exponential function f(x) = 2(1.5)^x. Part A: Which is the graph of f(x)? Part B: Select all the correct statements about the key features of the function f(x) = 2(1.5)^x.",
       "choices": {
         "part_a": {
           "D": "Graph D"
@@ -4465,7 +4546,7 @@
       "topic": "Writing Quadratic Functions from Graphs",
       "type": "multiple_choice",
       "has_image": true,
-      "stem": "Graph of function shown. Equation?",
+      "stem": "The graph of a function is shown. What is the equation of the function?",
       "choices": {
         "A": "y=x²–x–6",
         "B": "y=(1/2)x²–x–6",
@@ -4485,7 +4566,7 @@
       "topic": "Rational Exponents",
       "type": "select_all",
       "has_image": false,
-      "stem": "Which are equivalent to 4x^(1/2)y³?",
+      "stem": "Which of the following expressions are equivalent to 4x^(1/2) y³? Select all that apply.",
       "choices": {
         "A": "(2x^(1/4)y^(3/2))²",
         "B": "2√x·y³",
@@ -4505,7 +4586,7 @@
       "topic": "Absolute Value Functions",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "f(x)=2|x–1|+3. Part A: Which graph? Part B: True statements?",
+      "stem": "Consider the absolute value function f(x) = 2|x – 1| + 3. Part A: Which is the graph of f(x)? Part B: Select all the correct statements about the key features of the function f(x) = 2|x – 1| + 3.",
       "choices": {
         "part_a": {
           "C": "Graph C"
@@ -4535,7 +4616,7 @@
       "topic": "Literal Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "V=πr²h. Solve for h.",
+      "stem": "The formula for the volume of a cylinder is given by V = πr²h, where V is the volume, r is the radius of the base, and h is the height of the cylinder. Rearrange the formula to solve for the height h in terms of V and r.",
       "choices": {
         "A": "h=V/(πr²)",
         "B": "h=πr²/V",
@@ -4554,7 +4635,7 @@
       "topic": "Statistical Inference and Margin of Error",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "120 households: avg 40 books ±5. 4,000 total households. Part A: True statements? Part B: Total books range?",
+      "stem": "A survey was conducted on 120 households in Maple Town to estimate the average number of books per household. The survey reported an average of 40 books per household with a margin of error of ±5 books. Maple Town has a total of 4,000 households. Part A: Which of the following statements about the survey results are correct? Part B: Estimate the range of the total number of books in Maple Town. The total number of books in Maple Town is estimated to be between ___ and ___ books.",
       "choices": {
         "part_a": {
           "A": "Avg between 35 and 45",
@@ -4575,7 +4656,7 @@
       "topic": "Transformations of Functions",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "f(x)=x². Part A: Effect of f(x)+3? Part B: Effect of 3f(x)?",
+      "stem": "Given the original function f(x) = x². Part A: What is the effect on the graph of f(x) = x² after replacing f(x) with f(x) + 3? Part B: What is the effect on the graph of f(x) = x² after replacing f(x) with 3f(x)?",
       "choices": {
         "part_a": {
           "A": "Shift left 3",
@@ -4602,7 +4683,7 @@
       "topic": "Rational Exponents",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "(27^(2/3)) ÷ (3^(1/3))³ = ?",
+      "stem": "Evaluate the following expression and select the correct value: 27^(2/3) ÷ (3^(1/3))³.",
       "choices": {
         "A": "3",
         "B": "9",
@@ -4621,7 +4702,7 @@
       "topic": "Multiplying Polynomials",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "(2x+3)(x–5) = ?",
+      "stem": "Multiply the polynomials (2x + 3) and (x – 5).",
       "choices": {
         "A": "2x²+3x–15",
         "B": "2x²–10x+3",
@@ -4873,12 +4954,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Adding Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "P(x)=–1.8x⁶+7.3 and R(x)=–6.5x³–2.7x⁶. Find Q(x) if P(x)+R(x)=Q(x).",
-      "answer": "–4.5x⁶ – 6.5x³ + 7.3",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "–4.5x⁶ – 6.5x³ + 7.3",
+        "B": "–8.3x⁶ – 6.5x³ + 7.3",
+        "C": "–4.5x⁶ + 6.5x³ + 7.3",
+        "D": "4.5x⁶ – 6.5x³ + 7.3"
+      }
     },
     {
       "id": "AR13-015",
@@ -4908,12 +4995,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Adding Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "S(x)=P(x)+Q(x). Q(x)=4x³–2x²–7 and S(x)=7x³+x²+9x. Find P(x).",
-      "answer": "3x³ + 3x² + 9x + 7",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "3x³ + 3x² + 9x + 7",
+        "B": "3x³ – 3x² + 9x – 7",
+        "C": "11x³ – x² + 9x – 7",
+        "D": "3x³ + 3x² + 9x – 7"
+      }
     },
     {
       "id": "AR13-017",
@@ -5645,12 +5738,18 @@
       "benchmark": "MA.912.AR.1.7",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Factoring Special Products - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Square has area (4x²–20x+25) sq inches. What is the square's perimeter?",
-      "answer": "8x – 20",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "8x – 20",
+        "B": "8x – 5",
+        "C": "4x – 10",
+        "D": "8x + 20"
+      }
     },
     {
       "id": "AR17-011",
@@ -6842,25 +6941,6 @@
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
       "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR24-011_stem.png"
-    },
-    {
-      "id": "AR24-012",
-      "source": "MA.912.AR.2.4_Key",
-      "benchmark": "MA.912.AR.2.4",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Linear Functions",
-      "type": "multiple_choice",
-      "has_image": false,
-      "stem": "A linear function has an x-intercept at 3 and slope 1.5. Which equation represents this function?",
-      "choices": {
-        "A": "y = 1.5x + 3",
-        "B": "y = 1.5x – 4.5",
-        "C": "y = 3x – 1.5",
-        "D": "y = –1.5x + 4.5"
-      },
-      "answer": "B",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
     },
     {
       "id": "AR24-013",
@@ -8107,24 +8187,6 @@
       }
     },
     {
-      "id": "AR28-002",
-      "source": "MA.912.AR.2.8_Key",
-      "benchmark": "MA.912.AR.2.8",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Linear Inequalities",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph the inequality y > –2 on a coordinate plane.",
-      "answer": "Horizontal dashed line at y=–2, shade above",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-002_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-002_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-002_stem.png"
-      }
-    },
-    {
       "id": "AR28-003",
       "source": "MA.912.AR.2.8_Key",
       "benchmark": "MA.912.AR.2.8",
@@ -8148,24 +8210,6 @@
         "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_B.png",
         "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_C.png",
         "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-003_D.png"
-      }
-    },
-    {
-      "id": "AR28-004",
-      "source": "MA.912.AR.2.8_Key",
-      "benchmark": "MA.912.AR.2.8",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Linear Inequalities",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph the inequality y–2 > –3(x+1) on a coordinate plane.",
-      "answer": "Dashed line, slope –3, through (–1,2), shade above-right",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-004_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-004_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-004_stem.png"
       }
     },
     {
@@ -8501,24 +8545,6 @@
       }
     },
     {
-      "id": "AR28-019",
-      "source": "MA.912.AR.2.8_Key",
-      "benchmark": "MA.912.AR.2.8",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Linear Inequalities - Real World",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "4x+2y≤75 (balloons $4, confetti $2, max $75). Graph the inequality.",
-      "answer": "Solid line, x-intercept ~18.75, y-intercept 37.5, shade below in first quadrant",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-019_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-019_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-019_stem.png"
-      }
-    },
-    {
       "id": "AR28-020",
       "source": "MA.912.AR.2.8_Key",
       "benchmark": "MA.912.AR.2.8",
@@ -8545,24 +8571,6 @@
       }
     },
     {
-      "id": "AR28-021",
-      "source": "MA.912.AR.2.8_Key",
-      "benchmark": "MA.912.AR.2.8",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Linear Inequalities - Real World",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "28x+14y≤182 (jeans $28, shirts $14, max $182). Graph the inequality.",
-      "answer": "Solid line, x-intercept 6.5, y-intercept 13, shade below in first quadrant",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-021_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-021_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-021_stem.png"
-      }
-    },
-    {
       "id": "AR28-022",
       "source": "MA.912.AR.2.8_Key",
       "benchmark": "MA.912.AR.2.8",
@@ -8586,24 +8594,6 @@
         "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_B.png",
         "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_C.png",
         "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-022_D.png"
-      }
-    },
-    {
-      "id": "AR28-023",
-      "source": "MA.912.AR.2.8_Key",
-      "benchmark": "MA.912.AR.2.8",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Linear Inequalities - Real World",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "7w+5d≤40 (wings $7, hot dogs $5, max $40). Graph the inequality.",
-      "answer": "Solid line, x-intercept ~5.7, y-intercept 8, shade below in first quadrant",
-      "level": 4,
-      "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-023_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-023_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR28-023_stem.png"
       }
     },
     {
@@ -10280,7 +10270,7 @@
       "topic": "Classifying Exponential Functions",
       "type": "matching",
       "has_image": false,
-      "stem": "Classify each as exponential growth or decay: y=324(1.59)^x, y=500(0.5)^x, y=135200(13/14)^x, y=1000(1.015)^t, y=(1–0.667)^x, y=(0.9)^x.",
+      "stem": "Classify each situation as exponential growth or exponential decay. (a) The number of cells in a bacteria culture after x minutes is given by the equation y = 324(1.59)^x. (b) The remaining mass, in grams, of a radioactive substance after x hours is given by the equation y = 500(0.5)^x. (c) The population of a town after x years is given by the equation y = 135,200(13/14)^x. (d) The amount of money in an investment account after t years is given by the equation y = 1000(1.015)^t. (e) The effect of a new treatment after x hour on a virus is given by the equation y = (1 – 0.667)^x. (f) The population of invasive feral hogs after x years of control policies is given by the equation y = (0.9)^x.",
       "answer": "Growth: y=324(1.59)^x, y=1000(1.015)^t. Decay: all others",
       "level": 5,
       "level_label": "Level 5 – Mastery"
@@ -10293,7 +10283,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential growth? Choices: (A) Aidan adds $10 to jar each week, (B) Pine tree grows 1.5ft/year, (C) Ella earns $20/hr babysitting, (D) Computer science majors double every 5 years?",
+      "stem": "Which situation represents exponential growth?",
       "choices": {
         "A": "Aidan adds $10 to jar each week",
         "B": "Pine tree grows 1.5ft/year",
@@ -10312,12 +10302,12 @@
       "topic": "Classifying Exponential Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents exponential growth?",
+      "stem": "Which of the tables represent exponential growth? A: x=–4,–1,0,3 → y=626,6,2,1.008. B: x=3,5,7,9 → y=4.5,12.5,24.5,40.5. C: x=–8,–5,0,3 → y=64,25,0,9. D: x=–1,1,3,5 → y=0.5,2,8,32.",
       "choices": {
-        "A": "x=–4,–1,0,3 → y=626,6,2,1.008",
-        "B": "x=3,5,7,9 → y=4.5,12.5,24.5,40.5",
-        "C": "x=–8,–5,0,3 → y=64,25,0,9",
-        "D": "x=–1,1,3,5 → y=0.5,2,8,32"
+        "A": "Table A",
+        "B": "Table B",
+        "C": "Table C",
+        "D": "Table D"
       },
       "answer": "D",
       "level": 3,
@@ -10331,12 +10321,12 @@
       "topic": "Classifying Exponential Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents exponential decay?",
+      "stem": "Which of the tables represent exponential decay? A: x=–1,0,1,2 → y=100,5,0.25,0.0125. B: x=3,5,7,9 → y=4.5,12.5,24.5,40.5. C: x=0,1,2,3 → y=5,6,7.2,8.64. D: x=–4,–3,0,1 → y=80,45,0,5.",
       "choices": {
-        "A": "x=–1,0,1,2 → y=100,5,0.25,0.0125",
-        "B": "x=3,5,7,9 → y=4.5,12.5,24.5,40.5",
-        "C": "x=0,1,2,3 → y=5,6,7.2,8.64",
-        "D": "x=–4,–3,0,1 → y=80,45,0,5"
+        "A": "Table A",
+        "B": "Table B",
+        "C": "Table C",
+        "D": "Table D"
       },
       "answer": "A",
       "level": 3,
@@ -10369,7 +10359,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential growth? Choices: (A) Backpack price reduced 20%, (B) Bacteria triples every hour, (C) Student saves $10 from each paycheck, (D) Tree grows 1.5ft each year?",
+      "stem": "Which situation represents exponential growth?",
       "choices": {
         "A": "Backpack price reduced 20%",
         "B": "Bacteria triples every hour",
@@ -10388,7 +10378,7 @@
       "topic": "Classifying Exponential Functions from Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which represents exponential decay?",
+      "stem": "Which of the following represents exponential decay?",
       "choices": {
         "A": "y=100(1.2)^x",
         "B": "y=100(1–0.2)^x",
@@ -10407,7 +10397,7 @@
       "topic": "Classifying Exponential Functions from Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which represents exponential growth?",
+      "stem": "Which of the following represents exponential growth?",
       "choices": {
         "A": "y=250(x)²",
         "B": "y=250(4/5)^x",
@@ -10426,7 +10416,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "select_all",
       "has_image": false,
-      "stem": "Which represent exponential growth?",
+      "stem": "Which of the following represent exponential growth? Select all that apply.",
       "choices": {
         "A": "Savings account increases 5%/year",
         "B": "Candle burns 2 inches/hour",
@@ -10446,7 +10436,7 @@
       "topic": "Classifying Exponential Functions from Equations",
       "type": "select_all",
       "has_image": false,
-      "stem": "Which represent exponential growth?",
+      "stem": "Which of the following represent exponential growth? Select all that apply.",
       "choices": {
         "A": "y=0.5(1+0.01)^x",
         "B": "y=50(0.98)^(2x)",
@@ -10466,7 +10456,7 @@
       "topic": "Classifying Exponential Functions from Equations",
       "type": "select_all",
       "has_image": false,
-      "stem": "Which of the following functions represent exponential decay? Select all that apply.",
+      "stem": "Which of the following represent exponential decay? Select all that apply.",
       "choices": {
         "A": "y=0.7(1)^x",
         "B": "y=50(0.7)^x",
@@ -10506,7 +10496,7 @@
       "topic": "Exponential Growth vs Decay - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which situation represents exponential decay?",
+      "stem": "Which of the following situations represents exponential decay?",
       "choices": {
         "A": "Rabbit population shrinks 0.2%/year",
         "B": "Car loses 18% of value each year",
@@ -10525,7 +10515,7 @@
       "topic": "Classifying Exponential Functions from Equations",
       "type": "matching",
       "has_image": false,
-      "stem": "Match each function to growth or decay: f(x)=120(0.85)^x, g(t)=5(1.5)^(t/2), j(x)=10000(0.1)^x, f(w)=(15/2)(1–0.1)^w, h(r)=(2/3)^(10r), k(x)=(1/4)(3/2)^x.",
+      "stem": "Match each function to whether it represents exponential growth or decay. (a) f(x) = 120(0.85)^x. (b) g(t) = 5(1.5)^(t/2). (c) j(x) = 10,000(0.1)^x. (d) f(w) = (15/2)(1 – 0.1)^w. (e) h(r) = (2/3)^(10r). (f) k(x) = (1/4)(3/2)^x.",
       "answer": "Growth: g(t), k(x). Decay: f(x), j(x), f(w), h(r)",
       "level": 5,
       "level_label": "Level 5 – Mastery"
@@ -10538,7 +10528,7 @@
       "topic": "Classifying Exponential Functions from Tables",
       "type": "matching",
       "has_image": false,
-      "stem": "Match each table to growth or decay. Table 1: x=–1,0,1,2 y=2,1,0.5,0.25. Table 2: x=–4,–3,–2,2.5 y=0.025,0.064,0.164,0.419. Table 3: x=0,1,2,3 y=0.5,0.502,0.505,0.507. Table 4: x=0,1,4,5 y=10,9.9,9.6,9.5. Table 5: x=–2,–1,0,1 y=0.098,0.099,0.1,0.1009.",
+      "stem": "Each table represents a function. Match each table to whether it represents exponential growth or decay. (a) x=–1,0,1,2 → y=2,1,0.5,0.25. (b) x=–4,–3,–2,2.5 → y=0.025,0.064,0.164,0.419. (c) x=0,1,2,3 → y=0.5,0.502,0.505,0.507. (d) x=0,1,4,5 → y=10,9.9,9.6,9.5. (e) x=–2,–1,0,1 → y=0.098,0.099,0.1,0.1009.",
       "answer": "Growth: Tables 2, 3, 5. Decay: Tables 1, 4",
       "level": 5,
       "level_label": "Level 5 – Mastery"
@@ -11275,7 +11265,7 @@
       "topic": "Solving Systems of Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "x+y=1 and 2x–3y=17. Find the solution.",
+      "stem": "Find the solution of the system of equations shown below. x + y = 1 and 2x – 3y = 17.",
       "choices": {
         "A": "(–3,4)",
         "B": "(–4,3)",
@@ -11294,7 +11284,7 @@
       "topic": "Solving Systems of Equations",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "y=9x–1 and y=2x+3. What is the value of x? Enter as a fraction.",
+      "stem": "A system of equation is given. y = 9x – 1 and y = 2x + 3. If (x, y) is the solution to the system, what is the value of x? Enter your answer as a fraction in the box.",
       "answer": "4/7",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)"
@@ -11307,7 +11297,7 @@
       "topic": "Solving Systems of Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "3x–y=3 and –2x+y=–12. What is the y-value in the solution?",
+      "stem": "What is the y-value in the solution of this system of equations? 3x – y = 3 and –2x + y = –12.",
       "choices": {
         "A": "y=–30",
         "B": "y=–9",
@@ -11326,7 +11316,7 @@
       "topic": "Solving Systems of Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "3a+b=–6 and –3a–4b=–12. What is a+b?",
+      "stem": "For the system of equations shown, what is the value of a + b? 3a + b = –6 and –3a – 4b = –12.",
       "choices": {
         "A": "a+b=–4",
         "B": "a+b=0",
@@ -11345,7 +11335,7 @@
       "topic": "Solving Systems of Equations",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "2x+6y=3 and x+y=–4. What is the value of x?",
+      "stem": "What is the value of x in the solution to the system of equations below? 2x + 6y = 3 and x + y = –4.",
       "choices": {
         "A": "–6 3/4",
         "B": "–2 5/8",
@@ -11364,7 +11354,7 @@
       "topic": "Writing Systems of Equations - Real World",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "Mr. Kelly: 40 boxes pens/pencils, pens $5, pencils $2, total $131. Part A: Which two equations? Part B: How many pencil boxes?",
+      "stem": "Mr. Kelly buys a total of 40 boxes of pens and pencils for his class. Each box of pens costs $5. Each box of pencils costs $2. Mr. Kelly spends a total of $131 on the pens and pencils. Part A: Which equations form a system of equations that can be used to determine the number of boxes of pens, x, and the number of boxes of pencils, y, that Mr. Kelly buys? Select two correct answers. Part B: How many boxes of pencils Mr. Kelly bought?",
       "choices": {
         "part_a": {
           "A": "x+y=40",
@@ -11387,7 +11377,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "Company A: $200 for 2hr, $275 for 5hr. Company B: $200 for 3hr, $350 for 6hr. Part A: Which system? Part B: Interpret intersection.",
+      "stem": "Cassidy compares the costs of two different automobile repair companies. • Company A charges $200 for 2 hours of work and $275 for 5 hours of work. • Company B charges $200 for 3 hours of work and $350 for 6 hours of work. Part A: Which system of equations correctly relates the hours of work, x to the cost, y? Part B: What is the correct interpretation of the intersection point?",
       "choices": {
         "part_a": {
           "A": "Graph: Company A is y=25x+150 (less steep, higher intercept); Company B is y=50x+50 (steeper, lower intercept). Lines intersect near (4, 250).",
@@ -11421,7 +11411,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "Aidan 10ft/sec, Ella 6ft/sec with 30ft head start. Part A: Which system models distances? Part B: How many seconds for Aidan to catch up?",
+      "stem": "Aidan and his sister Ella are having a race. Aidan runs at a rate of 10 feet per second. Ella runs at a rate of 6 feet per second. Since Ella is younger, Aidan is letting her begin 30 feet ahead of the starting line. Let y represent the distance from the starting line and x represent the time elapsed, in seconds. Part A: Which system of equations correctly models the distance Aidan traveled and the distance Ella traveled? Part B: Exactly how many seconds does it take Aidan to catch up to Ella?",
       "choices": {
         "part_a": {
           "D": "Graph D showing y=10x and y=6x+30"
@@ -11446,7 +11436,7 @@
       "topic": "Solving Systems of Equations",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "2x–y=8 and y=–x+4. Part A: Solution? Part B: Which graph?",
+      "stem": "Consider the system of equations shown below. 2x – y = 8 and y = –x + 4. Part A: What is the solution of the system of equations? Part B: Which of the following graphs represents the system of equations?",
       "choices": {
         "part_a": {
           "A": "(4,0)",
@@ -11477,7 +11467,7 @@
       "topic": "Solving Systems of Equations",
       "type": "multiple_choice_multipart",
       "has_image": true,
-      "stem": "x+2y=8 and –2x+y=–6. Part A: Solution? Part B: Which graph?",
+      "stem": "Consider this system of linear equations. x + 2y = 8 and –2x + y = –6. Part A: What is the solution of the system of equations? Part B: Which of the following graphs represents the system of equations?",
       "choices": {
         "part_a": {
           "A": "(–1,2)",
@@ -11508,7 +11498,7 @@
       "topic": "Solving Systems of Equations",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "y=2x+5 and y=(1/4)x–(1/4). What is the solution?",
+      "stem": "A system of equations is given. y = 2x + 5 and y = (1/4)x – (1/4). What is the solution of the system?",
       "answer": "(–3, –1)",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)"
@@ -11521,7 +11511,7 @@
       "topic": "Writing Systems of Equations - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Team A beat Team B by 5 points, total 13 points. x=Team A, y=Team B. Which system?",
+      "stem": "Team A won the first game of the season against Team B by 5 points. The two teams together scored a total of 13 points in the game. Let x represent the points scored by Team A and let y represent the points scored by Team B. Which system of linear equations models the points scored by both Team A and Team B?",
       "choices": {
         "A": "y=x+5 and x+y=13",
         "B": "x=y–5 and y=13–x",
@@ -11540,7 +11530,7 @@
       "topic": "Writing Systems of Equations - Real World",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Company A: $25 fixed + $0.10/mile. Company B: $15 fixed + $0.20/mile. Which system?",
+      "stem": "Two car rental companies each charge a fixed fee for renting a car, plus an additional amount for each mile the car is driven. • Company A charges a fixed fee of $25 plus $0.10 per mile. • Company B charges a fixed fee of $15 plus $0.20 per mile. Create an equation for each company that can be used to determine y, the total amount, in dollars, a customer will be charged for renting a car and driving it x miles.",
       "choices": {
         "A": "A: y=0.10x+25, B: y=0.20x+15",
         "B": "A: y=10x+25, B: y=20x+15",
@@ -11559,7 +11549,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "Ms. Johnson: 50 boxes markers/crayons, markers $4, crayons $3, total $168. Part A: Which two equations? Part B: How many marker boxes?",
+      "stem": "Ms. Johnson is buying a total of 50 boxes of markers and crayons for her classroom. Each box of markers costs $4, while each box of crayons costs $3. She spends a total of $168 on the markers and crayons. Part A: Which two equations form a system that can be used to determine the number of boxes of markers (x) and the number of boxes of crayons (y) that Ms. Johnson buys? Part B: Using the system from Part A, determine how many boxes of markers Ms. Johnson purchased.",
       "choices": {
         "part_a": {
           "A": "x+y=50",
@@ -11582,7 +11572,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "Package A: 2 T-shirts + 1 jeans = $58. Package B: 3 T-shirts + 2 jeans = $97. Part A: Which system? Part B: Costs?",
+      "stem": "A clothing store offers two different discount packages. • Package A: 2 T-shirts and 1 pair of jeans cost $58. • Package B: 3 T-shirts and 2 pairs of jeans cost $97. Part A: Which system of equations correctly represents this situation? Part B: What is the cost of a T-shirt (x) and the cost of a pair of jeans (y).",
       "choices": {
         "part_a": {
           "A": "2x+y=58 and 3x+2y=97",
@@ -11603,7 +11593,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "10 apples + 5 oranges = $22. 6 apples + 2 oranges = $12. Part A: Which system? Part B: Cost of 1 apple + 1 orange?",
+      "stem": "A farmer sells apples and oranges at a local market. • 10 apples and 5 oranges cost $22. • 6 apples and 2 oranges cost $12. Part A: Which system of equations correctly represents this situation? Part B: If you buy only one apple and one orange, how much you will need to pay?",
       "choices": {
         "part_a": {
           "A": "5x+10y=12 and 2x+6y=22",
@@ -11624,7 +11614,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": true,
-      "stem": "Balloons $2, party hats $1.50, total $30, hats = 2× balloons (x=balloons, y=hats). Write system, graph, find intersection.",
+      "stem": "Anna plans to spend $30 on balloons and party hats for her daughter's birthday party. Including tax, balloons cost $2 each and party hats cost $1.50 each. The number of party hats Anna needs is twice as many as the number of balloons. Part A: If x represents the number of balloons and y represents the number of party hats, write a system of equations that can be used to represent this situation. Part B: Graph your system of equations on the set of axes below. Part C: State the coordinates of the point of intersection of your lines. Explain what each coordinate means in the context of the problem.",
       "answer": "System: 2x+1.5y=30 and y=2x. Intersection: (6,12) — 6 balloons and 12 party hats",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
@@ -11638,7 +11628,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Alex: $1.70 in nickels (n) and dimes (d), 25 coins total. Write system and find how many more nickels than dimes.",
+      "stem": "Alex had $1.70 in nickels and dimes on his desk. There were 25 coins in total. Part A: Write a system of equations that could be used to determine both the number of nickels, n, and the number of dimes, d, that Alex had. Part B: Use your system of equations to algebraically determine how many more nickels than dimes he had.",
       "answer": "n+d=25 and 0.05n+0.10d=1.70; Alex had 7 more nickels than dimes",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
@@ -11651,7 +11641,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "May: 2 matinees + 3 regular = $38.50. June: 6 matinees + 1 regular = $47.50. Write system and find prices.",
+      "stem": "Jen joined the Fan Favorite Movie Club at the local movie theater. At this theater, the cost of admission in May and June remains the same. In May, she saw 2 matinees and 3 regular-priced shows and spent $38.50. In June, she went to 6 matinees and one regular-priced show and spent $47.50. Part A: Write a system of equations to represent the cost, m, of a matinee ticket and the cost, r, of a regular-priced ticket. Part B: Jen said she spent $5.75 on each matinee and $9 on each regular show. Is Jen correct? Justify your answer.",
       "answer": "2m+3r=38.50 and 6m+r=47.50; matinee=$6.50, regular=$8.50",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
@@ -11664,7 +11654,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Amusement park: group of 6 (2 children)=$325.94. Group of 5 (3 children)=$256.95. Find adult and child ticket prices, then cost for group of 4 with 3 children.",
+      "stem": "At an amusement park, the cost for an adult admission is a, and for a child the cost is c. For a group of six that included two children, the cost was $325.94. For a group of five that included three children, the cost was $256.95. All ticket prices include tax. Part A: Write a system of equations, in terms of a and c, that models this situation. Part B: Use your system of equations to determine the exact cost of each type of ticket algebraically. Part C: Determine the cost for a group of four that includes three children.",
       "answer": "4a+2c=325.94 and 2a+3c=256.95; a=$57.99, c=$46.99; 4 with 3 children=$198.96",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
@@ -11677,7 +11667,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "30 small + 50 large sundaes = $420. 15 small + 35 large = $270. Is Peyton correct that small=$2.75, large=$6.75?",
+      "stem": "An ice cream shop sells small and large sundaes. One day, 30 small sundaes and 50 large sundaes were sold for $420. Another day, 15 small sundaes and 35 large sundaes were sold for $270. Sales tax is included in all prices. Part A: If x is the cost of a small sundae and y is the cost of a large sundae, write a system of equations to represent this situation. Part B: Peyton thinks that small sundaes cost $2.75 and large sundaes cost $6.75. Is Peyton correct? Justify your answer by using your equations to determine algebraically the cost of one small sundae, x, and the cost of one large sundae, y.",
       "answer": "30x+50y=420 and 15x+35y=270; Peyton is wrong. Small=$4, large=$6",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
@@ -11690,7 +11680,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Movie theater: adult $12, child $8. Perez family: 6 tickets, $60. Write system and find how many of each.",
+      "stem": "A movie theater sells adult tickets at $12.00 each and children's tickets at $8.00 each. The Perez family bought 6 tickets in total and spent $60. Part A: If a represents the number of adult tickets and c represents number of children's tickets, write a system of equations that allows you to determine how many of each type of ticket the Perez family purchased. Part B: Fill in the blanks to complete the sentence below: The Perez family bought ___ adult tickets and ___ children's tickets.",
       "answer": "12a+8c=60 and a+c=6; 3 adult tickets and 3 children's tickets",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
@@ -11703,7 +11693,7 @@
       "topic": "Writing and Solving Systems of Equations - Real World",
       "type": "gridded_response",
       "has_image": false,
-      "stem": "Catering: vegetarian $15 (v), non-vegetarian $20 (n), 35 meals total, $650 total. Write system and find each quantity.",
+      "stem": "A catering company offers two meal options: vegetarian meals, which costs $15 per serving, and non-vegetarian meals, which costs $20 per serving. An event order includes a total of 35 meals with a total cost of $650. Part A: If v represents the number of vegetarian meals and n represents number of non-vegetarian meals, write a system of equations that models this situation. Part B: Fill in the blanks to complete the sentence below: The event ordered ___ vegetarian meals and ___ non-vegetarian meals.",
       "answer": "15v+20n=650 and v+n=35; 10 vegetarian and 25 non-vegetarian",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level"
@@ -11716,7 +11706,7 @@
       "topic": "Solving Systems of Equations - Error Analysis",
       "type": "multiple_choice_multipart",
       "has_image": false,
-      "stem": "Carla solving 6x–5y=34 and 3x+2y=8. Her steps shown, error in Step 3. Part A: Which step has error? Part B: Correct solution?",
+      "stem": "Carla is solving this system of equations: 6x – 5y = 34 and 3x + 2y = 8. She followed the steps below. STEP 1: Rearrange the second equation to isolate the variable y. y = 4 – 1.5x. STEP 2: Substitute the expression y = 4 – 1.5x in the first equation: 6x – 5(4 – 1.5x) = 34. STEP 3: 6x – 20 – 7.5x = 34. STEP 4: –1.5x = 54. STEP 5: x = –36. Part A: In which step did Carla make a mistake? Part B: What is the correct solution of the system?",
       "choices": {
         "part_a": {
           "A": "Step 1",
@@ -11770,24 +11760,6 @@
       "level_label": "Level 3 – Passing (On Grade Level)"
     },
     {
-      "id": "AR94-003",
-      "source": "MA.912.AR.9.4_Key",
-      "benchmark": "MA.912.AR.9.4",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Systems of Inequalities",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph the solution set: y<–3 and x<5.",
-      "answer": "Dashed horizontal line at y=–3, shade below. Dashed vertical line at x=5, shade left. Solution is intersection region.",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-003_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-003_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-003_stem.png"
-      }
-    },
-    {
       "id": "AR94-004",
       "source": "MA.912.AR.9.4_Key",
       "benchmark": "MA.912.AR.9.4",
@@ -11814,24 +11786,6 @@
       }
     },
     {
-      "id": "AR94-005",
-      "source": "MA.912.AR.9.4_Key",
-      "benchmark": "MA.912.AR.9.4",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Systems of Inequalities",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph the solution set: y<–2x+5 and y<3x+2.",
-      "answer": "Two dashed lines, shade below both — intersection region below both lines",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-005_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-005_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-005_stem.png"
-      }
-    },
-    {
       "id": "AR94-006",
       "source": "MA.912.AR.9.4_Key",
       "benchmark": "MA.912.AR.9.4",
@@ -11855,24 +11809,6 @@
         "B": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_B.png",
         "C": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_C.png",
         "D": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-006_D.png"
-      }
-    },
-    {
-      "id": "AR94-007",
-      "source": "MA.912.AR.9.4_Key",
-      "benchmark": "MA.912.AR.9.4",
-      "reporting_category": "Linear Relationships",
-      "topic": "Graphing Systems of Inequalities",
-      "type": "gridded_response",
-      "has_image": true,
-      "stem": "Graph the solution set: –3x+2y≥–3 and x–1.5y<–4.5.",
-      "answer": "Solid line for first inequality shade above; dashed line for second shade above — intersection region",
-      "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-007_stem.png",
-      "image_urls": {
-        "A": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-007_A.png",
-        "stem": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR94-007_stem.png"
       }
     },
     {
@@ -12765,12 +12701,12 @@
       "topic": "Classifying Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents an exponential function?",
+      "stem": "Which table represents an exponential function? A: linear pattern. B: quadratic pattern. C: x=0,1,2,4,5 f=1,0.3,0.09,0.0081,0.00243. D: quadratic pattern.",
       "choices": {
-        "A": "x=0,1,2,3 → values 2,5,8,11 (linear: equal differences)",
-        "B": "x=0,1,2,3 → values 0,1,4,9 (quadratic: differences of differences are equal)",
-        "C": "x=0,1,2,4,5 → f(x)=1, 0.3, 0.09, 0.0081, 0.00243",
-        "D": "x=–2,–1,0,1,2 → values 4,1,0,1,4 (quadratic)"
+        "A": "Table A",
+        "B": "Table B",
+        "C": "Table C",
+        "D": "Table D"
       },
       "answer": "C",
       "level": 3,
@@ -12810,12 +12746,12 @@
       "topic": "Classifying Functions from Tables",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which table represents a quadratic function?",
+      "stem": "Which table represents a quadratic function? A: x=–2,–1,1,3,4 m=–2,1,1,–7,–14. B: linear pattern. C: exponential pattern. D: exponential pattern.",
       "choices": {
-        "A": "x=–2,–1,1,3,4 → m(x)=–2,1,1,–7,–14",
-        "B": "x=0,1,2,3 → values 5,8,11,14 (linear: equal differences)",
-        "C": "x=0,1,2,3 → values 1,2,4,8 (exponential: equal ratios)",
-        "D": "x=0,1,2,3 → values 3,9,27,81 (exponential)"
+        "A": "Table A",
+        "B": "Table B",
+        "C": "Table C",
+        "D": "Table D"
       },
       "answer": "A",
       "level": 3,
@@ -14661,7 +14597,7 @@
       "topic": "Properties of Exponents - Algebraic",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "Which is equivalent to ¹³√(k^52)?",
+      "stem": "Which is equivalent to ¹³√k⁵²?",
       "choices": {
         "A": "k^(1/4)",
         "B": "k^(13/52)",
@@ -14699,7 +14635,7 @@
       "topic": "Properties of Exponents - Algebraic",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "⁴√(x⁵). Which is equivalent?",
+      "stem": "⁴√x⁵. Which is equivalent?",
       "choices": {
         "A": "⁵√x^4",
         "B": "⁴√x^5",
@@ -14857,7 +14793,7 @@
       "topic": "Properties of Exponents - Algebraic",
       "type": "multiple_choice",
       "has_image": false,
-      "stem": "x>0: ∛(x²) · √(x⁵). Which is equivalent?",
+      "stem": "If x represents a positive real number, which expression is equivalent to ∛(x²) · √(x⁵)?",
       "choices": {
         "A": "∛(x⁷)",
         "B": "∛(x^10)",
@@ -14959,12 +14895,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Find the product: 3∛189 · 9∛56.",
-      "answer": "162∛49",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "162∛49",
+        "B": "27∛10584",
+        "C": "27∛49",
+        "D": "162∛245"
+      }
     },
     {
       "id": "NSO14-007",
@@ -14972,12 +14914,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "3√578 – 10√18 = a√b. Find a and b.",
-      "answer": "a=2, b=21",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "a=21, b=2",
+        "B": "a=2, b=21",
+        "C": "a=21, b=21",
+        "D": "a=2, b=2"
+      }
     },
     {
       "id": "NSO14-008",
@@ -14985,12 +14933,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "5∛256 / ∛16 = a·∛b. Find a and b.",
-      "answer": "a=2, b=10",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "a=10, b=2",
+        "B": "a=2, b=10",
+        "C": "a=5, b=16",
+        "D": "a=10, b=16"
+      }
     },
     {
       "id": "NSO14-009",
