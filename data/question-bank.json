@@ -856,13 +856,19 @@
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Two-Way Frequency Tables",
       "difficulty_pct": 68,
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Margo surveys 150 high school juniors and seniors about their favorite types of dipping sauce. She records the results in the table shown. Favorite Dipping Sauce — Juniors: Barbeque 19, Honey Mustard 26, Ranch 23, Sweet and Sour 11. Seniors: Barbeque 7, Honey Mustard 22, Ranch 30, Sweet and Sour 12. How many more high school juniors and seniors chose honey mustard sauce than sweet and sour sauce?",
-      "answer": "25",
+      "answer": "A",
       "item_id": "10524",
       "level": 2,
-      "level_label": "Level 2 – Approaching Grade Level"
+      "level_label": "Level 2 – Approaching Grade Level",
+      "choices": {
+        "A": "25",
+        "B": "–25",
+        "C": "50",
+        "D": "24"
+      }
     },
     {
       "id": "2024-040",
@@ -1062,12 +1068,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Rewrite (∛(8²³))^(3/2) · 4^(1/2) as a whole number.",
-      "answer": "16",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "16",
+        "B": "32",
+        "C": "8",
+        "D": "15"
+      }
     },
     {
       "id": "EFDA-005",
@@ -2942,12 +2954,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Adding Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "(–1.5x³ + 3x² + 3) + (1.5x³ – 2x² + 7). Simplify using fewest terms.",
-      "answer": "x² + 10",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "x² + 10",
+        "B": "–x² + 10",
+        "C": "x² – 10",
+        "D": "x² – 10"
+      }
     },
     {
       "id": "NLR-014",
@@ -2975,12 +2993,18 @@
       "benchmark": "MA.912.AR.3.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Quadratic Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Solve 3x² = 2x + 6. Round to nearest hundredth.",
-      "answer": "x ≈ –1.12 and x ≈ 1.79",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "x ≈ –1.12 and x ≈ 1.79",
+        "B": "x ≈ –1.12 only",
+        "C": "x ≈ –1.12 or x ≈ 1.79",
+        "D": "x ≈ –1.12 and only"
+      }
     },
     {
       "id": "NLR-016",
@@ -3776,12 +3800,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "The expression ∜32 · ∜2 is equivalent to ∜x. What is the value of x?",
-      "answer": "64",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "64",
+        "B": "–64",
+        "C": "65",
+        "D": "32"
+      }
     },
     {
       "id": "BEST-005",
@@ -3865,12 +3895,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Absolute Value Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Two hikers are exploring a mountain. One hiker is at an elevation of 200 meters, while the other hiker is at a different elevation. The given equation can be used to find the possible elevations, y, in meters, of the other hiker. |y – 200| = 45. Enter values to complete the sentence about the other hiker's elevation, in meters. The other hiker is at an elevation of either ___ or ___.",
-      "answer": "155 and 245",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "155 and 245",
+        "B": "155 only",
+        "C": "245 only",
+        "D": "200 and 245"
+      }
     },
     {
       "id": "BEST-010",
@@ -3953,13 +3989,19 @@
       "benchmark": "MA.912.DP.2.4",
       "reporting_category": "Linear Relationships",
       "topic": "Line of Best Fit",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Emily collects data on the growth of a tree from 2000 to 2020. She graphs the height of the tree and the number of years since 2000 in the scatter plot shown. She determines the equation for the line of best fit to be y = 1.5x + 2.75 where y represents the height of the tree, in feet, and x represents the number of years since 2000. Based on Emily's model, what is the projected height of the tree, in feet, for 2030?",
-      "answer": "47.75",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-014_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/BEST-014_stem.png",
+      "choices": {
+        "A": "47.75",
+        "B": "–47.75",
+        "C": "48.75",
+        "D": "95.5"
+      }
     },
     {
       "id": "BEST-015",
@@ -3967,12 +4009,18 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "David is planning a party and wants to buy cupcakes and cookies. • Cupcakes cost $3 each. • Cookies cost $2 each. • David can spend a maximum of $30. Create an inequality to represent how many cupcakes, c, and cookies, k, David can buy.",
-      "answer": "3c + 2k ≤ 30",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "3c + 2k ≤ 30",
+        "B": "3c + 2k ≥ 30",
+        "C": "3c + 2k < 30",
+        "D": "2c + 3k ≤ 30"
+      }
     },
     {
       "id": "BEST-016",
@@ -4174,12 +4222,18 @@
       "benchmark": "MA.912.DP.3.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Two-Way Frequency Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Alex surveyed 160 high school freshmen and sophomores about their favorite types of fruit. He records the results in the table shown. Freshmen: Apples 24, Bananas 18, Grapes 22, Oranges 14. Sophomores: Apples 20, Bananas 25, Grapes 16, Oranges 21. How many more high school freshmen and sophomores chose bananas than oranges?",
-      "answer": "8",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "8",
+        "B": "4",
+        "C": "7",
+        "D": "9"
+      }
     },
     {
       "id": "BEST-027",
@@ -4795,12 +4849,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Adding Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "What is the sum of (3x³ + 2x² + 7) and (4x² – 2x – 9)?",
-      "answer": "3x³ + 6x² – 2x – 2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "3x³ + 6x² – 2x – 2",
+        "B": "–3x³ + 6x² – 2x – 2",
+        "C": "3x³ – 6x² + 2x – 2",
+        "D": "3x³ + 6x² + 2x – 2"
+      }
     },
     {
       "id": "AR13-006",
@@ -4903,12 +4963,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Subtracting Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "D(x)=P(x)–Q(x). Q(x)=2x³–4x+5 and D(x)=x²–7x–2. Find P(x).",
-      "answer": "2x³ + x² – 11x + 3",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "2x³ + x² – 11x + 3",
+        "B": "–2x³ + x² – 11x + 3",
+        "C": "2x³ – x² + 11x + 3",
+        "D": "2x³ + x² – 11x – 3"
+      }
     },
     {
       "id": "AR13-012",
@@ -5014,12 +5080,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Subtracting Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "D(x)=P(x)–Q(x). P(x)=1.5x⁴–2.75x–1.7 and D(x)=–0.8x⁴–1.5x³–2.9x. Find Q(x).",
-      "answer": "2.3x⁴ + 1.5x³ + 0.15x – 1.7",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "2.3x⁴ + 1.5x³ + 0.15x – 1.7",
+        "B": "–2.3x⁴ + 1.5x³ + 0.15x – 1.7",
+        "C": "2.3x⁴ – 1.5x³ + 0.15x + 1.7",
+        "D": "2.3x⁴ + 1.5x³ + 0.15x – 1.7 + 1"
+      }
     },
     {
       "id": "AR13-018",
@@ -5141,12 +5213,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Multiplying Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "T(x)=x+3 and Q(x)=x²–5x+1. Find P(x)=T(x)·Q(x).",
-      "answer": "x³ – 2x² – 14x + 3",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "x³ – 2x² – 14x + 3",
+        "B": "–x³ – 2x² – 14x + 3",
+        "C": "x³ + 2x² – 14x – 3",
+        "D": "x³ – 2x² – 14x – 3"
+      }
     },
     {
       "id": "AR13-025",
@@ -5230,12 +5308,18 @@
       "benchmark": "MA.912.AR.1.3",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Multiplying Polynomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "M(x)=–9.5x²–ax and R(x)=–1.5x³+3.5. M(x)·R(x)=14.25x⁵+3.45x⁴–33.25x²–8.05x. Find a.",
-      "answer": "2.3",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "2.3",
+        "B": "–2.3",
+        "C": "3.3",
+        "D": "4.6"
+      }
     },
     {
       "id": "AR13-030",
@@ -5514,12 +5598,18 @@
       "benchmark": "MA.912.AR.1.4",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Dividing Polynomials by Monomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "(–28p³–17.5p²+12.25p) / (–3.5p) = ?",
-      "answer": "8p² + 5p – 3.5",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "8p² + 5p – 3.5",
+        "B": "–8p² + 5p – 3.5",
+        "C": "8p² – 5p + 3.5",
+        "D": "8p² + 5p – 3.5 + 1"
+      }
     },
     {
       "id": "AR14-010",
@@ -5527,12 +5617,18 @@
       "benchmark": "MA.912.AR.1.4",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Dividing Polynomials by Monomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "? / (2k) = 2k³+3k²–5k. Find the missing dividend.",
-      "answer": "4k⁴ + 6k³ – 10k²",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "4k⁴ + 6k³ – 10k²",
+        "B": "–4k⁴ + 6k³ – 10k²",
+        "C": "4k⁴ – 6k³ + 10k²",
+        "D": "4k⁴ + 6k³ – 10k² + 1"
+      }
     },
     {
       "id": "AR14-011",
@@ -5540,12 +5636,18 @@
       "benchmark": "MA.912.AR.1.4",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Dividing Polynomials by Monomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "P(x)=–18x⁶+15x⁴+12x³ and R(x)=–6x³+5x+4. Find Q(x) if P(x)÷Q(x)=R(x).",
-      "answer": "3x³",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "3x³",
+        "B": "–3x³",
+        "C": "3x²",
+        "D": "3x⁴"
+      }
     },
     {
       "id": "AR14-012",
@@ -5553,12 +5655,18 @@
       "benchmark": "MA.912.AR.1.4",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Dividing Polynomials by Monomials",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "M(x)=2x and N(x)=7x²–3x+1. Find L(x) if L(x)÷M(x)=N(x).",
-      "answer": "14x³ – 6x² + 2x",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "14x³ – 6x² + 2x",
+        "B": "–14x³ – 6x² + 2x",
+        "C": "14x³ + 6x² – 2x",
+        "D": "14x³ – 6x² + 2x + 1"
+      }
     },
     {
       "id": "AR17-001",
@@ -5995,12 +6103,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "(p+5)/–2 = 9. Solve for p.",
-      "answer": "p = –23",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "p = –23",
+        "B": "p = 23",
+        "C": "p = –22",
+        "D": "p = –46"
+      }
     },
     {
       "id": "AR21-P02",
@@ -6008,12 +6122,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–43 = 12 – 6p + p. Solve for p.",
-      "answer": "p = 11",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "p = 11",
+        "B": "p = –11",
+        "C": "p = 12",
+        "D": "p = 22"
+      }
     },
     {
       "id": "AR21-P03",
@@ -6021,12 +6141,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–11j – 6 + 3j = –30. Solve for j.",
-      "answer": "j = 3",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "j = 3",
+        "B": "j = –3",
+        "C": "j = 4",
+        "D": "j = 6"
+      }
     },
     {
       "id": "AR21-P04",
@@ -6034,12 +6160,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "3(x–2) + 5(2–x) = 16. Solve for x.",
-      "answer": "x = –6",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "x = –6",
+        "B": "x = 6",
+        "C": "x = –5",
+        "D": "x = –12"
+      }
     },
     {
       "id": "AR21-P05",
@@ -6047,12 +6179,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "5t + 7 = 3t – 9. Solve for t.",
-      "answer": "t = –8",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "t = –8",
+        "B": "t = 8",
+        "C": "t = –7",
+        "D": "t = –16"
+      }
     },
     {
       "id": "AR21-P06",
@@ -6060,12 +6198,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–2(x–4) = 7(x–4). Solve for x.",
-      "answer": "x = 4",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "x = 4",
+        "B": "x = –4",
+        "C": "x = 5",
+        "D": "x = 8"
+      }
     },
     {
       "id": "AR21-P07",
@@ -6073,12 +6217,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "(2/3)(3–6x) = –3(8x–4). Solve for x.",
-      "answer": "x = 1/2",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "x = 1/2",
+        "B": "x = 2",
+        "C": "x = –1/2",
+        "D": "x = –2"
+      }
     },
     {
       "id": "AR21-P08",
@@ -6086,12 +6236,18 @@
       "benchmark": "MA.912.AR.2.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "3(k+1) + 11k = 2(4+5k) + 3. Solve for k.",
-      "answer": "k = 2",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "k = 2",
+        "B": "k = –2",
+        "C": "k = 3",
+        "D": "k = 4"
+      }
     },
     {
       "id": "AR21-001",
@@ -6312,12 +6468,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Write equation of line through: x=–1,2,5,8 y=–8.75,–3.5,1.75,7.",
-      "answer": "y = (7/4)x – 7",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = (7/4)x – 7",
+        "B": "y = –(7/4)x – 7",
+        "C": "y = (7/4)x + 7",
+        "D": "y = (7/4)x – 7 + 1"
+      }
     },
     {
       "id": "AR22-002",
@@ -6325,12 +6487,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Write equation of line through: x=–2,1,4,7 y=–8.5,0.5,9.5,18.5.",
-      "answer": "y = 3x – 5/2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = 3x – 5/2",
+        "B": "y = –3x – 5/2",
+        "C": "y = 3x + 5/2",
+        "D": "y = 3x – 5/2 + 1"
+      }
     },
     {
       "id": "AR22-003",
@@ -6338,12 +6506,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Write equation of line through: x=–3,2,4,9 y=–1/2,–3,–4,–13/2.",
-      "answer": "y = –(1/2)x – 2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = –(1/2)x – 2",
+        "B": "y = (1/2)x – 2",
+        "C": "y = +(1/2)x – 2",
+        "D": "y = –(1/2)x – 2 + 1"
+      }
     },
     {
       "id": "AR22-004",
@@ -6351,12 +6525,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Write equation of line through: x=–4,–1,1,4 y=17.5,5.5,–2.5,–14.5.",
-      "answer": "y = –4x + 1.5",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = –4x + 1.5",
+        "B": "y = 4x + 1.5",
+        "C": "y = –4x – 1.5",
+        "D": "y = +4x + 1.5"
+      }
     },
     {
       "id": "AR22-005",
@@ -6364,12 +6544,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Write equation of line through: x=–1,1,5,8 y=–2.3,2.7,12.7,20.2.",
-      "answer": "y = 2.5x + 1/5",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = 2.5x + 1/5",
+        "B": "y = –2.5x + 1/5",
+        "C": "y = 2.5x – 1/5",
+        "D": "y = 2.5x + 1/5 + 1"
+      }
     },
     {
       "id": "AR22-006",
@@ -6377,12 +6563,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Write equation of line through: x=–2,1,3,7 y=0,1,5/3,3.",
-      "answer": "y = (1/3)x + 2/3",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = (1/3)x + 2/3",
+        "B": "y = –(1/3)x + 2/3",
+        "C": "y = (1/3)x – 2/3",
+        "D": "y = (1/3)x + 2/3 + 1"
+      }
     },
     {
       "id": "AR22-007",
@@ -6390,12 +6582,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Point-Slope Form",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Line through (–3,6) and (–5,–6). Write equation in point-slope form.",
-      "answer": "y–6=6(x+3) or y+6=6(x+5)",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y–6=6(x+3) or y+6=6(x+5)",
+        "B": "y–6=6(x+3) and y+6=6(x+5)",
+        "C": "only y–6=6(x+3)",
+        "D": "y–7=6(x+3) or y+6=6(x+5)"
+      }
     },
     {
       "id": "AR22-008",
@@ -6403,12 +6601,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Points",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Line through (2,–4) and (5,–4). Write equation of the line.",
-      "answer": "y = –4",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = –4",
+        "B": "y = 4",
+        "C": "y = –3",
+        "D": "y = –8"
+      }
     },
     {
       "id": "AR22-009",
@@ -6416,12 +6620,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Slope –5/7 through (–1, 0.5). Write equation in standard form.",
-      "answer": "5x + 6y = –2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "5x + 6y = –2",
+        "B": "–5x + 6y = –2",
+        "C": "5x – 6y = –2",
+        "D": "5x + 6y = +2"
+      }
     },
     {
       "id": "AR22-010",
@@ -6429,12 +6639,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Point-Slope Form",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Line through (–7,18) and (7,14). Write equation in point-slope form.",
-      "answer": "y–18=–(2/7)(x+7) or y–14=–(2/7)(x–7)",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y–18=–(2/7)(x+7) or y–14=–(2/7)(x–7)",
+        "B": "y–18=–(2/7)(x+7) and y–14=–(2/7)(x–7)",
+        "C": "only y–18=–(2/7)(x+7)",
+        "D": "y–19=–(2/7)(x+7) or y–14=–(2/7)(x–7)"
+      }
     },
     {
       "id": "AR22-011",
@@ -6442,12 +6658,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Undefined slope through (–7/8, 9/11). Write equation of the line.",
-      "answer": "x = –7/8",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "x = –7/8",
+        "B": "x = 8/7",
+        "C": "x = 7/8",
+        "D": "x = –6/8"
+      }
     },
     {
       "id": "AR22-012",
@@ -6455,13 +6677,19 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown. Write the equation of the line.",
-      "answer": "y = (3/2)x + 1/2",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-012_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-012_stem.png",
+      "choices": {
+        "A": "y = (3/2)x + 1/2",
+        "B": "y = –(3/2)x + 1/2",
+        "C": "y = (3/2)x – 1/2",
+        "D": "y = (3/2)x + 1/2 + 1"
+      }
     },
     {
       "id": "AR22-013",
@@ -6469,13 +6697,19 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown. Write the equation of the line.",
-      "answer": "y = (1/3)x + 2/3",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-013_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-013_stem.png",
+      "choices": {
+        "A": "y = (1/3)x + 2/3",
+        "B": "y = –(1/3)x + 2/3",
+        "C": "y = (1/3)x – 2/3",
+        "D": "y = (1/3)x + 2/3 + 1"
+      }
     },
     {
       "id": "AR22-014",
@@ -6483,13 +6717,19 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown. Write the equation of the line.",
-      "answer": "y = –(1/4)x + 3/4",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-014_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-014_stem.png",
+      "choices": {
+        "A": "y = –(1/4)x + 3/4",
+        "B": "y = (1/4)x + 3/4",
+        "C": "y = –(1/4)x – 3/4",
+        "D": "y = +(1/4)x + 3/4"
+      }
     },
     {
       "id": "AR22-015",
@@ -6497,13 +6737,19 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown. Write the equation of the line.",
-      "answer": "y = –(1/2)x + 3/2",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-015_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-015_stem.png",
+      "choices": {
+        "A": "y = –(1/2)x + 3/2",
+        "B": "y = (1/2)x + 3/2",
+        "C": "y = –(1/2)x – 3/2",
+        "D": "y = +(1/2)x + 3/2"
+      }
     },
     {
       "id": "AR22-016",
@@ -6511,13 +6757,19 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown (horizontal line). Write the equation.",
-      "answer": "y = 0.5",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-016_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-016_stem.png",
+      "choices": {
+        "A": "y = 0.5",
+        "B": "y = –0.5",
+        "C": "y = 1.5",
+        "D": "y = 1"
+      }
     },
     {
       "id": "AR22-017",
@@ -6525,13 +6777,19 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown (vertical line). Write the equation.",
-      "answer": "x = 1.5",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-017_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR22-017_stem.png",
+      "choices": {
+        "A": "x = 1.5",
+        "B": "x = –1.5",
+        "C": "x = 2.5",
+        "D": "x = 3"
+      }
     },
     {
       "id": "AR22-018",
@@ -6693,12 +6951,18 @@
       "benchmark": "MA.912.AR.2.2",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Equations - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Photo books (base price for 20 pages). Write equation for cost y vs pages x (x≥20) for each size: 7x9 ($20 base, $1/page), 8x11 ($25 base, $1/page), 12x12 ($45 base, $1.50/page).",
-      "answer": "7x9: y=x, 8x11: y=x+5, 12x12: y=1.5x+15",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "7×9: y=x;  8×11: y=x+5;  12×12: y=1.5x+15",
+        "B": "7×9: y=x+5;  8×11: y=x;  12×12: y=1.5x+15",
+        "C": "7×9: y=x;  8×11: y=x+5;  12×12: y=1.5x",
+        "D": "7×9: y=1.5x;  8×11: y=x+5;  12×12: y=x"
+      }
     },
     {
       "id": "AR24-001",
@@ -7191,13 +7455,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "5 + k/(–2) ≥ 2. Solve and graph.",
-      "answer": "k ≤ 6",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P01_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P01_stem.png",
+      "choices": {
+        "A": "k ≤ 6",
+        "B": "k ≥ 6",
+        "C": "k < 6",
+        "D": "k ≤ –6"
+      }
     },
     {
       "id": "AR26-P02",
@@ -7205,13 +7475,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "24 ≥ 6(w–2). Solve.",
-      "answer": "w ≤ 6",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P02_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P02_stem.png",
+      "choices": {
+        "A": "w ≤ 6",
+        "B": "w ≥ 6",
+        "C": "w < 6",
+        "D": "w ≤ –6"
+      }
     },
     {
       "id": "AR26-P03",
@@ -7219,13 +7495,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "5(4+y) > 2(y+7). Solve.",
-      "answer": "y > –2",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P03_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P03_stem.png",
+      "choices": {
+        "A": "y > –2",
+        "B": "y < –2",
+        "C": "y ≥ –2",
+        "D": "y > 2"
+      }
     },
     {
       "id": "AR26-P04",
@@ -7233,13 +7515,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Linear Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "–5n – 4 > 7n + 20. Solve.",
-      "answer": "n < –2",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P04_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P04_stem.png",
+      "choices": {
+        "A": "n < –2",
+        "B": "n > –2",
+        "C": "n ≤ –2",
+        "D": "n < 2"
+      }
     },
     {
       "id": "AR26-P05",
@@ -7247,13 +7535,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "–4 < 2p + 8 < 18. Solve.",
-      "answer": "–6 < p < 5",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P05_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P05_stem.png",
+      "choices": {
+        "A": "–6 < p < 5",
+        "B": "–6 > p > 5",
+        "C": "–7 < p < 5",
+        "D": "+6 < p < 5"
+      }
     },
     {
       "id": "AR26-P06",
@@ -7261,13 +7555,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "42 < 6(3–k) or (1/2)(14k–8) ≥ 10. Solve.",
-      "answer": "k < –4 or k ≥ 2",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P06_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P06_stem.png",
+      "choices": {
+        "A": "k < –4 or k ≥ 2",
+        "B": "k > –4 or k ≥ 2",
+        "C": "k < –4 and k ≥ 2",
+        "D": "k < 4 or k ≥ 2"
+      }
     },
     {
       "id": "AR26-P07",
@@ -7275,13 +7575,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "–6 < (1/3)(6y+12) < 14. Solve.",
-      "answer": "–5 < y < 5",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P07_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P07_stem.png",
+      "choices": {
+        "A": "–5 < y < 5",
+        "B": "–5 > y > 5",
+        "C": "–6 < y < 5",
+        "D": "+5 < y < 5"
+      }
     },
     {
       "id": "AR26-P08",
@@ -7289,13 +7595,19 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "–13 > q+2 or 5q ≥ –15. Solve.",
-      "answer": "q < –15 or q ≥ –3",
+      "answer": "A",
       "level": 1,
       "level_label": "Level 1 – Building Foundations",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P08_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR26-P08_stem.png",
+      "choices": {
+        "A": "q < –15 or q ≥ –3",
+        "B": "q > –15 or q ≥ –3",
+        "C": "q < –15 and q ≥ –3",
+        "D": "q < 15 or q ≥ 3"
+      }
     },
     {
       "id": "AR26-P09",
@@ -7303,12 +7615,18 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "5.6 ≥ –4d+8 > –3.2. Write solution in set builder notation.",
-      "answer": "{d | 0.6 ≤ d < 2.8}",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "{d | 0.6 ≤ d < 2.8}",
+        "B": "{d | 0.6 < d ≤ 2.8}",
+        "C": "{d | –0.6 ≤ d < –2.8}",
+        "D": "{d | 0.6 ≥ d > 2.8}"
+      }
     },
     {
       "id": "AR26-P10",
@@ -7316,12 +7634,18 @@
       "benchmark": "MA.912.AR.2.6",
       "reporting_category": "Linear Relationships",
       "topic": "Compound Inequalities - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–2 < x–5 ≤ 10. Write solution in set builder notation.",
-      "answer": "{x | 3 < x ≤ 15}",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "{x | 3 < x ≤ 15}",
+        "B": "{x | 3 ≤ x < 15}",
+        "C": "{x | –3 < x ≤ –15}",
+        "D": "{x | 3 ≥ x ≥ 15}"
+      }
     },
     {
       "id": "AR26-001",
@@ -7699,13 +8023,19 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Inequalities from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown. Write the inequality in standard form.",
-      "answer": "x – 2y ≥ 4",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-005_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-005_stem.png",
+      "choices": {
+        "A": "x – 2y ≥ 4",
+        "B": "x – 2y ≤ 4",
+        "C": "x – 3y ≥ 4",
+        "D": "x + 2y ≥ 4"
+      }
     },
     {
       "id": "AR27-006",
@@ -7829,13 +8159,19 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Inequalities from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown. Write inequality in point-slope form.",
-      "answer": "y+2>–(1/2)(x+3)",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-010_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-010_stem.png",
+      "choices": {
+        "A": "y+2>–(1/2)(x+3)",
+        "B": "y+2≥–(1/2)(x+3)",
+        "C": "y–2>–(1/2)(x–3)",
+        "D": "y+2>(1/2)(x+3)"
+      }
     },
     {
       "id": "AR27-011",
@@ -7843,13 +8179,19 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Inequalities from Graphs",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shown (vertical line). Write inequality.",
-      "answer": "x ≤ 4",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-011_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR27-011_stem.png",
+      "choices": {
+        "A": "x ≤ 4",
+        "B": "x ≥ 4",
+        "C": "x < 4",
+        "D": "x ≤ –4"
+      }
     },
     {
       "id": "AR27-012",
@@ -7990,12 +8332,18 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Gold $675/oz (g), silver $17/oz (s). Devon wants bracelet costing less than $500. Write inequality.",
-      "answer": "675g + 17s < 500",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "675g + 17s < 500",
+        "B": "675g + 17s > 500",
+        "C": "675g + 17s ≤ 500",
+        "D": "17g + 675s < 500"
+      }
     },
     {
       "id": "AR27-020",
@@ -8003,12 +8351,18 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Popcorn $3/box (p), cookies $4/box (s). Club wants to raise ≥$600. Write inequality.",
-      "answer": "3p + 4s ≥ 600",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "3p + 4s ≥ 600",
+        "B": "3p + 4s ≤ 600",
+        "C": "3p + 4s > 600",
+        "D": "4p + 3s ≥ 600"
+      }
     },
     {
       "id": "AR27-021",
@@ -8016,12 +8370,18 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Apples $3/lb (a), bananas $2/lb (b), max $25. Write inequality.",
-      "answer": "3a + 2b ≤ 25",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "3a + 2b ≤ 25",
+        "B": "3a + 2b ≥ 25",
+        "C": "3a + 2b < 25",
+        "D": "2a + 3b ≤ 25"
+      }
     },
     {
       "id": "AR27-022",
@@ -8029,12 +8389,18 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Gas $4.50/gal (g), car wash $12 (w), max $100. Write inequality.",
-      "answer": "4.5g + 12w ≤ 100",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "4.5g + 12w ≤ 100",
+        "B": "4.5g + 12w ≥ 100",
+        "C": "4.5g + 12w < 100",
+        "D": "12g + 4.5w ≤ 100"
+      }
     },
     {
       "id": "AR27-023",
@@ -8127,12 +8493,18 @@
       "benchmark": "MA.912.AR.2.7",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Linear Inequalities - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Platinum $850/oz (p), palladium $50/oz (d), max $1200. Write inequality.",
-      "answer": "850p + 50d ≤ 1200",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "850p + 50d ≤ 1200",
+        "B": "850p + 50d ≥ 1200",
+        "C": "850p + 50d < 1200",
+        "D": "50p + 850d ≤ 1200"
+      }
     },
     {
       "id": "AR27-028",
@@ -8807,12 +9179,18 @@
       "benchmark": "MA.912.AR.3.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Quadratic Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "x²+9x–22=0. What is the positive solution?",
-      "answer": "x = 2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "x = 2",
+        "B": "x = –2",
+        "C": "x = 3",
+        "D": "x = 4"
+      }
     },
     {
       "id": "AR31-009",
@@ -9506,12 +9884,18 @@
       "benchmark": "MA.912.AR.3.4",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Writing Quadratic Functions from Tables",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Launched object table: x=–2,–1,0,2,3,5 h=–112,0,80,144,128,0. Write the quadratic function.",
-      "answer": "y = –16x² + 64x + 80",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "y = –16x² + 64x + 80",
+        "B": "y = 16x² + 64x + 80",
+        "C": "y = –16x² – 64x – 80",
+        "D": "y = +16x² + 64x + 80"
+      }
     },
     {
       "id": "AR35-009",
@@ -9701,12 +10085,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "12=|4x|. Solve.",
-      "answer": "x=3 and x=–3",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "x=3 and x=–3",
+        "B": "x=3 only",
+        "C": "x=3 or x=–3",
+        "D": "x=3 and only"
+      }
     },
     {
       "id": "AR41-P02",
@@ -9714,12 +10104,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "|–a+2|+9=6. Solve.",
-      "answer": "No solution",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "No solution",
+        "B": "x = 0",
+        "C": "All real numbers",
+        "D": "x = 1"
+      }
     },
     {
       "id": "AR41-P03",
@@ -9727,12 +10123,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "3|4–3m|=30. Solve.",
-      "answer": "m=–2 and m=14/3",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "m=–2 and m=14/3",
+        "B": "m=–2 only",
+        "C": "m=–2 or m=14/3",
+        "D": "m=–2 and only"
+      }
     },
     {
       "id": "AR41-P04",
@@ -9740,12 +10142,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–4|5g–12|=–12. Solve.",
-      "answer": "g=3 and g=9/5",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "g=3 and g=9/5",
+        "B": "g=3 only",
+        "C": "g=3 or g=9/5",
+        "D": "g=3 and only"
+      }
     },
     {
       "id": "AR41-P05",
@@ -9753,12 +10161,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "|x–3|+9=30. Solve.",
-      "answer": "x=24 and x=–18",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "x=24 and x=–18",
+        "B": "x=24 only",
+        "C": "x=24 or x=–18",
+        "D": "x=24 and only"
+      }
     },
     {
       "id": "AR41-P06",
@@ -9766,12 +10180,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "3|2d–6|+2=2. Solve.",
-      "answer": "d=3",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "d=3",
+        "B": "d = –3",
+        "C": "d = 4",
+        "D": "d = 6"
+      }
     },
     {
       "id": "AR41-P07",
@@ -9779,12 +10199,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "7|2c–6|+4=32. Solve.",
-      "answer": "c=5 and c=1",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "c=5 and c=1",
+        "B": "c=5 only",
+        "C": "c=5 or c=1",
+        "D": "c=5 and only"
+      }
     },
     {
       "id": "AR41-P08",
@@ -9792,12 +10218,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations - Prerequisite",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–6|k+3|+24=0. Solve.",
-      "answer": "k=1 and k=–7",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "k=1 and k=–7",
+        "B": "k=1 only",
+        "C": "k=1 or k=–7",
+        "D": "k=1 and only"
+      }
     },
     {
       "id": "AR41-001",
@@ -9805,12 +10237,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Solving Absolute Value Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "–6|9–2x|=–18. What is the greatest value of x?",
-      "answer": "6",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "6",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      }
     },
     {
       "id": "AR41-002",
@@ -9818,12 +10256,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Absolute Value Equations - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "|x–85|=18. The other hiker is at either ___ or ___ meters elevation.",
-      "answer": "67 and 103",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "67 and 103",
+        "B": "67 only",
+        "C": "67 or 103",
+        "D": "67 and only"
+      }
     },
     {
       "id": "AR41-003",
@@ -9831,12 +10275,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Absolute Value Equations - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Muffin boxes: target 24oz, ±0.5oz tolerance. Lightest and heaviest acceptable weights?",
-      "answer": "Lightest: 23.5 oz, Heaviest: 24.5 oz",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "Lightest: 23.5 oz, Heaviest: 24.5 oz",
+        "B": "Lightest: 24.5 oz, Heaviest: 23.5 oz",
+        "C": "Lightest: 23 oz, Heaviest: 25 oz",
+        "D": "Lightest: 24 oz, Heaviest: 24 oz"
+      }
     },
     {
       "id": "AR41-004",
@@ -9931,12 +10381,18 @@
       "benchmark": "MA.912.AR.4.1",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Writing Absolute Value Equations - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Aisha lives 3 miles from school, Carlos 1 mile further. Aisha sometimes bikes to Carlos before going home. Write absolute value equation for daily distance.",
-      "answer": "|x–4|=1",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "|x–4|=1",
+        "B": "|x+4|=1",
+        "C": "|x–1|=4",
+        "D": "|x–4|=–1"
+      }
     },
     {
       "id": "AR41-010",
@@ -10923,12 +11379,18 @@
       "benchmark": "MA.912.AR.5.6",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Key Features of Exponential Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "What is the y-intercept of h(x)=12(9)^x?",
-      "answer": "12",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "12",
+        "B": "6",
+        "C": "11",
+        "D": "13"
+      }
     },
     {
       "id": "AR56-002",
@@ -11282,12 +11744,18 @@
       "benchmark": "MA.912.AR.9.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Systems of Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "A system of equation is given. y = 9x – 1 and y = 2x + 3. If (x, y) is the solution to the system, what is the value of x? Enter your answer as a fraction in the box.",
-      "answer": "4/7",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "4/7",
+        "B": "7/4",
+        "C": "–4/7",
+        "D": "5/7"
+      }
     },
     {
       "id": "AR91-003",
@@ -11496,12 +11964,18 @@
       "benchmark": "MA.912.AR.9.1",
       "reporting_category": "Linear Relationships",
       "topic": "Solving Systems of Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "A system of equations is given. y = 2x + 5 and y = (1/4)x – (1/4). What is the solution of the system?",
-      "answer": "(–3, –1)",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "(–3, –1)",
+        "B": "(–1, –3)",
+        "C": "(3, 1)",
+        "D": "(–3, 1)"
+      }
     },
     {
       "id": "AR91-012",
@@ -12396,12 +12870,18 @@
       "benchmark": "MA.912.F.1.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Classifying Functions from Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "d(x)=|10–x|. What type of function?",
-      "answer": "Absolute value",
+      "answer": "A",
       "level": 2,
-      "level_label": "Level 2 – Approaching Grade Level"
+      "level_label": "Level 2 – Approaching Grade Level",
+      "choices": {
+        "A": "Absolute value",
+        "B": "Linear",
+        "C": "Quadratic",
+        "D": "Exponential"
+      }
     },
     {
       "id": "F11-006",
@@ -12863,12 +13343,18 @@
       "benchmark": "MA.912.F.1.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Evaluating Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "g(x)=(5–2x)³. What is g(–1)+g(1)?",
-      "answer": "−18",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "−18",
+        "B": "18",
+        "C": "−9",
+        "D": "−36"
+      }
     },
     {
       "id": "F12-002",
@@ -12876,12 +13362,18 @@
       "benchmark": "MA.912.F.1.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Evaluating Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=x²+5x–12. What is f(–3)?",
-      "answer": "–6",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "–6",
+        "B": "6",
+        "C": "–7",
+        "D": "–3"
+      }
     },
     {
       "id": "F12-003",
@@ -12908,12 +13400,18 @@
       "benchmark": "MA.912.F.1.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Evaluating Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=–3x+4. What is 2f(3)+f(–4)?",
-      "answer": "316",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "316",
+        "B": "–316",
+        "C": "632",
+        "D": "315"
+      }
     },
     {
       "id": "F12-005",
@@ -12940,12 +13438,18 @@
       "benchmark": "MA.912.F.1.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Evaluating Functions - Finding Input",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=3x²–5. If f(x)=22, what could x be?",
-      "answer": "3 or –3",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "3 or –3",
+        "B": "3 and –3",
+        "C": "only 3",
+        "D": "4 or –3"
+      }
     },
     {
       "id": "F12-007",
@@ -12972,12 +13476,18 @@
       "benchmark": "MA.912.F.1.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Evaluating Functions - Finding Input",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=(1/2)(4x–3). If f(x)=5/2, what is x?",
-      "answer": "2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "2",
+        "B": "1",
+        "C": "3",
+        "D": "4"
+      }
     },
     {
       "id": "F12-009",
@@ -13081,12 +13591,18 @@
       "benchmark": "MA.912.F.1.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Evaluating Functions - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(d)=50+25d (cell phone bill, d=devices). Total monthly cost for 3 devices?",
-      "answer": "$125",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "$125",
+        "B": "$138",
+        "C": "$225",
+        "D": "$62"
+      }
     },
     {
       "id": "F12-015",
@@ -13208,13 +13724,19 @@
       "benchmark": "MA.912.F.1.3",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Average Rate of Change from Graphs - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Graph shows school transportation budget 2010–2023. What is average rate of change from 2010 to 2023? Round to nearest dollar.",
-      "answer": "$4,846/year",
+      "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-002_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/F13-002_stem.png",
+      "choices": {
+        "A": "$4,846/year",
+        "B": "$3,846/year",
+        "C": "$5,846/year",
+        "D": "$4,846 total"
+      }
     },
     {
       "id": "F13-003",
@@ -13222,12 +13744,18 @@
       "benchmark": "MA.912.F.1.3",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Average Rate of Change from Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(n)=(1.3)^n (medication in mg, n=hours). Average rate of change between hour 2 and hour 3? Round to nearest thousandth.",
-      "answer": "0.507 mg/hr",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "0.507 mg/hr",
+        "B": "0.250 mg/hr",
+        "C": "0.750 mg/hr",
+        "D": "1.014 mg/hr"
+      }
     },
     {
       "id": "F13-004",
@@ -13235,12 +13763,18 @@
       "benchmark": "MA.912.F.1.3",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Average Rate of Change from Tables - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Burke family trip table: hr=1,2,3,4,5 miles=45.15,112.12,178.78,238.53,305.75. Average rate of change hours 2–4? Round to nearest tenth.",
-      "answer": "63.2 miles/hour",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "63.2 miles/hour",
+        "B": "31.6 miles/hour",
+        "C": "126.4 miles/hour",
+        "D": "60 miles/hour"
+      }
     },
     {
       "id": "F13-005",
@@ -13519,12 +14053,18 @@
       "benchmark": "MA.912.F.2.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Transformations of Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=x² transformed to g(x)=f(x+3)+5. Complete: graph of f translated ___ units ___ and 5 units ___.",
-      "answer": "3 units left and 5 units up",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "3 units left and 5 units up",
+        "B": "3 units left only",
+        "C": "3 units left or 5 units up",
+        "D": "3 units left and only"
+      }
     },
     {
       "id": "F21-004",
@@ -13621,12 +14161,18 @@
       "benchmark": "MA.912.F.2.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Transformations of Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=x² transformed to g(x)=f(x–3)–9. What are the coordinates of the vertex of g?",
-      "answer": "(3, –9)",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "(3, –9)",
+        "B": "(–9, 3)",
+        "C": "(–3, 9)",
+        "D": "(3, 9)"
+      }
     },
     {
       "id": "F21-009",
@@ -13634,12 +14180,18 @@
       "benchmark": "MA.912.F.2.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Transformations of Functions",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "f(x)=3x²–7. g(x)=f(x)–4. Write a function for g(x).",
-      "answer": "g(x) = 3x² – 11",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "g(x) = 3x² – 11",
+        "B": "–g(x) = 3x² – 11",
+        "C": "g(x) = 3x² + 11",
+        "D": "g(x) = 3x² + 11"
+      }
     },
     {
       "id": "F21-010",
@@ -13875,12 +14427,18 @@
       "benchmark": "MA.912.FL.3.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Simple Interest",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "$3,600 at 0.5% simple interest annually for 5 years. Total amount?",
-      "answer": "$3,690.00",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "$3,690.00",
+        "B": "$4,059.00",
+        "C": "$3,790.00",
+        "D": "$1,845.00"
+      }
     },
     {
       "id": "FL32-003",
@@ -13888,12 +14446,18 @@
       "benchmark": "MA.912.FL.3.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Compound Interest",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "$2,000 at 6% annual interest compounded monthly for 1 year. Total amount? Round to nearest dollar.",
-      "answer": "$2,123",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "$2,123",
+        "B": "$2,335",
+        "C": "$2,223",
+        "D": "$1,062"
+      }
     },
     {
       "id": "FL34-001",
@@ -13920,12 +14484,18 @@
       "benchmark": "MA.912.FL.3.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Simple Interest",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Raquel lends $1,655 at 9.25% simple interest per year. Igor returned $1,757 + a VR headset after 2 years 3 months. What is the headset price?",
-      "answer": "$242.45",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "$242.45",
+        "B": "$266.69",
+        "C": "$342.45",
+        "D": "$121.22"
+      }
     },
     {
       "id": "FL34-002",
@@ -13972,12 +14542,18 @@
       "benchmark": "MA.912.FL.3.2",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Simple Interest",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "John lends money to Edward at 10% simple interest for 4 years. Edward pays back $1,400. How much did John lend?",
-      "answer": "$1,000",
+      "answer": "A",
       "level": 4,
-      "level_label": "Level 4 – Above Grade Level"
+      "level_label": "Level 4 – Above Grade Level",
+      "choices": {
+        "A": "$1,000",
+        "B": "$1,400",
+        "C": "$400",
+        "D": "$1,040"
+      }
     },
     {
       "id": "FL32-006",
@@ -14495,12 +15071,18 @@
       "benchmark": "MA.912.NSO.1.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Rational Exponents",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "4^(5/2) · 4^x = ⁷√(4³). Find x.",
-      "answer": "x = –1/6",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "x = –1/6",
+        "B": "x = 6/1",
+        "C": "x = 1/6",
+        "D": "x = 0/6"
+      }
     },
     {
       "id": "NSO11-011",
@@ -14508,12 +15090,18 @@
       "benchmark": "MA.912.NSO.1.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Rational Exponents",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "(∛(–216))^(–y) = 1/36. Find y.",
-      "answer": "y = 2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "y = 2",
+        "B": "y = –2",
+        "C": "y = 3",
+        "D": "y = 4"
+      }
     },
     {
       "id": "NSO11-012",
@@ -14521,12 +15109,18 @@
       "benchmark": "MA.912.NSO.1.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Rational Exponents",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "5 / (25^(–r)) = 5⁴. Find r.",
-      "answer": "r = –3/2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "r = –3/2",
+        "B": "r = 2/3",
+        "C": "r = 3/2",
+        "D": "r = –2/2"
+      }
     },
     {
       "id": "NSO11-013",
@@ -14534,12 +15128,18 @@
       "benchmark": "MA.912.NSO.1.1",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Rational Exponents",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "2.5^(1/2) × (2.5^(2/3))⁴ = 2.5^(g+1). Find g.",
-      "answer": "g = 2",
+      "answer": "A",
       "level": 3,
-      "level_label": "Level 3 – Passing (On Grade Level)"
+      "level_label": "Level 3 – Passing (On Grade Level)",
+      "choices": {
+        "A": "g = 2",
+        "B": "g = –2",
+        "C": "g = 3",
+        "D": "g = 4"
+      }
     },
     {
       "id": "NSO11-014",
@@ -14830,12 +15430,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Find the sum: 5√64 + 6√100.",
-      "answer": "100",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "100",
+        "B": "99",
+        "C": "101",
+        "D": "200"
+      }
     },
     {
       "id": "NSO14-002",
@@ -14843,12 +15449,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Find the difference: 3√81 – 2√49.",
-      "answer": "13",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "13",
+        "B": "12",
+        "C": "14",
+        "D": "18"
+      }
     },
     {
       "id": "NSO14-003",
@@ -14856,12 +15468,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Find the product: 5√25 · 4√16.",
-      "answer": "400",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "400",
+        "B": "800",
+        "C": "200",
+        "D": "399"
+      }
     },
     {
       "id": "NSO14-004",
@@ -14869,12 +15487,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Find the quotient: √150 / √6.",
-      "answer": "5",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "5",
+        "B": "10",
+        "C": "–5",
+        "D": "4"
+      }
     },
     {
       "id": "NSO14-005",
@@ -14882,12 +15506,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "Find the difference: 11√245 – 8√180.",
-      "answer": "29√5",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "29√5",
+        "B": "14√5",
+        "C": "29√10",
+        "D": "58√5"
+      }
     },
     {
       "id": "NSO14-006",
@@ -15089,12 +15719,18 @@
       "benchmark": "MA.912.NSO.1.4",
       "reporting_category": "Expressions, Functions, and Data Analysis",
       "topic": "Operations with Radicals",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": false,
       "stem": "√72 / √2 = ?",
-      "answer": "6",
+      "answer": "A",
       "level": 1,
-      "level_label": "Level 1 – Building Foundations"
+      "level_label": "Level 1 – Building Foundations",
+      "choices": {
+        "A": "6",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      }
     },
     {
       "id": "NSO14-017",
@@ -15201,13 +15837,19 @@
       "benchmark": "MA.912.AR.3.6",
       "reporting_category": "Non-Linear Relationships",
       "topic": "Key Features of Quadratic Functions - Real World",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Quadratic function h models rocket height. What is the maximum value of the graph?",
-      "answer": "225",
+      "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR36-002_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR36-002_stem.png",
+      "choices": {
+        "A": "225",
+        "B": "224",
+        "C": "450",
+        "D": "226"
+      }
     },
     {
       "id": "AR36-003",
@@ -15632,13 +16274,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Parallel Lines from Graph",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line parallel to f through P.",
-      "answer": "y = –1",
+      "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-001_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-001_stem.png",
+      "choices": {
+        "A": "y = –1",
+        "B": "y = 1",
+        "C": "y = 0",
+        "D": "y = 2"
+      }
     },
     {
       "id": "AR23-NEW-002",
@@ -15646,13 +16294,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Parallel Lines from Graph",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line parallel to g through P.",
-      "answer": "y = 2x + 3",
+      "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-002_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-002_stem.png",
+      "choices": {
+        "A": "y = 2x + 3",
+        "B": "y = –2x + 3",
+        "C": "y = 2x – 3",
+        "D": "y = 2x + 3 + 1"
+      }
     },
     {
       "id": "AR23-NEW-003",
@@ -15660,13 +16314,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Perpendicular Lines from Graph",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line perpendicular to f through Q.",
-      "answer": "x = 3",
+      "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-003_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-003_stem.png",
+      "choices": {
+        "A": "x = 3",
+        "B": "x = –3",
+        "C": "x = 4",
+        "D": "x = 6"
+      }
     },
     {
       "id": "AR23-NEW-004",
@@ -15674,13 +16334,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Perpendicular Lines from Graph",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Lines f and g are graphed with points P(–2,–1) and Q(3,–2). Line f is y=2, line g is y=2x–1. Write the equation of the line perpendicular to g through Q.",
-      "answer": "y = –(1/2)x – (1/2)",
+      "answer": "A",
       "level": 4,
       "level_label": "Level 4 – Above Grade Level",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-004_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-004_stem.png",
+      "choices": {
+        "A": "y = –(1/2)x – (1/2)",
+        "B": "y = (1/2)x – (1/2)",
+        "C": "y = +(1/2)x – (1/2)",
+        "D": "y = –(1/2)x – (1/2) + 1"
+      }
     },
     {
       "id": "AR23-NEW-005",
@@ -15688,13 +16354,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Parallel Line Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Line p is shown on the coordinate plane. Write the equation of the line parallel to line p and passes through (3, 2).",
-      "answer": "y = –(7/3)x + 9",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-005_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-005_stem.png",
+      "choices": {
+        "A": "y = –(7/3)x + 9",
+        "B": "y = (7/3)x + 9",
+        "C": "y = –(7/3)x – 9",
+        "D": "y = +(7/3)x + 9"
+      }
     },
     {
       "id": "AR23-NEW-006",
@@ -15702,13 +16374,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Perpendicular Line Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Line p is shown on the coordinate plane. Write the equation of the line perpendicular to line p and passes through (2, 1).",
-      "answer": "y = (3/7)x + 1/7",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-006_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-006_stem.png",
+      "choices": {
+        "A": "y = (3/7)x + 1/7",
+        "B": "y = –(3/7)x + 1/7",
+        "C": "y = (3/7)x – 1/7",
+        "D": "y = (3/7)x + 1/7 + 1"
+      }
     },
     {
       "id": "AR23-NEW-007",
@@ -15716,13 +16394,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Parallel Line Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Line h is shown on the coordinate plane. Write the equation of the line parallel to line h and passes through (1, 4).",
-      "answer": "y = (2/3)x + 10/3",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-007_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-007_stem.png",
+      "choices": {
+        "A": "y = (2/3)x + 10/3",
+        "B": "y = –(2/3)x + 10/3",
+        "C": "y = (2/3)x – 10/3",
+        "D": "y = (2/3)x + 10/3 + 1"
+      }
     },
     {
       "id": "AR23-NEW-008",
@@ -15730,13 +16414,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Perpendicular Line Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Line h is shown on the coordinate plane. Write the equation of the line perpendicular to line h and passes through (2, 1).",
-      "answer": "y = –(3/2)x + 4",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-008_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-008_stem.png",
+      "choices": {
+        "A": "y = –(3/2)x + 4",
+        "B": "y = (3/2)x + 4",
+        "C": "y = –(3/2)x – 4",
+        "D": "y = +(3/2)x + 4"
+      }
     },
     {
       "id": "AR23-NEW-009",
@@ -15744,13 +16434,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Parallel Line Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Line z is shown on the coordinate plane. Write the equation of the line parallel to line z and passes through (–1, –1).",
-      "answer": "y = 4x + 3",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-009_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-009_stem.png",
+      "choices": {
+        "A": "y = 4x + 3",
+        "B": "y = –4x + 3",
+        "C": "y = 4x – 3",
+        "D": "y = 4x + 3 + 1"
+      }
     },
     {
       "id": "AR23-NEW-010",
@@ -15758,13 +16454,19 @@
       "benchmark": "MA.912.AR.2.3",
       "reporting_category": "Linear Relationships",
       "topic": "Writing Perpendicular Line Equations",
-      "type": "gridded_response",
+      "type": "multiple_choice",
       "has_image": true,
       "stem": "Line z is shown on the coordinate plane. Write the equation of the line perpendicular to line z and passes through (1, 0).",
-      "answer": "y = –(1/4)x + 1/4",
+      "answer": "A",
       "level": 3,
       "level_label": "Level 3 – Passing (On Grade Level)",
-      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-010_stem.png"
+      "image_url": "https://raw.githubusercontent.com/alondra122201-collab/mvp-algebra1/main/images/questions/AR23-NEW-010_stem.png",
+      "choices": {
+        "A": "y = –(1/4)x + 1/4",
+        "B": "y = (1/4)x + 1/4",
+        "C": "y = –(1/4)x – 1/4",
+        "D": "y = +(1/4)x + 1/4"
+      }
     }
   ]
 }
