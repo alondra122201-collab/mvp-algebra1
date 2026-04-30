@@ -1,24 +1,28 @@
 <!DOCTYPE html>
+
 <!--
   ============================================================
-  MVP Algebra 1 — Drill & Kill
+  MVP Algebra 1 — Skill Drills
   © 2026 Alondra Delgado. All rights reserved.
   Created by Alondra Delgado · Hialeah Senior High School
   Part of the MVP Algebra 1 platform.
   Unauthorized copying, modification, or redistribution is prohibited.
   ============================================================
 -->
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MVP Algebra 1 — Drill & Kill</title>
+<title>MVP Algebra 1 — Skill Drills</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
 <!-- Firebase -->
+
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
 <style>
@@ -36,15 +40,15 @@
     --orb-1: rgba(0, 229, 255, 0.12);
     --orb-2: rgba(255, 45, 149, 0.10);
   }
-  body.theme-miami {
-    --bg-1: #0a1f2e; --bg-2: #1a3a55; --bg-3: #2d1d50;
-    --cyan: #00d9c0; --cyan-glow: rgba(0, 217, 192, 0.5);
-    --gold: #ffaa3b; --gold-glow: rgba(255, 170, 59, 0.5);
-    --pink: #ff7e5f; --green: #00ff9d; --red: #ff5577;
-    --text: #f5fafe; --text-dim: #88a4b3;
-    --primary-deep: #00a89a; --primary-darker: #006659;
-    --grid-line: rgba(0, 217, 192, 0.05);
-    --orb-1: rgba(0, 217, 192, 0.14); --orb-2: rgba(255, 126, 95, 0.12);
+  body.theme-neon {
+    --bg-1: #02010a; --bg-2: #07051c; --bg-3: #0c0828;
+    --cyan: #00f0ff; --cyan-glow: rgba(0, 240, 255, 0.6);
+    --gold: #b6ff00; --gold-glow: rgba(182, 255, 0, 0.5);
+    --pink: #ff2bd6; --green: #b6ff00; --red: #ff3060;
+    --text: #f5fafe; --text-dim: #7a8aa0;
+    --primary-deep: #00cce0; --primary-darker: #007a8a;
+    --grid-line: rgba(0, 240, 255, 0.05);
+    --orb-1: rgba(0, 240, 255, 0.14); --orb-2: rgba(255, 43, 214, 0.12);
   }
   body.theme-galaxy {
     --bg-1: #0a0420; --bg-2: #1a0a40; --bg-3: #2d1560;
@@ -102,8 +106,285 @@
       radial-gradient(circle at 85% 80%, var(--orb-2), transparent 40%);
     pointer-events: none; z-index: 0;
   }
-  body.theme-miami::before, body.theme-galaxy::before,
+  body.theme-neon::before, body.theme-galaxy::before,
   body.theme-matrix::before, body.theme-sakura::before { display: none; }
+
+  /* ============================================================
+     RICH THEME BACKGROUNDS (animated)
+     The #themeBg container holds all per-theme moving elements.
+     Animations are dampened during active drill via .drill-active.
+  ============================================================ */
+  #themeBg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  /* === NEON: cyberpunk midnight + drifting neon-tube outlines === */
+  body.theme-neon {
+    background:
+      linear-gradient(180deg,
+        #02010a 0%,
+        #04031a 35%,
+        #07051c 65%,
+        #02010a 100%);
+  }
+  /* Soft neon glow accents radiating from corners */
+  body.theme-neon::after {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 500px 600px at 0% 100%, rgba(0, 240, 255, 0.16), transparent 60%),
+      radial-gradient(ellipse 500px 600px at 100% 0%, rgba(255, 43, 214, 0.14), transparent 60%),
+      radial-gradient(ellipse 400px 400px at 100% 100%, rgba(182, 255, 0, 0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Subtle scanline overlay for the cyberpunk display feel */
+  .neon-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 240, 255, 0.025) 3px,
+      rgba(0, 240, 255, 0.025) 4px
+    );
+    pointer-events: none;
+    z-index: 4;
+  }
+  /* Neon-tube outline shapes that drift slowly across the screen */
+  .neon-shape {
+    position: absolute;
+    pointer-events: none;
+    animation: neonDrift linear forwards;
+    opacity: 0;
+  }
+  .neon-shape svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+  @keyframes neonDrift {
+    0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    10%  { opacity: 1; }
+    50%  { transform: translate(var(--drift-x, 200px), var(--drift-y, -40px)) rotate(var(--spin, 60deg)); }
+    90%  { opacity: 1; }
+    100% { transform: translate(calc(var(--drift-x, 200px) * 2), calc(var(--drift-y, -40px) * 2)) rotate(calc(var(--spin, 60deg) * 2)); opacity: 0; }
+  }
+  /* Slow, hypnotic flicker on a small subset of shapes for that authentic broken-tube vibe */
+  @keyframes neonFlicker {
+    0%, 100% { filter: brightness(1); }
+    47% { filter: brightness(1); }
+    48% { filter: brightness(0.3); }
+    49% { filter: brightness(1.2); }
+    50% { filter: brightness(0.5); }
+    51% { filter: brightness(1); }
+  }
+  .neon-shape.flicker svg { animation: neonFlicker 6s infinite; }
+
+  /* === GALAXY: floating stars + shooting stars + nebula === */
+  body.theme-galaxy {
+    background:
+      radial-gradient(ellipse 700px 400px at 18% 28%, rgba(180, 110, 255, 0.22), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 82% 72%, rgba(255, 100, 200, 0.18), transparent 60%),
+      radial-gradient(ellipse 500px 400px at 50% 50%, rgba(100, 80, 200, 0.12), transparent 60%),
+      linear-gradient(180deg, #0a0420 0%, #1a0a40 50%, #2d1560 100%);
+  }
+  .galaxy-stars {
+    position: absolute; inset: 0;
+  }
+  .galaxy-stars span {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: white; border-radius: 50%;
+    opacity: 0.85;
+    animation: twinkle var(--twinkle-dur, 3s) ease-in-out infinite;
+  }
+  .galaxy-stars span.big {
+    width: 3px; height: 3px;
+    box-shadow: 0 0 6px white, 0 0 14px rgba(255, 255, 255, 0.5);
+  }
+  .galaxy-stars span.huge {
+    width: 4px; height: 4px;
+    box-shadow: 0 0 8px white, 0 0 18px var(--cyan-glow);
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.7); }
+    50%      { opacity: 1;    transform: scale(1.2); }
+  }
+  .shooting-star {
+    position: absolute;
+    width: 3px; height: 3px;
+    background: white; border-radius: 50%;
+    box-shadow: 0 0 6px white, 0 0 16px white;
+    opacity: 0;
+  }
+  .shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 50%; right: 100%;
+    width: 140px; height: 1.5px;
+    margin-top: -0.75px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85));
+    transform-origin: right center;
+  }
+  .shooting-star.fly {
+    animation: shoot 1.5s linear forwards;
+  }
+  @keyframes shoot {
+    0%   { transform: translate(0, 0); opacity: 0; }
+    10%  { opacity: 1; }
+    100% { transform: translate(480px, 320px); opacity: 0; }
+  }
+
+  /* === SAKURA: soft clouds + falling cherry blossom petals === */
+  body.theme-sakura {
+    background:
+      radial-gradient(ellipse at 15% 5%, #ffe5ed 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 95%, #ffd5e3 0%, transparent 45%),
+      linear-gradient(180deg, #fff8fa 0%, #fff0f4 50%, #ffe5ed 100%);
+  }
+  .sakura-cloud {
+    position: absolute;
+    opacity: 0.9;
+    animation: cloudDrift linear infinite;
+    filter: drop-shadow(0 4px 12px rgba(214, 51, 132, 0.08));
+  }
+  .sakura-cloud svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @keyframes cloudDrift {
+    0%   { transform: translateX(-280px); }
+    100% { transform: translateX(calc(100vw + 80px)); }
+  }
+  .petal {
+    position: absolute;
+    top: -30px;
+    animation: petalFall linear forwards;
+    pointer-events: none;
+  }
+  .petal svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @keyframes petalFall {
+    0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    8%   { opacity: 0.9; }
+    100% {
+      transform: translate(var(--sway, 60px), 110vh) rotate(var(--spin, 720deg));
+      opacity: 0.5;
+    }
+  }
+
+  /* === MATRIX: scanlines + glitch + falling characters === */
+  body.theme-matrix {
+    background: linear-gradient(180deg, #000000 0%, #001508 100%);
+  }
+  .matrix-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 255, 65, 0.045) 2px,
+      rgba(0, 255, 65, 0.045) 3px
+    );
+    pointer-events: none;
+    z-index: 5;
+  }
+  .matrix-scan-bar {
+    position: absolute;
+    left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(0deg,
+      transparent,
+      rgba(0, 255, 65, 0.04) 30%,
+      rgba(0, 255, 65, 0.10) 50%,
+      rgba(0, 255, 65, 0.04) 70%,
+      transparent);
+    animation: scanBar 7s linear infinite;
+    pointer-events: none;
+    z-index: 4;
+  }
+  @keyframes scanBar {
+    0%   { top: -120px; }
+    100% { top: 100vh; }
+  }
+  .matrix-glitch {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 255, 65, 0.06);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 6;
+    mix-blend-mode: screen;
+  }
+  .matrix-glitch.fire { animation: glitchFlick 0.22s; }
+  @keyframes glitchFlick {
+    0%   { opacity: 0; transform: translateX(0); filter: hue-rotate(0deg); }
+    15%  { opacity: 1; transform: translateX(-6px); filter: hue-rotate(120deg); }
+    30%  { opacity: 0.5; transform: translateX(8px); }
+    50%  { opacity: 1; transform: translateX(-3px); filter: hue-rotate(-40deg); }
+    75%  { opacity: 0.7; transform: translateX(2px); }
+    100% { opacity: 0; transform: translateX(0); filter: hue-rotate(0deg); }
+  }
+  .matrix-column {
+    position: absolute;
+    top: -250px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    animation: matrixFall linear infinite;
+    pointer-events: none;
+    line-height: 1.2;
+    color: rgba(0, 255, 65, 0.65);
+    text-shadow: 0 0 4px currentColor;
+    z-index: 2;
+  }
+  .matrix-column span:last-child {
+    color: rgba(225, 255, 225, 1);
+    text-shadow: 0 0 8px #00ff41, 0 0 14px #00ff41;
+  }
+  @keyframes matrixFall {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(calc(100vh + 250px)); }
+  }
+
+  /* === DAMPEN ANIMATIONS DURING ACTIVE DRILL (Option B) ===
+     When the student is on the active question screen, all theme
+     animations are paused or reduced to keep focus on the question.
+     This applies during the drill screen ONLY — picker, results,
+     welcome, confirm, speed prompt all keep full animations. */
+  body.drill-active .matrix-scan-bar,
+  body.drill-active .matrix-glitch,
+  body.drill-active .galaxy-stars span {
+    animation-play-state: paused;
+  }
+  body.drill-active .shooting-star,
+  body.drill-active .petal,
+  body.drill-active .sakura-cloud,
+  body.drill-active .matrix-column,
+  body.drill-active .neon-shape {
+    display: none;
+  }
+  /* Per-theme question card overlay so background doesn't fight the text */
+  body.theme-neon .question-card    { background: rgba(2, 1, 10, 0.65); }
+  body.theme-galaxy .question-card { background: rgba(10, 6, 28, 0.55); }
+  body.theme-matrix .question-card { background: rgba(0, 10, 5, 0.65); }
+  body.theme-sakura .question-card { background: rgba(255, 252, 254, 0.70); }
+  /* ============ END RICH THEME BACKGROUNDS ============ */
+
   body.theme-sakura {
     background:
       radial-gradient(ellipse at 15% 5%, #ffe5ed 0%, transparent 45%),
@@ -149,6 +430,33 @@
     color: var(--cyan);
     text-shadow: 0 0 12px var(--cyan-glow);
     letter-spacing: 0.1em;
+  }
+  .skill-breadcrumb {
+    display: none; /* hidden by default; JS shows it during drill */
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    padding-left: 14px;
+    margin-left: 4px;
+    border-left: 2px solid var(--panel-border);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+  }
+  .skill-breadcrumb::before {
+    content: '›';
+    margin-right: 8px;
+    color: var(--cyan);
+    font-weight: 900;
+  }
+  body.drill-active .skill-breadcrumb {
+    display: inline-block;
+  }
+  @media (max-width: 720px) {
+    .skill-breadcrumb { max-width: 140px; font-size: 0.85rem; }
   }
 
   /* ============ MVP CARD ============ */
@@ -450,6 +758,28 @@
     border-radius: 6px;
     letter-spacing: 0.1em;
   }
+  /* Completed-but-not-exhausted: visual signal it's been done at least once today */
+  .skill-tile.completed:not(.exhausted) {
+    opacity: 0.78;
+    border-color: rgba(0, 255, 157, 0.35);
+  }
+  .skill-tile.completed:not(.exhausted)::before {
+    content: '✓';
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 22px; height: 22px;
+    background: var(--green);
+    color: #000;
+    font-family: 'Bungee', cursive;
+    font-size: 0.85rem;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.4);
+  }
+  .skill-tile.completed:not(.exhausted):hover {
+    opacity: 1;
+  }
   .skill-name {
     font-size: 1.05rem;
     font-weight: 700;
@@ -484,6 +814,56 @@
   }
   .skill-difficulty-dots span.unlocked { background: var(--cyan); }
   .skill-difficulty-dots span.mastered { background: var(--gold); box-shadow: 0 0 6px var(--gold-glow); }
+
+  /* ============ SESSION STATS DASH ============ */
+  .stats-dash {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto 32px;
+    padding: 0 8px;
+  }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    padding: 14px 8px 12px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    transition: all 0.2s;
+  }
+  .stat-card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 14px var(--cyan-glow);
+  }
+  .stat-icon {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .stat-value {
+    font-family: 'Bungee', cursive;
+    font-size: 1.4rem;
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan-glow);
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  @media (max-width: 720px) {
+    .stats-dash { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+    .stat-card { padding: 10px 4px 8px; }
+    .stat-icon { font-size: 1.1rem; }
+    .stat-value { font-size: 1.05rem; }
+    .stat-label { font-size: 0.6rem; letter-spacing: 0.05em; }
+  }
 
   /* ============ SCREEN 2: CONFIRMATION ============ */
   .confirm-card {
@@ -1021,190 +1401,234 @@
     .confirm-card { padding: 30px 24px; margin: 30px auto; }
   }
 </style>
+
 </head>
 <body>
+
+<!-- Theme background container (populated by JS based on current theme) -->
+
+<div id="themeBg"></div>
 
 <div class="app">
 
   <!-- ============ TOP BAR ============ -->
+
   <div class="topbar">
     <div class="topbar-left">
       <button class="back-btn" onclick="goToPicker()">← Skills</button>
       <button class="back-btn lobby-link" onclick="goToLobby()" title="Back to lobby">🏠</button>
-      <div class="brand">🎯 DRILL & KILL</div>
+      <div class="brand">🎯 SKILL DRILLS</div>
+      <span class="skill-breadcrumb" id="skillBreadcrumb"></span>
     </div>
     <div class="topbar-right">
 
-      <!-- MVP Card -->
-      <div class="mvp-card" id="mvpCard" onclick="toggleNotifs(event)">
-        <span class="mvp-card-name" id="mvpName">—</span>
-        <span class="mvp-card-divider">·</span>
-        <span class="mvp-card-coins" id="mvpCoins">🪙 0</span>
-        <span class="notif-dot"></span>
-        <div class="notif-dropdown" id="notifDropdown">
-          <div class="notif-title">⚔️ BATTLE INVITES</div>
-          <div class="notif-empty" id="notifContent">No pending invites.</div>
-        </div>
-      </div>
-
-      <!-- Theme picker -->
-      <div class="theme-picker">
-        <button class="theme-toggle" onclick="toggleThemeMenu(event)" title="Change theme">🎨</button>
-        <div class="theme-menu" id="themeMenu">
-          <div class="theme-menu-title">CHOOSE THEME</div>
-          <button class="theme-option active" data-theme="arcade" onclick="setTheme('arcade')"><span>⚡ Arcade</span></button>
-          <button class="theme-option" data-theme="miami" onclick="setTheme('miami')"><span>🌴 Miami</span></button>
-          <button class="theme-option" data-theme="galaxy" onclick="setTheme('galaxy')"><span>🌌 Galaxy</span></button>
-          <button class="theme-option" data-theme="matrix" onclick="setTheme('matrix')"><span>💚 Matrix</span></button>
-          <button class="theme-option" data-theme="sakura" onclick="setTheme('sakura')"><span>🌸 Sakura</span></button>
-        </div>
-      </div>
+```
+  <!-- MVP Card -->
+  <div class="mvp-card" id="mvpCard" onclick="toggleNotifs(event)">
+    <span class="mvp-card-name" id="mvpName">—</span>
+    <span class="mvp-card-divider">·</span>
+    <span class="mvp-card-coins" id="mvpCoins">🪙 0</span>
+    <span class="notif-dot"></span>
+    <div class="notif-dropdown" id="notifDropdown">
+      <div class="notif-title">⚔️ BATTLE INVITES</div>
+      <div class="notif-empty" id="notifContent">No pending invites.</div>
     </div>
   </div>
 
+  <!-- Theme picker -->
+  <div class="theme-picker">
+    <button class="theme-toggle" onclick="toggleThemeMenu(event)" title="Change theme">🎨</button>
+    <div class="theme-menu" id="themeMenu">
+      <div class="theme-menu-title">CHOOSE THEME</div>
+      <button class="theme-option active" data-theme="arcade" onclick="setTheme('arcade')"><span>⚡ Arcade</span></button>
+      <button class="theme-option" data-theme="neon" onclick="setTheme('neon')"><span>🌃 Neon</span></button>
+      <button class="theme-option" data-theme="galaxy" onclick="setTheme('galaxy')"><span>🪐 Galaxy</span></button>
+      <button class="theme-option" data-theme="matrix" onclick="setTheme('matrix')"><span>💚 Matrix</span></button>
+      <button class="theme-option" data-theme="sakura" onclick="setTheme('sakura')"><span>🌸 Sakura</span></button>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
   <!-- ============ MAIN STAGE ============ -->
+
   <div class="stage">
 
-    <!-- ===== SCREEN 1: SKILL PICKER ===== -->
-    <div class="screen active" id="screen-picker">
-      <div class="picker-header">
-        <div class="picker-title">PICK YOUR SKILL</div>
-        <div class="picker-subtitle">20 questions. Adaptive difficulty. Earn coins. 3 drills per skill per day.</div>
-      </div>
+```
+<!-- ===== SCREEN 1: SKILL PICKER ===== -->
+<div class="screen active" id="screen-picker">
+  <div class="picker-header">
+    <div class="picker-title">PICK YOUR SKILL</div>
+    <div class="picker-subtitle">20 questions. Adaptive difficulty. Earn coins. 3 drills per skill per day.</div>
+  </div>
 
-      <div id="skillCategories"></div>
+  <!-- ===== SESSION STATS DASH ===== -->
+  <div class="stats-dash" id="statsDash">
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-value" id="statDrills">0</div>
+      <div class="stat-label">Drills</div>
     </div>
-
-    <!-- ===== SCREEN 1.5: SPEED MODE PROMPT ===== -->
-    <div class="screen" id="screen-speedprompt">
-      <div class="confirm-card">
-        <div class="speed-prompt-emoji">⚡</div>
-        <div class="confirm-skill" id="speedPromptSkill">Skill Name</div>
-        <div class="speed-prompt-question">Add <strong>Speed Mode</strong>?</div>
-
-        <div class="speed-prompt-info">
-          <div class="speed-perk">
-            <span class="speed-perk-icon">🪙</span>
-            <span><strong>Double coins</strong> per correct answer</span>
-          </div>
-          <div class="speed-perk">
-            <span class="speed-perk-icon">⏱</span>
-            <span><strong>30 seconds</strong> per question · run out = wrong</span>
-          </div>
-          <div class="speed-perk">
-            <span class="speed-perk-icon risk">⚠️</span>
-            <span><strong>Wrong answers cost coins</strong></span>
-          </div>
-        </div>
-
-        <div class="button-row">
-          <button class="btn btn-secondary" onclick="chooseSpeedMode(false)">No · Standard</button>
-          <button class="btn btn-speed" onclick="chooseSpeedMode(true)">⚡ Yes · Speed Mode</button>
-        </div>
-      </div>
+    <div class="stat-card">
+      <div class="stat-icon">✅</div>
+      <div class="stat-value" id="statCorrect">0</div>
+      <div class="stat-label">Correct</div>
     </div>
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-value" id="statAccuracy">—</div>
+      <div class="stat-label">Accuracy</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🪙</div>
+      <div class="stat-value" id="statCoins">0</div>
+      <div class="stat-label">Coins</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🔥</div>
+      <div class="stat-value" id="statBestStreak">0</div>
+      <div class="stat-label">Best Streak</div>
+    </div>
+  </div>
 
-    <!-- ===== SCREEN 2: CONFIRMATION ===== -->
-    <div class="screen" id="screen-confirm">
-      <div class="confirm-card">
-        <div class="confirm-skill" id="confirmSkillName">Skill Name</div>
-        <div class="confirm-standard" id="confirmStandard">Standard</div>
+  <div id="skillCategories"></div>
+</div>
 
-        <div class="confirm-info">
-          <div class="confirm-info-row">
-            <span>Questions</span><strong>20</strong>
-          </div>
-          <div class="confirm-info-row confirm-info-divider">
-            <span>Difficulty</span><strong>Adaptive · starts Easy</strong>
-          </div>
-          <div class="confirm-info-row confirm-info-divider">
-            <span>Mode</span><strong id="confirmMode">Standard</strong>
-          </div>
-          <div class="confirm-info-row confirm-info-divider">
-            <span>Today's attempts on this skill</span><strong id="confirmAttempts">0 / 3</strong>
-          </div>
-        </div>
+<!-- ===== SCREEN 1.5: SPEED MODE PROMPT ===== -->
+<div class="screen" id="screen-speedprompt">
+  <div class="confirm-card">
+    <div class="speed-prompt-emoji">⚡</div>
+    <div class="confirm-skill" id="speedPromptSkill">Skill Name</div>
+    <div class="speed-prompt-question">Add <strong>Speed Mode</strong>?</div>
 
-        <div class="speed-banner" id="speedBanner" style="display: none;">
-          <div class="speed-banner-title">⚡ SPEED MODE ENGAGED</div>
-          <div class="speed-banner-desc">30 seconds per question. Coin rewards <strong>doubled</strong>. Wrong answers <strong>cost coins</strong>. Run out of time = wrong.</div>
-        </div>
-
-        <div class="button-row">
-          <button class="btn btn-secondary" onclick="backToSpeedPrompt()">← Back</button>
-          <button class="btn" id="startDrillBtn" onclick="startDrill()">START DRILL →</button>
-        </div>
+    <div class="speed-prompt-info">
+      <div class="speed-perk">
+        <span class="speed-perk-icon">🪙</span>
+        <span><strong>Double coins</strong> per correct answer</span>
+      </div>
+      <div class="speed-perk">
+        <span class="speed-perk-icon">⏱</span>
+        <span><strong>30 seconds</strong> per question · run out = wrong</span>
+      </div>
+      <div class="speed-perk">
+        <span class="speed-perk-icon risk">⚠️</span>
+        <span><strong>Wrong answers cost coins</strong></span>
       </div>
     </div>
 
-    <!-- ===== SCREEN 3: DRILL ===== -->
-    <div class="screen" id="screen-drill">
-      <div class="drill-header">
-        <div class="drill-counter">
-          <span class="num" id="drillNum">1</span>
-          <span style="color: var(--text-dim);">/</span>
-          <span>20</span>
-        </div>
-        <div class="drill-stats">
-          <div class="diff-badge easy" id="diffBadge">EASY</div>
-          <div class="drill-stat streak">🔥 <span id="streakNum">0</span><span class="label">STREAK</span></div>
-          <div class="drill-stat time">⏱ <span id="timeDisplay">0:00</span></div>
-        </div>
-      </div>
-      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-      <div class="countdown-bar" id="countdownBar"><div class="countdown-fill" id="countdownFill"></div></div>
+    <div class="button-row">
+      <button class="btn btn-secondary" onclick="chooseSpeedMode(false)">No · Standard</button>
+      <button class="btn btn-speed" onclick="chooseSpeedMode(true)">⚡ Yes · Speed Mode</button>
+    </div>
+  </div>
+</div>
 
-      <div class="question-card">
-        <div class="question-text" id="questionText"></div>
-        <div class="question-graph" id="questionGraph"></div>
-        <div class="options" id="options"></div>
+<!-- ===== SCREEN 2: CONFIRMATION ===== -->
+<div class="screen" id="screen-confirm">
+  <div class="confirm-card">
+    <div class="confirm-skill" id="confirmSkillName">Skill Name</div>
+    <div class="confirm-standard" id="confirmStandard">Standard</div>
+
+    <div class="confirm-info">
+      <div class="confirm-info-row">
+        <span>Questions</span><strong>20</strong>
+      </div>
+      <div class="confirm-info-row confirm-info-divider">
+        <span>Difficulty</span><strong>Adaptive · starts Easy</strong>
+      </div>
+      <div class="confirm-info-row confirm-info-divider">
+        <span>Mode</span><strong id="confirmMode">Standard</strong>
+      </div>
+      <div class="confirm-info-row confirm-info-divider">
+        <span>Today's attempts on this skill</span><strong id="confirmAttempts">0 / 3</strong>
       </div>
     </div>
 
-    <!-- ===== SCREEN 4: RESULTS ===== -->
-    <div class="screen" id="screen-results">
-      <div class="results-card">
-        <div class="results-title">DRILL COMPLETE</div>
-        <div class="results-score" id="resultsScore">18 / 20</div>
-        <div class="results-accuracy" id="resultsAccuracy">90%</div>
+    <div class="speed-banner" id="speedBanner" style="display: none;">
+      <div class="speed-banner-title">⚡ SPEED MODE ENGAGED</div>
+      <div class="speed-banner-desc">30 seconds per question. Coin rewards <strong>doubled</strong>. Wrong answers <strong>cost coins</strong>. Run out of time = wrong.</div>
+    </div>
 
-        <div class="results-stats-row">
-          <div class="results-stat">
-            <div class="results-stat-value" id="resultsTime">4m 32s</div>
-            <div class="results-stat-label">Total Time</div>
-          </div>
-          <div class="results-stat">
-            <div class="results-stat-value" id="resultsBestStreak">12</div>
-            <div class="results-stat-label">Best Streak</div>
-          </div>
-        </div>
+    <div class="button-row">
+      <button class="btn btn-secondary" onclick="backToSpeedPrompt()">← Back</button>
+      <button class="btn" id="startDrillBtn" onclick="startDrill()">START DRILL →</button>
+    </div>
+  </div>
+</div>
 
-        <div class="results-rewards">
-          <div class="results-reward">
-            <div class="results-reward-value" id="resultsXp">+130 XP</div>
-            <div class="results-reward-label">EXPERIENCE</div>
-          </div>
-          <div class="results-reward">
-            <div class="results-reward-value" id="resultsCoins">+95 🪙</div>
-            <div class="results-reward-label">COINS</div>
-          </div>
-        </div>
+<!-- ===== SCREEN 3: DRILL ===== -->
+<div class="screen" id="screen-drill">
+  <div class="drill-header">
+    <div class="drill-counter">
+      <span class="num" id="drillNum">1</span>
+      <span style="color: var(--text-dim);">/</span>
+      <span>20</span>
+    </div>
+    <div class="drill-stats">
+      <div class="diff-badge easy" id="diffBadge">EASY</div>
+      <div class="drill-stat streak">🔥 <span id="streakNum">0</span><span class="label">STREAK</span></div>
+      <div class="drill-stat time">⏱ <span id="timeDisplay">0:00</span></div>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="countdown-bar" id="countdownBar"><div class="countdown-fill" id="countdownFill"></div></div>
 
-        <div class="button-row">
-          <button class="btn btn-secondary" onclick="goToLobby()">Back to Lobby</button>
-          <button class="btn btn-secondary" onclick="goToPicker()">New Skill</button>
-          <button class="btn" id="drillAgainBtn" onclick="drillAgain()">DRILL AGAIN →</button>
-        </div>
+  <div class="question-card">
+    <div class="question-text" id="questionText"></div>
+    <div class="question-graph" id="questionGraph"></div>
+    <div class="options" id="options"></div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 4: RESULTS ===== -->
+<div class="screen" id="screen-results">
+  <div class="results-card">
+    <div class="results-title">DRILL COMPLETE</div>
+    <div class="results-score" id="resultsScore">18 / 20</div>
+    <div class="results-accuracy" id="resultsAccuracy">90%</div>
+
+    <div class="results-stats-row">
+      <div class="results-stat">
+        <div class="results-stat-value" id="resultsTime">4m 32s</div>
+        <div class="results-stat-label">Total Time</div>
+      </div>
+      <div class="results-stat">
+        <div class="results-stat-value" id="resultsBestStreak">12</div>
+        <div class="results-stat-label">Best Streak</div>
       </div>
     </div>
+
+    <div class="results-rewards">
+      <div class="results-reward">
+        <div class="results-reward-value" id="resultsXp">+130 XP</div>
+        <div class="results-reward-label">EXPERIENCE</div>
+      </div>
+      <div class="results-reward">
+        <div class="results-reward-value" id="resultsCoins">+95 🪙</div>
+        <div class="results-reward-label">COINS</div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button class="btn btn-secondary" onclick="goToLobby()">Back to Lobby</button>
+      <button class="btn btn-secondary" onclick="goToPicker()">New Skill</button>
+      <button class="btn" id="drillAgainBtn" onclick="drillAgain()">DRILL AGAIN →</button>
+    </div>
+  </div>
+</div>
+```
 
   </div>
 
   <!-- Toast / banner overlays -->
+
   <div class="diff-toast" id="diffToast"></div>
   <div class="elite-banner" id="eliteBanner">🔥 ELITE GRIND 🔥</div>
 
   <!-- Farming modal -->
+
   <div class="modal-overlay" id="farmingModal">
     <div class="modal-card">
       <div class="modal-emoji">😅</div>
@@ -1215,6 +1639,7 @@
   </div>
 
   <!-- Leave-drill confirmation modal -->
+
   <div class="modal-overlay" id="leaveModal">
     <div class="modal-card">
       <div class="modal-emoji">🚪</div>
@@ -1265,12 +1690,318 @@ if (!studentId) window.location.href = 'signin.html';
 // ============================================================
 // THEME SYSTEM
 // ============================================================
-const THEMES = ['arcade', 'miami', 'galaxy', 'matrix', 'sakura'];
+const THEMES = ['arcade', 'neon', 'galaxy', 'matrix', 'sakura'];
 function toggleThemeMenu(e) {
   if (e) e.stopPropagation();
   document.getElementById('themeMenu').classList.toggle('open');
   document.getElementById('notifDropdown').classList.remove('open');
 }
+// ============================================================
+// THEME ANIMATION SYSTEM (rich animated backgrounds)
+// ============================================================
+let themeAnimationCleanup = null;
+
+function clearThemeBg() {
+  if (themeAnimationCleanup) {
+    themeAnimationCleanup();
+    themeAnimationCleanup = null;
+  }
+  const bg = document.getElementById('themeBg');
+  if (bg) bg.innerHTML = '';
+}
+
+// ===== NEON =====
+function initNeon() {
+  const bg = document.getElementById('themeBg');
+  if (!bg) return;
+  let active = true;
+  const initialTimeouts = [];
+
+  // Static scanline overlay
+  bg.innerHTML = `<div class="neon-scanlines"></div>`;
+
+  // Each shape comes in a chosen neon color from the cyberpunk palette
+  const NEON_COLORS = [
+    '#00f0ff', // electric cyan
+    '#ff2bd6', // hot magenta
+    '#b6ff00', // acid green
+    '#ff5500', // orange neon
+    '#a855ff'  // violet
+  ];
+
+  // Five shape types — outlines only, like neon tubes
+  function shapeSvg(color) {
+    const shapes = ['circle', 'triangle', 'square', 'hexagon', 'plus'];
+    const type = shapes[Math.floor(Math.random() * shapes.length)];
+    const stroke = `stroke="${color}" stroke-width="3" fill="none"`;
+    // The CSS filter handles the glow via drop-shadow
+    let inner = '';
+    switch (type) {
+      case 'circle':
+        inner = `<circle cx="50" cy="50" r="40" ${stroke}/>`;
+        break;
+      case 'triangle':
+        inner = `<polygon points="50,10 92,82 8,82" ${stroke} stroke-linejoin="round"/>`;
+        break;
+      case 'square':
+        inner = `<rect x="14" y="14" width="72" height="72" ${stroke} stroke-linejoin="round"/>`;
+        break;
+      case 'hexagon':
+        inner = `<polygon points="50,8 88,30 88,70 50,92 12,70 12,30" ${stroke} stroke-linejoin="round"/>`;
+        break;
+      case 'plus':
+        inner = `<path d="M 50 12 L 50 88 M 12 50 L 88 50" ${stroke} stroke-linecap="round"/>`;
+        break;
+    }
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
+  }
+
+  function spawnShape() {
+    if (!active) return;
+    const shape = document.createElement('div');
+    shape.className = 'neon-shape';
+    // ~15% of shapes get the broken-tube flicker
+    if (Math.random() < 0.15) shape.classList.add('flicker');
+
+    // Pick a color
+    const color = NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)];
+
+    // Random starting position somewhere along the edges (not center, so they truly drift "in")
+    // Spawn from one of the four edges and drift toward the opposite-ish direction
+    const edge = Math.floor(Math.random() * 4); // 0=top, 1=right, 2=bottom, 3=left
+    let startLeft, startTop, driftX, driftY;
+    if (edge === 0) {
+      // Top edge → drift down-and-sideways
+      startLeft = (10 + Math.random() * 80) + '%';
+      startTop = '-100px';
+      driftX = (Math.random() * 240 - 120);
+      driftY = 200 + Math.random() * 300;
+    } else if (edge === 1) {
+      // Right edge → drift left-and-sideways
+      startLeft = 'calc(100% + 50px)';
+      startTop = (10 + Math.random() * 80) + '%';
+      driftX = -(200 + Math.random() * 300);
+      driftY = (Math.random() * 240 - 120);
+    } else if (edge === 2) {
+      // Bottom edge → drift up-and-sideways
+      startLeft = (10 + Math.random() * 80) + '%';
+      startTop = 'calc(100% + 50px)';
+      driftX = (Math.random() * 240 - 120);
+      driftY = -(200 + Math.random() * 300);
+    } else {
+      // Left edge → drift right-and-sideways
+      startLeft = '-100px';
+      startTop = (10 + Math.random() * 80) + '%';
+      driftX = 200 + Math.random() * 300;
+      driftY = (Math.random() * 240 - 120);
+    }
+    shape.style.left = startLeft;
+    shape.style.top = startTop;
+
+    // Size variation: 120-220px (large neon signs)
+    const size = 120 + Math.random() * 100;
+    shape.style.width = size + 'px';
+    shape.style.height = size + 'px';
+
+    // Glow filter — uses the chosen color
+    shape.style.filter = `drop-shadow(0 0 6px ${color}) drop-shadow(0 0 14px ${color})`;
+
+    // Animation: slow drift (12-22s)
+    shape.style.animationDuration = (12 + Math.random() * 10) + 's';
+
+    // Drift vector and rotation passed via CSS variables
+    shape.style.setProperty('--drift-x', driftX + 'px');
+    shape.style.setProperty('--drift-y', driftY + 'px');
+    shape.style.setProperty('--spin', (Math.random() * 240 - 120) + 'deg');
+
+    shape.innerHTML = shapeSvg(color);
+    bg.appendChild(shape);
+    // Remove after animation completes
+    setTimeout(() => shape.remove(), 25000);
+  }
+
+  // Initial burst — 8 shapes staggered 200ms apart for instant impact
+  for (let i = 0; i < 8; i++) {
+    initialTimeouts.push(setTimeout(spawnShape, i * 200));
+  }
+
+  // Recurring spawn every 1.8-3.5 seconds (denser than petals, since shapes are smaller and longer-lived)
+  const spawnInterval = setInterval(spawnShape, 1800 + Math.random() * 1700);
+
+  themeAnimationCleanup = () => {
+    active = false;
+    clearInterval(spawnInterval);
+    initialTimeouts.forEach(clearTimeout);
+  };
+}
+
+// ===== GALAXY =====
+function initGalaxy() {
+  const bg = document.getElementById('themeBg');
+  if (!bg) return;
+  let active = true;
+  const stars = document.createElement('div');
+  stars.className = 'galaxy-stars';
+  let starsHtml = '';
+  for (let i = 0; i < 160; i++) {
+    const x = (Math.random() * 100).toFixed(2);
+    const y = (Math.random() * 100).toFixed(2);
+    const r = Math.random();
+    const cls = r < 0.08 ? 'huge' : r < 0.22 ? 'big' : '';
+    const dur = (2 + Math.random() * 4).toFixed(1);
+    const delay = (Math.random() * 4).toFixed(1);
+    starsHtml += `<span class="${cls}" style="left:${x}%; top:${y}%; --twinkle-dur:${dur}s; animation-delay:${delay}s"></span>`;
+  }
+  stars.innerHTML = starsHtml;
+  bg.appendChild(stars);
+
+  function spawnShootingStar() {
+    if (!active) return;
+    const ss = document.createElement('div');
+    ss.className = 'shooting-star';
+    ss.style.left = (Math.random() * 65) + '%';
+    ss.style.top  = (Math.random() * 50) + '%';
+    bg.appendChild(ss);
+    requestAnimationFrame(() => ss.classList.add('fly'));
+    setTimeout(() => ss.remove(), 1600);
+  }
+  let timeoutId;
+  function scheduleNext() {
+    if (!active) return;
+    timeoutId = setTimeout(() => {
+      spawnShootingStar();
+      scheduleNext();
+    }, 2500 + Math.random() * 4500);
+  }
+  const initialTimeout = setTimeout(spawnShootingStar, 1200);
+  scheduleNext();
+  themeAnimationCleanup = () => {
+    active = false;
+    clearTimeout(timeoutId);
+    clearTimeout(initialTimeout);
+  };
+}
+
+// ===== SAKURA =====
+function initSakura() {
+  const bg = document.getElementById('themeBg');
+  if (!bg) return;
+  let active = true;
+  const initialTimeouts = [];
+  const cloudSvg = `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="22" cy="40" rx="18" ry="14" fill="white"/>
+    <ellipse cx="44" cy="28" rx="22" ry="20" fill="white"/>
+    <ellipse cx="68" cy="24" rx="24" ry="22" fill="white"/>
+    <ellipse cx="92" cy="34" rx="20" ry="18" fill="white"/>
+    <ellipse cx="60" cy="42" rx="28" ry="16" fill="white"/>
+  </svg>`;
+  for (let i = 0; i < 5; i++) {
+    const cloud = document.createElement('div');
+    cloud.className = 'sakura-cloud';
+    cloud.style.top = (4 + Math.random() * 55) + '%';
+    cloud.style.width = (170 + Math.random() * 130) + 'px';
+    cloud.style.animationDuration = (70 + Math.random() * 50) + 's';
+    cloud.style.animationDelay = -(Math.random() * 100) + 's';
+    cloud.innerHTML = cloudSvg;
+    bg.appendChild(cloud);
+  }
+  const petalColors = [
+    { fill: '#ffabd1', stroke: '#ff7eaa' },
+    { fill: '#ffc4dd', stroke: '#ff95bd' },
+    { fill: '#ff95bd', stroke: '#d6648e' }
+  ];
+  function petalSvg() {
+    const c = petalColors[Math.floor(Math.random() * petalColors.length)];
+    return `<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 2 C13 4 14.5 7 14.5 11 C14.5 15 12 17.5 10 18.5 C8 17.5 5.5 15 5.5 11 C5.5 7 7 4 10 2 Z M10 5.2 L9 7 L10 6.4 L11 7 Z"
+            fill="${c.fill}" stroke="${c.stroke}" stroke-width="0.5"/>
+    </svg>`;
+  }
+  function spawnPetal() {
+    if (!active) return;
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.style.left = (Math.random() * 100) + '%';
+    petal.style.animationDuration = (8 + Math.random() * 6) + 's';
+    petal.style.setProperty('--sway', (Math.random() * 240 - 120) + 'px');
+    petal.style.setProperty('--spin', (Math.random() * 720 + 360) + 'deg');
+    const size = 13 + Math.random() * 12;
+    petal.style.width = size + 'px';
+    petal.style.height = size + 'px';
+    petal.innerHTML = petalSvg();
+    bg.appendChild(petal);
+    setTimeout(() => petal.remove(), 14500);
+  }
+  for (let i = 0; i < 5; i++) {
+    initialTimeouts.push(setTimeout(spawnPetal, i * 700));
+  }
+  const petalInterval = setInterval(spawnPetal, 750);
+  themeAnimationCleanup = () => {
+    active = false;
+    clearInterval(petalInterval);
+    initialTimeouts.forEach(clearTimeout);
+  };
+}
+
+// ===== MATRIX =====
+function initMatrix() {
+  const bg = document.getElementById('themeBg');
+  if (!bg) return;
+  let active = true;
+  const initialTimeouts = [];
+  bg.innerHTML = `
+    <div class="matrix-scan-bar"></div>
+    <div class="matrix-glitch" id="matrixGlitch"></div>
+    <div class="matrix-scanlines"></div>
+  `;
+  function createColumn() {
+    if (!active) return;
+    const col = document.createElement('div');
+    col.className = 'matrix-column';
+    col.style.left = (Math.random() * 100) + '%';
+    const dur = 6 + Math.random() * 8;
+    col.style.animationDuration = dur + 's';
+    let html = '';
+    const len = 18 + Math.floor(Math.random() * 16);
+    for (let i = 0; i < len; i++) {
+      const ch = Math.random() > 0.5 ? '1' : '0';
+      const op = (0.15 + (i / len) * 0.7).toFixed(2);
+      html += `<span style="opacity:${op}">${ch}</span>`;
+    }
+    col.innerHTML = html;
+    bg.appendChild(col);
+    setTimeout(() => col.remove(), (dur + 1) * 1000);
+  }
+  for (let i = 0; i < 8; i++) {
+    initialTimeouts.push(setTimeout(createColumn, i * 350));
+  }
+  const colInterval = setInterval(createColumn, 1100);
+
+  const glitch = document.getElementById('matrixGlitch');
+  function fireGlitch() {
+    if (!glitch) return;
+    glitch.classList.remove('fire');
+    void glitch.offsetWidth;
+    glitch.classList.add('fire');
+  }
+  let glitchTimeout;
+  function scheduleGlitch() {
+    if (!active) return;
+    glitchTimeout = setTimeout(() => {
+      fireGlitch();
+      scheduleGlitch();
+    }, 2200 + Math.random() * 5500);
+  }
+  scheduleGlitch();
+
+  themeAnimationCleanup = () => {
+    active = false;
+    clearInterval(colInterval);
+    clearTimeout(glitchTimeout);
+    initialTimeouts.forEach(clearTimeout);
+  };
+}
+
 function setTheme(theme) {
   THEMES.forEach(t => document.body.classList.remove('theme-' + t));
   if (theme !== 'arcade') document.body.classList.add('theme-' + theme);
@@ -1279,6 +2010,13 @@ function setTheme(theme) {
   });
   document.getElementById('themeMenu').classList.remove('open');
   localStorage.setItem('mvp_theme', theme);
+  // Initialize the rich animated background for this theme
+  clearThemeBg();
+  if (theme === 'neon')  initNeon();
+  else if (theme === 'galaxy') initGalaxy();
+  else if (theme === 'sakura') initSakura();
+  else if (theme === 'matrix') initMatrix();
+  // Arcade has no JS-spawned elements (just the CSS grid via body::before)
 }
 function loadSavedTheme() {
   setTheme(localStorage.getItem('mvp_theme') || 'arcade');
@@ -2123,67 +2861,293 @@ function gen_fevaluate(diff) {
   return { q, options, correctIdx };
 }
 // ----- Domain & range from graph (hand-written, simple)
+// ----- Domain & Range from a graph
+// Easy   : linear (mostly all-reals), plus some bounded segments with open/closed endpoints
+// Medium : quadratics with vertex (range bounded), exponentials (range > 0)
+// Hard   : absolute value, quadratics, exponentials (NO square root or cube root)
 function gen_domrange(diff) {
-  // Easy: linear unbounded → "All real numbers"
-  // Medium: parabola opening up with vertex y=k → range [k, ∞)
-  // Hard: bounded segment
-  if (diff === 'easy') {
-    const m = randNonZero(-3, 3), b = rand(-3, 3);
-    const graph = makeLineGraph(m, b);
-    const q = `What is the domain of the function shown?`;
-    const { options, correctIdx } = shuffleOptions('All real numbers', ['x ≥ 0', '0 ≤ x ≤ 10', 'x > 0']);
-    return { q, options, correctIdx, graph };
-  }
-  if (diff === 'medium') {
-    // Use a parabola: y = (x - h)^2 + k  (we render via simple SVG)
-    const h = rand(-3, 3), k = rand(-4, 2);
-    const w = 360, height = 360, cx = w / 2, cy = height / 2, unit = (w - 40) / 20;
-    let svg = `<svg viewBox="0 0 ${w} ${height}" xmlns="http://www.w3.org/2000/svg" style="background:rgba(255,255,255,0.95);border-radius:10px;padding:6px;">`;
+  // Shared SVG helpers (axes, gridlines)
+  function svgFrame() {
+    const w = 360, h = 360, cx = w / 2, cy = h / 2, unit = (w - 40) / 20;
+    let s = `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="background:rgba(255,255,255,0.95);border-radius:10px;padding:6px;">`;
     for (let i = -10; i <= 10; i++) {
-      svg += `<line x1="${cx + i * unit}" y1="20" x2="${cx + i * unit}" y2="${height - 20}" stroke="#dde" stroke-width="1"/>`;
-      svg += `<line x1="20" y1="${cy + i * unit}" x2="${w - 20}" y2="${cy + i * unit}" stroke="#dde" stroke-width="1"/>`;
+      s += `<line x1="${cx + i * unit}" y1="20" x2="${cx + i * unit}" y2="${h - 20}" stroke="#dde" stroke-width="1"/>`;
+      s += `<line x1="20" y1="${cy + i * unit}" x2="${w - 20}" y2="${cy + i * unit}" stroke="#dde" stroke-width="1"/>`;
     }
-    svg += `<line x1="${cx}" y1="20" x2="${cx}" y2="${height - 20}" stroke="#222" stroke-width="2"/>`;
-    svg += `<line x1="20" y1="${cy}" x2="${w - 20}" y2="${cy}" stroke="#222" stroke-width="2"/>`;
+    s += `<line x1="${cx}" y1="20" x2="${cx}" y2="${h - 20}" stroke="#222" stroke-width="2"/>`;
+    s += `<line x1="20" y1="${cy}" x2="${w - 20}" y2="${cy}" stroke="#222" stroke-width="2"/>`;
+    return { svg: s, w, h, cx, cy, unit };
+  }
+
+  // ============ EASY ============
+  if (diff === 'easy') {
+    // 60% of easy questions: a full linear → "All real numbers" for both domain and range
+    // 40% of easy questions: bounded line segment with open/closed endpoints
+    const isFullLine = Math.random() < 0.6;
+    const askDomain = Math.random() < 0.5;
+
+    if (isFullLine) {
+      // Full extending linear function — domain AND range are all reals
+      const m = randNonZero(-3, 3), b = rand(-3, 3);
+      const f = svgFrame();
+      let s = f.svg;
+      // Draw line across full graph
+      const x1 = -10, x2 = 10;
+      const y1v = m * x1 + b, y2v = m * x2 + b;
+      // Clip to viewable area
+      function clipLine(xa, ya, xb, yb) {
+        // Simple clip to y in [-10, 10]
+        let pts = [[xa, ya], [xb, yb]];
+        return pts;
+      }
+      s += `<line x1="${f.cx + x1 * f.unit}" y1="${f.cy - y1v * f.unit}" x2="${f.cx + x2 * f.unit}" y2="${f.cy - y2v * f.unit}" stroke="#0099cc" stroke-width="3"/>`;
+      // Add arrows at both ends
+      s += `<polygon points="${f.cx + x1 * f.unit - 4},${f.cy - y1v * f.unit + (m > 0 ? 8 : -8)} ${f.cx + x1 * f.unit + 4},${f.cy - y1v * f.unit + (m > 0 ? 8 : -8)} ${f.cx + x1 * f.unit},${f.cy - y1v * f.unit}" fill="#0099cc"/>`;
+      s += `<polygon points="${f.cx + x2 * f.unit - 4},${f.cy - y2v * f.unit + (m > 0 ? -8 : 8)} ${f.cx + x2 * f.unit + 4},${f.cy - y2v * f.unit + (m > 0 ? -8 : 8)} ${f.cx + x2 * f.unit},${f.cy - y2v * f.unit}" fill="#0099cc"/>`;
+      s += `</svg>`;
+      const q = `What is the ${askDomain ? 'domain' : 'range'} of the function shown?`;
+      const correct = 'All real numbers';
+      const distractorPool = ['x ≥ 0', 'x ≤ 0', 'x > 0', `x ≥ ${rand(1, 5)}`, `${rand(-3, -1)} ≤ x ≤ ${rand(2, 6)}`, 'y ≥ 0', `y ≤ ${rand(0, 4)}`];
+      // Shuffle pool, pick 3
+      for (let i = distractorPool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [distractorPool[i], distractorPool[j]] = [distractorPool[j], distractorPool[i]];
+      }
+      const { options, correctIdx } = shuffleOptions(correct, distractorPool.slice(0, 3));
+      return { q, options, correctIdx, graph: s };
+    } else {
+      // Bounded line segment with open/closed endpoints
+      const m = randNonZero(-2, 2);
+      const b = rand(-2, 2);
+      const xLeft = rand(-5, -1);
+      const xRight = rand(2, 6);
+      const leftClosed = Math.random() < 0.5;
+      const rightClosed = Math.random() < 0.5;
+      const yLeft = m * xLeft + b;
+      const yRight = m * xRight + b;
+      const f = svgFrame();
+      let s = f.svg;
+      s += `<line x1="${f.cx + xLeft * f.unit}" y1="${f.cy - yLeft * f.unit}" x2="${f.cx + xRight * f.unit}" y2="${f.cy - yRight * f.unit}" stroke="#0099cc" stroke-width="3"/>`;
+      // Endpoint circles
+      s += `<circle cx="${f.cx + xLeft * f.unit}" cy="${f.cy - yLeft * f.unit}" r="6" fill="${leftClosed ? '#0099cc' : 'white'}" stroke="#0099cc" stroke-width="2.5"/>`;
+      s += `<circle cx="${f.cx + xRight * f.unit}" cy="${f.cy - yRight * f.unit}" r="6" fill="${rightClosed ? '#0099cc' : 'white'}" stroke="#0099cc" stroke-width="2.5"/>`;
+      s += `</svg>`;
+
+      const q = `What is the ${askDomain ? 'domain' : 'range'} of the function shown?`;
+      // Build correct based on domain or range
+      let correct;
+      if (askDomain) {
+        const lOp = leftClosed ? '≤' : '<';
+        const rOp = rightClosed ? '≤' : '<';
+        correct = `${xLeft} ${lOp} x ${rOp} ${xRight}`;
+      } else {
+        const yLo = Math.min(yLeft, yRight);
+        const yHi = Math.max(yLeft, yRight);
+        // The endpoint matching depends on which end has the lower y
+        const loClosed = (yLeft < yRight) ? leftClosed : rightClosed;
+        const hiClosed = (yLeft < yRight) ? rightClosed : leftClosed;
+        const lOp = loClosed ? '≤' : '<';
+        const rOp = hiClosed ? '≤' : '<';
+        correct = `${yLo} ${lOp} y ${rOp} ${yHi}`;
+      }
+
+      // Distractors — different intervals, different inequalities
+      const distractors = [];
+      if (askDomain) {
+        // Build plausible-error distractors
+        distractors.push(`${xLeft - 1} ≤ x ≤ ${xRight + 1}`);                         // wrong endpoints
+        distractors.push(`${xLeft} < x < ${xRight}`);                                   // both flipped open/closed
+        distractors.push('All real numbers');
+        if (Math.random() < 0.5) distractors.push(`x ≥ ${xLeft}`);                      // unbounded
+      } else {
+        const yLo = Math.min(yLeft, yRight);
+        const yHi = Math.max(yLeft, yRight);
+        distractors.push(`${yLo - 1} ≤ y ≤ ${yHi + 1}`);
+        distractors.push(`${xLeft} ≤ y ≤ ${xRight}`);                                  // axis confusion
+        distractors.push('All real numbers');
+      }
+      // Shuffle and pick 3
+      for (let i = distractors.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+      }
+      const { options, correctIdx } = shuffleOptions(correct, distractors.slice(0, 3));
+      return { q, options, correctIdx, graph: s };
+    }
+  }
+
+  // ============ MEDIUM ============
+  // Quadratic or Exponential — both have notable range constraints
+  if (diff === 'medium') {
+    const useQuadratic = Math.random() < 0.55;
+
+    if (useQuadratic) {
+      // y = a(x - h)² + k where a ∈ {1, -1, 2, -2} (so it opens visibly)
+      const aSign = Math.random() < 0.5 ? 1 : -1;
+      const aMag = Math.random() < 0.5 ? 1 : 0.5;
+      const a = aSign * aMag;
+      const h = rand(-3, 3), k = rand(-4, 4);
+      const f = svgFrame();
+      let s = f.svg;
+      let path = 'M ';
+      for (let xv = -10; xv <= 10; xv += 0.2) {
+        const yv = a * (xv - h) * (xv - h) + k;
+        if (yv > 10 || yv < -10) continue;
+        path += `${f.cx + xv * f.unit},${f.cy - yv * f.unit} `;
+      }
+      s += `<polyline points="${path.slice(2)}" stroke="#0099cc" stroke-width="3" fill="none"/>`;
+      s += `<circle cx="${f.cx + h * f.unit}" cy="${f.cy - k * f.unit}" r="5" fill="#ff2d95"/>`;
+      s += `</svg>`;
+      const q = `What is the range of the function shown?`;
+      const correct = aSign > 0 ? `y ≥ ${k}` : `y ≤ ${k}`;
+      const distractors = [
+        aSign > 0 ? `y ≥ ${k + 2}` : `y ≤ ${k - 2}`,
+        aSign > 0 ? `y ≥ ${k - 3}` : `y ≤ ${k + 3}`,
+        'All real numbers',
+        `x ≥ ${h}`
+      ];
+      // Shuffle, pick 3
+      for (let i = distractors.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+      }
+      const { options, correctIdx } = shuffleOptions(correct, distractors.slice(0, 3));
+      return { q, options, correctIdx, graph: s };
+    } else {
+      // Exponential: y = a · b^x, range is y > 0 (or y < 0 if a is negative)
+      // We'll keep a positive for medium difficulty
+      const isGrowth = Math.random() < 0.5;
+      const a = 1;
+      const b = isGrowth ? 2 : 0.5;
+      const f = svgFrame();
+      let s = f.svg;
+      let path = 'M ';
+      for (let xv = -10; xv <= 10; xv += 0.2) {
+        const yv = a * Math.pow(b, xv);
+        if (yv > 10 || yv < -10) continue;
+        path += `${f.cx + xv * f.unit},${f.cy - yv * f.unit} `;
+      }
+      s += `<polyline points="${path.slice(2)}" stroke="#0099cc" stroke-width="3" fill="none"/>`;
+      // Asymptote indicator (dashed line on x-axis)
+      s += `<line x1="20" y1="${f.cy}" x2="${f.w - 20}" y2="${f.cy}" stroke="#aa3399" stroke-width="1" stroke-dasharray="4 4"/>`;
+      s += `</svg>`;
+      const q = `What is the range of the function shown?`;
+      const correct = 'y > 0';
+      const distractors = ['y ≥ 0', 'All real numbers', `y > ${rand(1, 4)}`, 'x > 0'];
+      for (let i = distractors.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+      }
+      const { options, correctIdx } = shuffleOptions(correct, distractors.slice(0, 3));
+      return { q, options, correctIdx, graph: s };
+    }
+  }
+
+  // ============ HARD ============
+  // Absolute value, harder quadratics, harder exponentials
+  // (NO square root, NO cube root per design spec)
+  const choice = Math.random();
+
+  if (choice < 0.4) {
+    // Absolute value: y = a|x - h| + k
+    // Range: y ≥ k if a > 0, y ≤ k if a < 0
+    const aSign = Math.random() < 0.5 ? 1 : -1;
+    const h = rand(-3, 3), k = rand(-4, 4);
+    const f = svgFrame();
+    let s = f.svg;
     let path = 'M ';
     for (let xv = -10; xv <= 10; xv += 0.2) {
-      const yv = (xv - h) * (xv - h) + k;
+      const yv = aSign * Math.abs(xv - h) + k;
       if (yv > 10 || yv < -10) continue;
-      path += `${cx + xv * unit},${cy - yv * unit} `;
+      path += `${f.cx + xv * f.unit},${f.cy - yv * f.unit} `;
     }
-    svg += `<polyline points="${path.slice(2)}" stroke="#0099cc" stroke-width="3" fill="none"/>`;
-    svg += `<circle cx="${cx + h * unit}" cy="${cy - k * unit}" r="5" fill="#ff2d95"/>`;
-    svg += `</svg>`;
+    s += `<polyline points="${path.slice(2)}" stroke="#0099cc" stroke-width="3" fill="none"/>`;
+    s += `<circle cx="${f.cx + h * f.unit}" cy="${f.cy - k * f.unit}" r="5" fill="#ff2d95"/>`;
+    s += `</svg>`;
     const q = `What is the range of the function shown?`;
-    const correct = `y ≥ ${k}`;
-    // Distractors with DIFFERENT threshold values, not just flipped inequality
-    const distractors = [];
-    const candidates = new Set([k]);
-    function tryAdd(threshold, op) {
-      const opt = `y ${op} ${threshold}`;
-      if (candidates.has(`${op}${threshold}`) && op === '≥') return;
-      candidates.add(`${op}${threshold}`);
-      distractors.push(opt);
-    }
-    // Different k values with ≥
-    for (let i = 0; i < 5 && distractors.length < 2; i++) {
-      const altK = k + (i % 2 === 0 ? (i + 2) : -(i + 2));
-      if (altK !== k && Math.abs(altK - k) >= 2) tryAdd(altK, '≥');
-    }
-    // Add "All real numbers" distractor (a real common student mistake)
-    if (distractors.length < 3) distractors.push('All real numbers');
-    // 70/30: occasionally include "y ≤ k" as the trivial flip
-    if (allowTrivialDistractor() && distractors.length < 3) {
-      distractors.push(`y ≤ ${k}`);
-    } else if (distractors.length < 3) {
-      // Add another non-trivial: x ≥ h (axis confusion)
-      distractors.push(`x ≥ ${h}`);
+    const correct = aSign > 0 ? `y ≥ ${k}` : `y ≤ ${k}`;
+    const distractors = [
+      aSign > 0 ? `y ≥ ${k + 2}` : `y ≤ ${k - 2}`,
+      'All real numbers',
+      `x ≥ ${h}`,
+      aSign > 0 ? `y > ${k}` : `y < ${k}`
+    ];
+    for (let i = distractors.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
     }
     const { options, correctIdx } = shuffleOptions(correct, distractors.slice(0, 3));
-    return { q, options, correctIdx, graph: svg };
+    return { q, options, correctIdx, graph: s };
+  } else if (choice < 0.75) {
+    // Harder quadratic: bigger |a|, bigger h and k offsets
+    const aSign = Math.random() < 0.5 ? 1 : -1;
+    const a = aSign * (Math.random() < 0.5 ? 0.5 : 1);
+    const h = randNonZero(-5, 5), k = randNonZero(-7, 7);
+    const f = svgFrame();
+    let s = f.svg;
+    let path = 'M ';
+    for (let xv = -10; xv <= 10; xv += 0.2) {
+      const yv = a * (xv - h) * (xv - h) + k;
+      if (yv > 10 || yv < -10) continue;
+      path += `${f.cx + xv * f.unit},${f.cy - yv * f.unit} `;
+    }
+    s += `<polyline points="${path.slice(2)}" stroke="#0099cc" stroke-width="3" fill="none"/>`;
+    s += `<circle cx="${f.cx + h * f.unit}" cy="${f.cy - k * f.unit}" r="5" fill="#ff2d95"/>`;
+    s += `</svg>`;
+    const askDomain = Math.random() < 0.3;
+    const q = `What is the ${askDomain ? 'domain' : 'range'} of the function shown?`;
+    let correct, distractors;
+    if (askDomain) {
+      correct = 'All real numbers';
+      distractors = [`x ≥ ${h}`, `x ≤ ${h}`, `y ≥ ${k}`, `${k} ≤ x ≤ ${k + 5}`];
+    } else {
+      correct = aSign > 0 ? `y ≥ ${k}` : `y ≤ ${k}`;
+      distractors = [
+        aSign > 0 ? `y ≥ ${k + 3}` : `y ≤ ${k - 3}`,
+        'All real numbers',
+        `x ≥ ${h}`,
+        aSign > 0 ? `y > ${k}` : `y < ${k}`
+      ];
+    }
+    for (let i = distractors.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+    }
+    const { options, correctIdx } = shuffleOptions(correct, distractors.slice(0, 3));
+    return { q, options, correctIdx, graph: s };
+  } else {
+    // Exponential with vertical shift: y = a·b^x + c (range is y > c or y < c)
+    const isGrowth = Math.random() < 0.5;
+    const a = 1;
+    const b = isGrowth ? 2 : 0.5;
+    const c = rand(-3, 3);
+    const f = svgFrame();
+    let s = f.svg;
+    let path = 'M ';
+    for (let xv = -10; xv <= 10; xv += 0.2) {
+      const yv = a * Math.pow(b, xv) + c;
+      if (yv > 10 || yv < -10) continue;
+      path += `${f.cx + xv * f.unit},${f.cy - yv * f.unit} `;
+    }
+    s += `<polyline points="${path.slice(2)}" stroke="#0099cc" stroke-width="3" fill="none"/>`;
+    // Asymptote at y = c
+    s += `<line x1="20" y1="${f.cy - c * f.unit}" x2="${f.w - 20}" y2="${f.cy - c * f.unit}" stroke="#aa3399" stroke-width="1" stroke-dasharray="4 4"/>`;
+    s += `</svg>`;
+    const q = `What is the range of the function shown?`;
+    const correct = `y > ${c}`;
+    const distractors = [
+      `y ≥ ${c}`,
+      `y > ${c + 2}`,
+      `y < ${c}`,
+      'All real numbers'
+    ];
+    for (let i = distractors.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+    }
+    const { options, correctIdx } = shuffleOptions(correct, distractors.slice(0, 3));
+    return { q, options, correctIdx, graph: s };
   }
-  // hard: same as medium but ask for domain (still all reals)
-  return gen_domrange('easy');
 }
 // ----- Vertex from vertex form: y = a(x - h)^2 + k
 function gen_vertex(diff) {
@@ -2319,16 +3283,73 @@ function gen_stdvertex(diff) {
   return { q, options, correctIdx };
 }
 // ----- Growth vs. decay
+// ----- Growth vs Decay
+// Fixed 2-option layout: Growth (left) | Decay (right) every question.
+// EASY:   ab^x form only — students learn to read the base directly
+// MEDIUM: mix of ab^x AND a(1 ± r)^x forms — recognize both BEST reference sheet forms
+// HARD:   mostly (1 ± r)^x with subtle rates + tricky bases (fractional/decimal)
 function gen_growthdecay(diff) {
   const isGrowth = Math.random() > 0.5;
-  let base;
-  if (diff === 'easy') base = isGrowth ? (1 + rand(2, 9) / 10) : (rand(1, 9) / 10);
-  else if (diff === 'medium') base = isGrowth ? (1 + rand(1, 50) / 100) : (1 - rand(5, 50) / 100);
-  else base = isGrowth ? (1 + rand(1, 30) / 100) : (1 - rand(2, 30) / 100);
-  const a = rand(2, 10);
-  const correct = isGrowth ? 'Growth' : 'Decay';
-  const q = `Is this exponential growth or decay?<span class="block-eq">f(x) = ${a}(${base.toFixed(2)})<sup>x</sup></span>`;
-  const { options, correctIdx } = shuffleOptions(correct, ['Growth', 'Decay', 'Linear', 'Neither'].filter(o => o !== correct));
+  let q;
+
+  if (diff === 'easy') {
+    // ab^x form only. Pick obvious bases.
+    const a = rand(2, 10);
+    let base;
+    if (isGrowth) {
+      // Growth bases: clearly > 1
+      const growthBases = [2, 3, 4, 5, 1.5, 1.2, 1.8, 2.5];
+      base = growthBases[Math.floor(Math.random() * growthBases.length)];
+    } else {
+      // Decay bases: clearly between 0 and 1
+      const decayBases = [0.5, 0.25, 0.75, 0.8, 0.9, 0.4, 0.6, 0.3];
+      base = decayBases[Math.floor(Math.random() * decayBases.length)];
+    }
+    q = `Is this exponential growth or decay?<span class="block-eq">f(x) = ${a}(${base})<sup>x</sup></span>`;
+  } else if (diff === 'medium') {
+    // 50/50 mix of ab^x and a(1 ± r)^x
+    const useRForm = Math.random() < 0.5;
+    const a = rand(20, 200);
+    if (useRForm) {
+      // a(1 ± r)^x form — explicit sign
+      const r = (rand(1, 25) / 100);
+      const sign = isGrowth ? '+' : '−';
+      q = `Is this exponential growth or decay?<span class="block-eq">f(x) = ${a}(1 ${sign} ${r})<sup>x</sup></span>`;
+    } else {
+      // ab^x form with subtler bases
+      const base = isGrowth
+        ? (1 + rand(3, 30) / 100)   // 1.03 to 1.30
+        : (1 - rand(3, 30) / 100);  // 0.97 to 0.70
+      q = `Is this exponential growth or decay?<span class="block-eq">f(x) = ${a}(${base.toFixed(2)})<sup>x</sup></span>`;
+    }
+  } else {
+    // HARD: mostly (1 ± r)^x with subtle r values; some tricky ab^x too
+    const useRForm = Math.random() < 0.7;
+    const a = rand(15, 500);
+    if (useRForm) {
+      // a(1 ± r)^x with smaller, harder-to-spot rates
+      const r = (rand(1, 18) / 100);
+      const sign = isGrowth ? '+' : '−';
+      q = `Is this exponential growth or decay?<span class="block-eq">f(x) = ${a}(1 ${sign} ${r})<sup>x</sup></span>`;
+    } else {
+      // ab^x with fractional or close-to-1 bases (tricky to read)
+      let base;
+      if (isGrowth) {
+        // Subtle growth: 1.01, 1.02, 1.04, 1.08, or fractional like 5/4 (=1.25), 9/8 (=1.125)
+        const subtleGrowth = [1.01, 1.02, 1.04, 1.06, 1.08, 1.125, 1.15];
+        base = subtleGrowth[Math.floor(Math.random() * subtleGrowth.length)];
+      } else {
+        // Subtle decay: 0.96, 0.98, or fractional like 7/8 (=0.875)
+        const subtleDecay = [0.92, 0.94, 0.96, 0.98, 0.875, 0.85];
+        base = subtleDecay[Math.floor(Math.random() * subtleDecay.length)];
+      }
+      q = `Is this exponential growth or decay?<span class="block-eq">f(x) = ${a}(${base})<sup>x</sup></span>`;
+    }
+  }
+
+  // Fixed 2-option layout: Growth always on left (index 0), Decay always on right (index 1)
+  const options = ['Growth', 'Decay'];
+  const correctIdx = isGrowth ? 0 : 1;
   return { q, options, correctIdx };
 }
 // ----- Initial value & growth rate
@@ -2756,6 +3777,13 @@ function backToSpeedPrompt() {
 function showScreen(name) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + name).classList.add('active');
+  // Toggle drill-active class to dampen theme animations during the active drill question screen.
+  // Per Option B: animations stay full on picker, results, welcome, confirm, speedprompt.
+  if (name === 'drill') {
+    document.body.classList.add('drill-active');
+  } else {
+    document.body.classList.remove('drill-active');
+  }
 }
 
 // ============================================================
@@ -2928,7 +3956,41 @@ window.addEventListener('beforeunload', (e) => {
 // ============================================================
 // SKILL PICKER RENDER
 // ============================================================
+// ============================================================
+// SESSION STATS — tracked since file open (page load)
+// ============================================================
+const sessionStats = {
+  drillsCompleted: 0,
+  questionsCorrect: 0,
+  questionsTotal: 0,
+  coinsEarned: 0,
+  bestStreak: 0,
+  // Set of skill codes the student has finished at least one full drill on this session
+  // (used to mark tiles as "completed" with the ✓ badge).
+  completedSkillCodes: new Set()
+};
+
+function refreshStatsDash() {
+  const dEl = document.getElementById('statDrills');
+  const cEl = document.getElementById('statCorrect');
+  const aEl = document.getElementById('statAccuracy');
+  const coEl = document.getElementById('statCoins');
+  const bsEl = document.getElementById('statBestStreak');
+  if (!dEl) return;
+  dEl.textContent = sessionStats.drillsCompleted;
+  cEl.textContent = sessionStats.questionsCorrect;
+  if (sessionStats.questionsTotal === 0) {
+    aEl.textContent = '—';
+  } else {
+    const pct = Math.round((sessionStats.questionsCorrect / sessionStats.questionsTotal) * 100);
+    aEl.textContent = pct + '%';
+  }
+  coEl.textContent = sessionStats.coinsEarned;
+  bsEl.textContent = sessionStats.bestStreak;
+}
+
 function renderSkillPicker() {
+  refreshStatsDash();
   const container = document.getElementById('skillCategories');
   container.innerHTML = '';
   CATEGORY_ORDER.forEach(cat => {
@@ -2941,12 +4003,15 @@ function renderSkillPicker() {
     skillsInCat.forEach(skill => {
       const attemptsToday = getAttemptCount(skill.code);
       const exhausted = attemptsToday >= 3;
+      const completed = sessionStats.completedSkillCodes.has(skill.code);
       const tile = document.createElement('div');
-      tile.className = 'skill-tile' + (exhausted ? ' exhausted' : '');
+      let cls = 'skill-tile';
+      if (exhausted) cls += ' exhausted';
+      else if (completed) cls += ' completed';
+      tile.className = cls;
       tile.innerHTML = `
         <div class="skill-name">${skill.name}</div>
         <div class="skill-meta">
-          <span class="skill-standard">${skill.standard}</span>
           <span class="skill-attempts">${attemptsToday} / 3</span>
         </div>
       `;
@@ -2999,6 +4064,7 @@ function startDrill() {
     correctCount: 0,
     consecutiveCorrect: 0,
     consecutiveWrong: 0,
+    streakDisplay: 0,           // visible "🔥 STREAK" counter — does NOT reset on level-up
     bestStreak: 0,
     currentDifficulty: 'easy',
     startedAt: Date.now(),
@@ -3013,6 +4079,9 @@ function startDrill() {
 
   // UI prep
   document.getElementById('countdownBar').classList.toggle('show', speedMode);
+  // Set breadcrumb to current skill name
+  const breadcrumb = document.getElementById('skillBreadcrumb');
+  if (breadcrumb) breadcrumb.textContent = drillState.skill.name;
   loadNextQuestion();
   startDrillTimer();
   showScreen('drill');
@@ -3031,7 +4100,7 @@ function loadNextQuestion() {
   // Update header
   document.getElementById('drillNum').textContent = drillState.questionIndex + 1;
   document.getElementById('progressFill').style.width = ((drillState.questionIndex + 1) / TOTAL_QUESTIONS * 100) + '%';
-  document.getElementById('streakNum').textContent = drillState.consecutiveCorrect;
+  document.getElementById('streakNum').textContent = drillState.streakDisplay;
 
   const dBadge = document.getElementById('diffBadge');
   dBadge.className = 'diff-badge ' + drillState.currentDifficulty;
@@ -3100,8 +4169,9 @@ function onAnswerSelected(selectedIdx, timedOut = false) {
   if (correct) {
     drillState.correctCount++;
     drillState.consecutiveCorrect++;
+    drillState.streakDisplay++;
     drillState.consecutiveWrong = 0;
-    if (drillState.consecutiveCorrect > drillState.bestStreak) drillState.bestStreak = drillState.consecutiveCorrect;
+    if (drillState.streakDisplay > drillState.bestStreak) drillState.bestStreak = drillState.streakDisplay;
     const baseCoins = drillState.currentDifficulty === 'easy' ? 1 : drillState.currentDifficulty === 'medium' ? 2 : 3;
     const baseXp = drillState.currentDifficulty === 'easy' ? 5 : drillState.currentDifficulty === 'medium' ? 8 : 12;
     coinsEarned = drillState.speedMode ? baseCoins * 2 : baseCoins;
@@ -3117,6 +4187,7 @@ function onAnswerSelected(selectedIdx, timedOut = false) {
   } else {
     drillState.consecutiveWrong++;
     drillState.consecutiveCorrect = 0;
+    drillState.streakDisplay = 0;     // wrong answer DOES break the visible streak
     // Speed mode: deduct 1 coin for wrong (per design)
     if (drillState.speedMode && currentCoins > 0) {
       coinsEarned = -1;
@@ -3142,7 +4213,7 @@ function onAnswerSelected(selectedIdx, timedOut = false) {
   }
 
   // Elite Grind activation check
-  const shouldBeElite = drillState.speedMode && drillState.currentDifficulty === 'hard' && drillState.consecutiveCorrect >= 5;
+  const shouldBeElite = drillState.speedMode && drillState.currentDifficulty === 'hard' && drillState.streakDisplay >= 5;
   if (shouldBeElite && !drillState.eliteActive) {
     drillState.eliteActive = true;
     document.getElementById('eliteBanner').classList.add('show');
@@ -3225,6 +4296,16 @@ async function finishDrill() {
 
   // Persist to Firebase
   await persistDrillResults();
+
+  // Update session stats (since file open) — for the picker stats dash
+  sessionStats.drillsCompleted += 1;
+  sessionStats.questionsCorrect += drillState.correctCount;
+  sessionStats.questionsTotal += TOTAL_QUESTIONS;
+  sessionStats.coinsEarned += Math.max(0, drillState.coinsEarned);
+  if (drillState.bestStreak > sessionStats.bestStreak) {
+    sessionStats.bestStreak = drillState.bestStreak;
+  }
+  sessionStats.completedSkillCodes.add(drillState.skill.code);
 
   // Render results screen
   document.getElementById('resultsScore').textContent = `${drillState.correctCount} / ${TOTAL_QUESTIONS}`;
@@ -3353,5 +4434,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkillPicker();
 });
 </script>
+
 </body>
 </html>
