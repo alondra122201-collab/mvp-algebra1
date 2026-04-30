@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  MVP Algebra 1 — Sign In
+  © 2026 Alondra Delgado. All rights reserved.
+  Created by Alondra Delgado · Hialeah Senior High School
+  Part of the MVP Algebra 1 platform.
+  Unauthorized copying, modification, or redistribution is prohibited.
+  ============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVP Algebra 1 — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+<style>
+  :root {
+    --bg-1: #050818;
+    --bg-2: #0e1438;
+    --bg-3: #1a1245;
+    --cyan: #00e5ff;
+    --cyan-glow: #00e5ff80;
+    --gold: #ffc233;
+    --gold-glow: #ffc23380;
+    --pink: #ff2d95;
+    --green: #39ff14;
+    --red: #ff3b3b;
+    --text: #f0f4ff;
+    --text-dim: #8a92b8;
+    --panel: rgba(255, 255, 255, 0.04);
+    --panel-border: rgba(255, 255, 255, 0.12);
+    --primary-deep: #0099cc;
+    --primary-darker: #006080;
+    --grid-line: rgba(0, 229, 255, 0.04);
+    --orb-1: rgba(0, 229, 255, 0.12);
+    --orb-2: rgba(255, 45, 149, 0.10);
+  }
+
+  /* ============ THEMES (mirrored from EOC Battle) ============ */
+  body.theme-miami {
+    --bg-1: #0a1f2e; --bg-2: #1a3a55; --bg-3: #2d1d50;
+    --cyan: #00d9c0; --cyan-glow: rgba(0, 217, 192, 0.5);
+    --gold: #ffaa3b; --gold-glow: rgba(255, 170, 59, 0.5);
+    --pink: #ff7e5f; --green: #00ff9d; --red: #ff5577;
+    --text: #f5fafe; --text-dim: #88a4b3;
+    --primary-deep: #00a89a; --primary-darker: #006659;
+    --grid-line: rgba(0, 217, 192, 0.05);
+    --orb-1: rgba(0, 217, 192, 0.14); --orb-2: rgba(255, 126, 95, 0.12);
+  }
+  body.theme-galaxy {
+    --bg-1: #0a0420; --bg-2: #1a0a40; --bg-3: #2d1560;
+    --cyan: #b794ff; --cyan-glow: rgba(183, 148, 255, 0.5);
+    --gold: #ffd700; --gold-glow: rgba(255, 215, 0, 0.5);
+    --pink: #ff6ad5; --green: #5dffd6; --red: #ff5577;
+    --text: #f0e8ff; --text-dim: #9c8bbc;
+    --primary-deep: #8a5cd9; --primary-darker: #5e3995;
+    --grid-line: rgba(183, 148, 255, 0.05);
+    --orb-1: rgba(183, 148, 255, 0.14); --orb-2: rgba(255, 106, 213, 0.12);
+  }
+  body.theme-matrix {
+    --bg-1: #000000; --bg-2: #001a0a; --bg-3: #00331f;
+    --cyan: #00ff41; --cyan-glow: rgba(0, 255, 65, 0.5);
+    --gold: #ff5500; --gold-glow: rgba(255, 85, 0, 0.5);
+    --pink: #00ffaa; --green: #00ff41; --red: #ff3030;
+    --text: #d0ffd0; --text-dim: #5a8a5a;
+    --primary-deep: #00cc33; --primary-darker: #008822;
+    --grid-line: rgba(0, 255, 65, 0.05);
+    --orb-1: rgba(0, 255, 65, 0.13); --orb-2: rgba(0, 255, 170, 0.10);
+  }
+  body.theme-sakura {
+    --bg-1: #fff5f7; --bg-2: #ffe5ed; --bg-3: #ffd5e3;
+    --cyan: #d63384; --cyan-glow: rgba(214, 51, 132, 0.4);
+    --gold: #c9303a; --gold-glow: rgba(201, 48, 58, 0.4);
+    --pink: #5b3fa0; --green: #2d8a4d; --red: #c9303a;
+    --text: #2d1f3a; --text-dim: #6b5878;
+    --panel: rgba(45, 31, 58, 0.05);
+    --panel-border: rgba(45, 31, 58, 0.18);
+    --primary-deep: #a02466; --primary-darker: #6e1845;
+    --grid-line: rgba(214, 51, 132, 0.06);
+    --orb-1: rgba(214, 51, 132, 0.12); --orb-2: rgba(91, 63, 160, 0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text);
+    background: radial-gradient(ellipse at top, var(--bg-2) 0%, var(--bg-1) 70%);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, var(--orb-1), transparent 40%),
+      radial-gradient(circle at 85% 80%, var(--orb-2), transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Hide arcade grid for non-arcade themes */
+  body.theme-miami::before, body.theme-galaxy::before,
+  body.theme-matrix::before, body.theme-sakura::before { display: none; }
+
+  body.theme-sakura {
+    background:
+      radial-gradient(ellipse at 15% 5%, #ffe5ed 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 95%, #ffd5e3 0%, transparent 45%),
+      linear-gradient(180deg, #fff8fa 0%, #fff0f4 50%, #ffe5ed 100%);
+  }
+
+  .app {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Top bar with theme picker */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 36px;
+    position: relative;
+    z-index: 100;
+  }
+  .brand {
+    font-family: 'Bungee', cursive;
+    font-size: 1.4rem;
+    color: var(--cyan);
+    text-shadow: 0 0 12px var(--cyan-glow);
+    letter-spacing: 0.1em;
+  }
+
+  /* Theme picker (same as EOC Battle) */
+  .theme-picker { position: relative; }
+  .theme-toggle {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--text);
+    line-height: 1;
+    transition: all 0.15s;
+  }
+  .theme-toggle:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px var(--cyan-glow);
+  }
+  .theme-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--bg-2);
+    border: 2px solid var(--panel-border);
+    border-radius: 14px;
+    padding: 14px;
+    min-width: 200px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+  }
+  .theme-menu.open { display: block; }
+  .theme-menu-title {
+    font-family: 'Bungee', cursive;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.18em;
+    padding: 4px 8px 12px;
+  }
+  .theme-option {
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; padding: 10px 12px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem; font-weight: 600;
+    transition: all 0.15s;
+    text-align: left;
+  }
+  .theme-option:hover { background: var(--panel-border); }
+  .theme-option.active {
+    border-color: var(--cyan);
+    background: var(--panel);
+  }
+
+  /* Main stage */
+  .stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 60px;
+  }
+
+  .screen {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    animation: slideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .screen.active { display: flex; }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .big-title {
+    font-family: 'Bungee', cursive;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 0.95;
+    color: var(--cyan);
+    text-shadow:
+      0 0 20px var(--cyan-glow),
+      0 0 40px var(--cyan-glow),
+      4px 4px 0 var(--pink);
+    letter-spacing: 0.05em;
+  }
+  .subtitle {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    color: var(--text-dim);
+    max-width: 500px;
+    line-height: 1.4;
+  }
+
+  /* ID input card */
+  .input-card {
+    background: var(--panel);
+    border: 2px solid var(--panel-border);
+    border-radius: 24px;
+    padding: 40px 50px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+  }
+  .input-label {
+    font-family: 'Bungee', cursive;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    letter-spacing: 0.18em;
+    margin-bottom: 16px;
+  }
+  .id-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--panel-border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--cyan);
+    text-align: center;
+    letter-spacing: 0.15em;
+    transition: all 0.2s;
+    outline: none;
+  }
+  .id-input::placeholder { color: var(--text-dim); opacity: 0.4; }
+  .id-input:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px var(--cyan-glow);
+  }
+  body.theme-sakura .id-input {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .error-msg {
+    color: var(--red);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 14px;
+    min-height: 1.4em;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .error-msg.show { opacity: 1; }
+
+  /* Buttons */
+  .btn {
+    font-family: 'Bungee', cursive;
+    font-size: 1.4rem;
+    padding: 22px 56px;
+    background: linear-gradient(135deg, var(--cyan), var(--primary-deep));
+    color: #000;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    box-shadow: 0 8px 0 var(--primary-darker), 0 12px 30px var(--cyan-glow);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-transform: uppercase;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0 var(--primary-darker), 0 16px 40px var(--cyan-glow);
+  }
+  .btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 var(--primary-darker);
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--panel-border);
+    color: var(--text);
+    box-shadow: none;
+    font-size: 1.1rem;
+    padding: 16px 36px;
+  }
+  .btn-secondary:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    transform: none;
+    box-shadow: 0 0 20px var(--cyan-glow);
+  }
+
+  .button-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Confirm screen */
+  .welcome-name {
+    font-family: 'Bungee', cursive;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--gold);
+    text-shadow:
+      0 0 20px var(--gold-glow),
+      0 0 40px var(--gold-glow);
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+  }
+  .welcome-prompt {
+    font-size: 1.5rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .welcome-prompt em {
+    color: var(--cyan);
+    font-style: normal;
+    font-weight: 800;
+  }
+
+  /* Loading state */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--panel-border);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Footer */
+  .footer {
+    padding: 18px 40px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand">⚡ MVP ALGEBRA 1</div>
+    <div class="theme-picker">
+      <button class="theme-toggle" onclick="toggleThemeMenu(event)" title="Change theme">🎨</button>
+      <div class="theme-menu" id="themeMenu">
+        <div class="theme-menu-title">CHOOSE THEME</div>
+        <button class="theme-option active" data-theme="arcade" onclick="setTheme('arcade')"><span>⚡ Arcade</span></button>
+        <button class="theme-option" data-theme="miami" onclick="setTheme('miami')"><span>🌴 Miami</span></button>
+        <button class="theme-option" data-theme="galaxy" onclick="setTheme('galaxy')"><span>🌌 Galaxy</span></button>
+        <button class="theme-option" data-theme="matrix" onclick="setTheme('matrix')"><span>💚 Matrix</span></button>
+        <button class="theme-option" data-theme="sakura" onclick="setTheme('sakura')"><span>🌸 Sakura</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage">
+
+    <!-- ============ SCREEN 1: ENTER ID ============ -->
+    <div class="screen active" id="screen-id">
+      <div class="big-title">WELCOME</div>
+      <div class="subtitle">Enter your Student ID to begin.</div>
+      <div class="input-card">
+        <div class="input-label">STUDENT ID</div>
+        <input
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="10"
+          class="id-input"
+          id="idInput"
+          placeholder="000000"
+          autocomplete="off"
+          autofocus
+        />
+        <div class="error-msg" id="errorMsg"></div>
+      </div>
+      <button class="btn" id="continueBtn" onclick="lookupStudent()">CONTINUE →</button>
+    </div>
+
+    <!-- ============ SCREEN 2: LOADING ============ -->
+    <div class="screen" id="screen-loading">
+      <div class="spinner"></div>
+      <div class="subtitle">Looking you up...</div>
+    </div>
+
+    <!-- ============ SCREEN 3: CONFIRM NAME ============ -->
+    <div class="screen" id="screen-confirm">
+      <div class="welcome-prompt">Welcome back,</div>
+      <div class="welcome-name" id="confirmName">Alondra</div>
+      <div class="welcome-prompt">Is that <em>you</em>?</div>
+      <div class="button-row">
+        <button class="btn-secondary btn" onclick="goBackToIdEntry()">← NOT ME</button>
+        <button class="btn" onclick="confirmAndEnter()">YES, LET'S GO →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © Alondra Delgado · Hialeah Senior · MVP Algebra 1
+  </div>
+</div>
+
+<script>
+// ============================================================
+// FIREBASE CONFIG
+// ============================================================
+// NOTE: This must match the config used in index.html and intelligence.html
+const firebaseConfig = {
+  apiKey: "PLACEHOLDER_FIREBASE_KEY",
+  authDomain: "mvp-algebra1.firebaseapp.com",
+  projectId: "mvp-algebra1",
+  storageBucket: "mvp-algebra1.appspot.com",
+  messagingSenderId: "PLACEHOLDER",
+  appId: "PLACEHOLDER"
+};
+
+// Initialize Firebase if not already initialized
+let db = null;
+try {
+  if (typeof firebase !== 'undefined' && firebase.apps && !firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  if (typeof firebase !== 'undefined') {
+    db = firebase.firestore();
+  }
+} catch (e) {
+  console.warn('Firebase init failed — running in offline/demo mode:', e);
+}
+
+// ============================================================
+// THEME SYSTEM
+// ============================================================
+const THEMES = ['arcade', 'miami', 'galaxy', 'matrix', 'sakura'];
+
+function toggleThemeMenu(e) {
+  if (e) e.stopPropagation();
+  document.getElementById('themeMenu').classList.toggle('open');
+}
+
+function setTheme(theme) {
+  THEMES.forEach(t => document.body.classList.remove('theme-' + t));
+  if (theme !== 'arcade') document.body.classList.add('theme-' + theme);
+  document.querySelectorAll('.theme-option').forEach(el => {
+    el.classList.toggle('active', el.dataset.theme === theme);
+  });
+  document.getElementById('themeMenu').classList.remove('open');
+  localStorage.setItem('mvp_theme', theme);
+}
+
+// Load saved theme on page load
+function loadSavedTheme() {
+  const saved = localStorage.getItem('mvp_theme') || 'arcade';
+  setTheme(saved);
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.theme-picker')) {
+    document.getElementById('themeMenu').classList.remove('open');
+  }
+});
+
+// ============================================================
+// SCREEN NAVIGATION
+// ============================================================
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+}
+
+// ============================================================
+// SIGN-IN LOGIC
+// ============================================================
+let currentStudent = null; // { id, firstName, ... }
+
+function showError(msg) {
+  const el = document.getElementById('errorMsg');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+function clearError() {
+  document.getElementById('errorMsg').classList.remove('show');
+}
+
+async function lookupStudent() {
+  const id = document.getElementById('idInput').value.trim();
+  clearError();
+
+  if (!id) {
+    showError("Please enter your Student ID.");
+    return;
+  }
+
+  // Demo / admin account — bypass Firebase
+  if (id === '000000') {
+    currentStudent = {
+      id: '000000',
+      firstName: 'Demo',
+      lastName: 'Student',
+      isDemo: true
+    };
+    showScreen('loading');
+    setTimeout(() => {
+      document.getElementById('confirmName').textContent = 'Demo Student';
+      showScreen('confirm');
+    }, 500);
+    return;
+  }
+
+  showScreen('loading');
+
+  try {
+    if (!db) {
+      // Firebase isn't connected — for now, allow any non-empty ID through with a placeholder name
+      // (this preserves dev workflow when running without Firebase configured)
+      console.warn('Firebase not connected — accepting ID for development');
+      currentStudent = {
+        id: id,
+        firstName: 'Student',
+        lastName: id,
+        isDemo: false
+      };
+      setTimeout(() => {
+        document.getElementById('confirmName').textContent = 'Student ' + id;
+        showScreen('confirm');
+      }, 500);
+      return;
+    }
+
+    const docRef = db.collection('playerProfiles').doc(id);
+    const docSnap = await docRef.get();
+
+    if (!docSnap.exists) {
+      showScreen('id');
+      showError("Hmm, we don't recognize that ID. Double-check with your teacher.");
+      document.getElementById('idInput').focus();
+      document.getElementById('idInput').select();
+      return;
+    }
+
+    const data = docSnap.data();
+    currentStudent = {
+      id: id,
+      firstName: data.firstName || data.first_name || 'Student',
+      lastName: data.lastName || data.last_name || '',
+      period: data.period || null,
+      ...data
+    };
+
+    document.getElementById('confirmName').textContent = currentStudent.firstName;
+    showScreen('confirm');
+
+  } catch (err) {
+    console.error('Lookup error:', err);
+    showScreen('id');
+    showError("Something went wrong. Please try again.");
+  }
+}
+
+function goBackToIdEntry() {
+  currentStudent = null;
+  showScreen('id');
+  const input = document.getElementById('idInput');
+  input.value = '';
+  input.focus();
+}
+
+function confirmAndEnter() {
+  if (!currentStudent) return;
+  // Save session
+  localStorage.setItem('mvp_studentId', currentStudent.id);
+  localStorage.setItem('mvp_studentFirstName', currentStudent.firstName);
+  localStorage.setItem('mvp_isDemo', currentStudent.isDemo ? '1' : '0');
+  // Send to lobby
+  window.location.href = 'lobby.html';
+}
+
+// ============================================================
+// EVENT LISTENERS
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  loadSavedTheme();
+
+  // Allow Enter key to submit the ID
+  const input = document.getElementById('idInput');
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      lookupStudent();
+    }
+  });
+
+  // Restrict input to digits only
+  input.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    clearError();
+  });
+
+  // If a session already exists, jump straight to lobby (avoids re-login on every visit)
+  // Comment this out if you want to force re-login each visit
+  // const existingId = localStorage.getItem('mvp_studentId');
+  // if (existingId) window.location.href = 'lobby.html';
+});
+</script>
+</body>
+</html>
